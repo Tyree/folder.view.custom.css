@@ -1,0 +1,24 @@
+/*************************************************/
+/* ICON HOVER EFFECTS */
+/*************************************************/
+/* Desaturate docker container icons, saturate on hover */
+.folder-preview-wrapper img {
+  filter: saturate(0);
+}
+.folder-preview-wrapper:hover img {
+  filter: saturate(1);
+}
+
+/*************************************************/
+/* AUTOSTART ICONS - DOCKER PAGE */
+/*************************************************/
+.outer:not(.folder-outer).autostart i.started:not(.fa-spin)::before {
+  content: "\f144"; /* Replace the green triangle with a different icon */
+}
+.outer:not(.folder-outer).autostart i.stopped:not(.fa-spin)::before {
+  content: "\f28d"; /* Replace the red square with a different icon */
+}
+.outer:not(.folder-outer).autostart i.started.fa-spin::before,
+.outer:not(.folder-outer).autostart i.stopped.fa-spin::before {
+  content: "\f110"; /* Replace the spinner with a different icon */
+}

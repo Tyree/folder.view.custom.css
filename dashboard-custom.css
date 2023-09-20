@@ -1,0 +1,146 @@
+/* Apply border-box to all elements inside the docker and vm panes */
+#docker_view *,
+#vm_view * {
+  box-sizing: border-box;
+}
+
+/* Add a padding left to the entire docker and vm icon area
+- this compensates for the expanded folder header */
+#docker_view tr:nth-child(2) td,
+#vm_view tr:nth-child(2) td {
+  padding-left: 20px;
+}
+
+/* Expand the clickable area of folders and containers
+to the full width of the wrapper */
+#docker_view .hand {
+  position: absolute;
+  z-index: 50;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+}
+
+/* Set a height on the name/text area of
+the folders and containers to the same height of the icon */
+#docker_view .inner {
+  display: inline-block;
+  height: 32px;
+  margin-left: 38px;
+}
+
+/* Compressed folder wrapper and docker container wrapper styles */
+#docker_view .outer {
+  position: relative; /* Needed for absolute positioning of child elements */
+  display: inline-block;
+}
+
+/* Expanded folder outer wrapper styles */
+#docker_view .folder-showcase-outer[expanded="true"] {
+  float: left;
+  display: block;
+  margin-bottom: 20px;
+  margin-left: -10px; /* Overcome 20px container padding-left by giving
+                      expanded folder a negative left margin */
+  width: calc(
+    100% + 10px
+  ); /* Add 10px to the width to overcome negative margin */
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Child docker container icons wrapper "drawer" styles */
+#docker_view .folder-showcase-outer[expanded="true"] .folder-showcase {
+  float: left;
+  display: block;
+  padding: 0 20px;
+}
+
+/* Hide the "started" and "stopped" text so that only
+the green arrow or red square shows on containers */
+#docker_view .outer:not(.folder-docker) .state {
+  opacity: 0;
+}
+
+/*************************************************/
+/* EXPANDED FOLDER HEADER STYLES */
+/*************************************************/
+/* Add padding to the clickable area - builds on compressed styles */
+#docker_view .folder-showcase-outer[expanded="true"] .hand.folder-hand-docker {
+  padding: 8px;
+}
+
+/* Expanded folder wrapper/header styles */
+#docker_view .folder-showcase-outer[expanded="true"] .outer.folder-docker {
+  display: block;
+  float: none;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0); /* transparent border for size */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* Increase the size of the icon */
+#docker_view .folder-showcase-outer[expanded="true"] img.folder-img-docker {
+  width: 48px;
+  height: 48px;
+  filter: saturate(1); /* Override saturate-on-hover effects */
+}
+
+/* Set a height on the folder-name/text area to the same
+height of the icon - builds on compressed styles */
+#docker_view
+  .folder-showcase-outer[expanded="true"]
+  .inner.folder-inner-docker {
+  height: 48px;
+  margin-left: 55px;
+}
+
+/* Increase the font size for the folder name */
+#docker_view .folder-showcase-outer[expanded="true"] .folder-appname-docker {
+  font-size: 2rem;
+}
+
+/* Down arrow icon */
+#docker_view .folder-showcase-outer[expanded="true"] .folder-docker::after {
+  position: absolute;
+  content: "\f0d7";
+  display: block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 3rem;
+  right: 1rem;
+  bottom: 0;
+}
+/*************************************************/
+
+/*************************************************/
+/* ICON HOVER EFFECTS */
+/*************************************************/
+/* Desaturate docker/vm container and folder icons, saturate on hover */
+#docker_view .outer img {
+  filter: saturate(0);
+}
+#docker_view .outer:hover img {
+  filter: saturate(1);
+}
+
+/*************************************************/
+/* AUTOSTART ICONS - DASH */
+/*************************************************/
+#docker_view
+  .outer:not(.folder-docker).autostart.started
+  i:not(.fa-spin)::before {
+  content: "\f144"; /* Replace the green triangle with a different icon */
+}
+#docker_view
+  .outer:not(.folder-docker).autostart.stopped
+  i:not(.fa-spin)::before {
+  content: "\f28d"; /* Replace the red square with a different icon */
+}
+#docker_view .outer:not(.folder-docker).autostart.started i.fa-spin::before,
+#docker_view .outer:not(.folder-docker).autostart.stopped i.fa-spin::before {
+  content: "\f110"; /* Replace the spinner with a different icon */
+}
