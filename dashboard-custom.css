@@ -140,7 +140,8 @@ height of the icon - builds on compressed styles */
   i:not(.fa-spin)::before {
   content: "\f28d"; /* Replace the red square with a different icon */
 }
-#docker_view .outer:not(.folder-docker).autostart.started i.fa-spin::before,
-#docker_view .outer:not(.folder-docker).autostart.stopped i.fa-spin::before {
+#docker_view .outer:not(.folder-docker).started i.fa-spin::before,
+#docker_view .outer:not(.folder-docker).stopped i.fa-spin::before {
   content: "\f110"; /* Replace the spinner with a different icon */
+  color: #e68a00;
 }
