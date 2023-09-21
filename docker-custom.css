@@ -18,7 +18,8 @@
 .outer:not(.folder-outer).autostart i.stopped:not(.fa-spin)::before {
   content: "\f28d"; /* Replace the red square with a different icon */
 }
-.outer:not(.folder-outer).autostart i.started.fa-spin::before,
-.outer:not(.folder-outer).autostart i.stopped.fa-spin::before {
+.outer:not(.folder-outer) i.started.fa-spin::before,
+.outer:not(.folder-outer) i.stopped.fa-spin::before {
   content: "\f110"; /* Replace the spinner with a different icon */
+  color: #e68a00;
 }
