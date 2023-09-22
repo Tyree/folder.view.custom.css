@@ -1,5 +1,5 @@
 /* Developed with folder.view version 2023.09.15 - 
-Autostart Icon styles require version 2023.09.22 or greater
+Autostart Icon styles require version 2023.09.22-1 or greater
 https://github.com/scolcipitato/folder.view */
 
 /* Apply border-box to all elements inside the docker and vm panes */
@@ -134,6 +134,7 @@ height of the icon - builds on compressed styles */
 /*************************************************/
 /* AUTOSTART ICONS - DASH */
 /*************************************************/
+/* Container Icons */
 #docker_view
   .outer:not(.folder-docker).autostart.started
   i:not(.fa-spin)::before {
@@ -148,4 +149,44 @@ height of the icon - builds on compressed styles */
 #docker_view .outer:not(.folder-docker).stopped i.fa-spin::before {
   content: "\f110"; /* Replace the spinner with a different icon */
   color: #e68a00;
+}
+
+/* Folder Icons */
+/* Add a triangle icon beside the standard Started/Stopped icon 
+Uncomment these rules and comment the icon replace rules below
+To add an autostart status icon instead of replacing the default icon*/
+/* #docker_view .folder-showcase-outer:not(.no-autostart) .state::before {
+  content: "\f144";
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 1.3rem;
+  margin-right: 4px;
+} */
+/* Green color when all autostart containers are started */
+/* #docker_view .autostart-full .state::before {
+  color: #4caf50; 
+} */
+/* Orange when some autostart containers are started */
+/* #docker_view .autostart-partial .state::before {
+  color: #e68a00; 
+} */
+/* Red when no autostart containers are started */
+/* #docker_view .autostart-off .state::before {
+  color: #f0000c; 
+} */
+
+/* Replace the default container status icon with an icon
+denoting presence of autostart containers */
+#docker_view .outer.folder-docker:not(.no-autostart) i::before {
+  content: "\f144"; /* Replace the green triangle with a different icon
+                    if this folder has autostart containers */
+}
+#docker_view .outer.folder-docker.autostart-full i::before {
+  color: #4caf50; /* Green color when all autostart containers are started */
+}
+#docker_view .outer.folder-docker.autostart-partial i::before {
+  color: #e68a00; /* Orange when some autostart containers are started */
+}
+#docker_view .outer.folder-docker.autostart-off i::before {
+  color: #f0000c; /* Red when no autostart containers are started */
 }
