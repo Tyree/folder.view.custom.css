@@ -3,6 +3,46 @@ Autostart Icon styles require version 2023.09.22-1 or greater
 https://github.com/scolcipitato/folder.view */
 
 /*************************************************/
+/* VARIABLES - Change these settings to your preference */
+/*************************************************/
+/* See https://fontawesome.com/icons for icons.
+Find an icon you'd like to use, click on it and copy
+the unicode fromt he top right corner. Example: f144
+Paste this within the " " below to change the icon.
+Be sure to leave the \ at the beginning of the code
+as shown below.
+For colors - look up a hex color convertor online
+like https://htmlcolorcodes.com/color-picker/ */
+/*************************************************/
+:root {
+  /* ICONS */
+  --folder-started-icon: "\f04b"; /* Normal started icon - default is play triangle */
+  --folder-stopped-icon: "\f04d"; /* Normal stopped icon - default is rounded square */
+  --folder-autostart-full-icon: "\f144"; /* Indicate ALL autostart containers within the folder are started */
+  --folder-autostart-partial-icon: "\f144"; /* Indicates SOME autostart containers within the folder are started */
+  --folder-autostart-off-icon: "\f144"; /* Indicates NO autostart containers within the folder are started */
+
+  --container-started-icon: "\f04b"; /* Normal started icon - default is play triangle */
+  --container-stopped-icon: "\f04d"; /* Normal stopped icon - default is rounded square */
+  --container-autostart-started-icon: "\f144"; /* Indicates autostart container is started */
+  --container-autostart-stopped-icon: "\f28d"; /* Indicates autostart container is stopped */
+  --container-spin-icon: "\f110"; /* Spin icon temporarily shown between container stopping and starting */
+
+  /* ICON COLORS */
+  --folder-started-icon-c: #4caf50; /* Normal started icon - default is green */
+  --folder-stopped-icon-c: #f0000c; /* Normal stopped icon - default is red */
+  --folder-autostart-full-icon-c: #4caf50; /* Indicate ALL autostart containers within the folder are started */
+  --folder-autostart-partial-icon-c: #e68a00; /* Indicates SOME autostart containers within the folder are started */
+  --folder-autostart-off-icon-c: #f0000c; /* Indicates NO autostart containers within the folder are started */
+  --container-spin-icon-c: #e68a00; /* Spin icon temporarily shown between container stopping and starting */
+
+  --container-started-icon-c: #4caf50; /* Normal started icon - default is play triangle */
+  --container-stopped-icon-c: #e68a00; /* Normal stopped icon - default is rounded square */
+  --container-autostart-started-icon-c: #4caf50; /* Indicates autostart container is started */
+  --container-autostart-stopped-icon-c: #f0000c; /* Indicates autostart container is stopped */
+}
+
+/*************************************************/
 /* ICON HOVER EFFECTS */
 /*************************************************/
 /* Desaturate docker container icons, saturate on hover */
@@ -14,16 +54,86 @@ https://github.com/scolcipitato/folder.view */
 }
 
 /*************************************************/
-/* AUTOSTART ICONS - DOCKER PAGE */
+/* DEFAULT STARTED/STOPPED ICONS */
+/*************************************************/
+/* Folder Started Icon */
+.folder:not(.autostart-full, .autostart-partial, .autostart-off)
+  .outer.folder-outer
+  i.started:not(.fa-spin)::before {
+  content: var(--folder-started-icon);
+  color: var(--folder-started-icon-c);
+}
+/* Folder Stopped Icon */
+.folder:not(.autostart-full, .autostart-partial, .autostart-off)
+  .outer.folder-outer
+  i.stopped:not(.fa-spin)::before {
+  content: var(--folder-stopped-icon);
+  color: var(--folder-stopped-icon-c);
+}
+/* Folder Spin Icon */
+.folder:not(.autostart-full, .autostart-partial, .autostart-off)
+  .outer.folder-outer
+  i.fa-spin::before {
+  content: var(--folder-spin-icon);
+  color: var(--folder-spin-icon-c);
+}
+
+/* Container Started Icon */
+.outer:not(.folder-outer, .autostart) i.started:not(.fa-spin)::before {
+  content: var(--container-started-icon);
+  color: var(--container-started-icon-c);
+}
+/* Container Stopped Icon */
+.outer:not(.folder-outer, .autostart) i.stopped:not(.fa-spin)::before {
+  content: var(--container-stopped-icon);
+  color: var(--container-stopped-icon-c);
+}
+/* Container Spin Icon */
+.outer:not(.folder-outer, .autostart) i.fa-spin::before {
+  content: var(--container-spin-icon);
+  color: var(--container-spin-icon-c);
+}
+
+/*************************************************/
+/* AUTOSTART ICONS */
 /*************************************************/
 .outer:not(.folder-outer).autostart i.started:not(.fa-spin)::before {
-  content: "\f144"; /* Replace the green triangle with a different icon */
+  content: var(
+    --container-autostart-started-icon
+  ); /* Replace the green triangle with a different icon */
+  color: var(--container-autostart-started-icon-c);
 }
 .outer:not(.folder-outer).autostart i.stopped:not(.fa-spin)::before {
-  content: "\f28d"; /* Replace the red square with a different icon */
+  content: var(
+    --container-autostart-stopped-icon
+  ); /* Replace the red square with a different icon */
+  color: var(--container-autostart-stopped-icon-c);
 }
 .outer:not(.folder-outer) i.started.fa-spin::before,
 .outer:not(.folder-outer) i.stopped.fa-spin::before {
-  content: "\f110"; /* Replace the spinner with a different icon */
-  color: #e68a00;
+  content: var(
+    --container-spin-icon
+  ); /* Replace the spinner with a different icon */
+  color: var(--container-spin-icon-c);
+}
+
+/* Replace the folder's default ontainer status icon with an icon
+denoting presence of autostart containers */
+.folder.autostart-full .folder-outer i.folder-load-status::before {
+  content: var(--folder-autostart-full-icon);
+  color: var(
+    --folder-autostart-full-icon-c
+  ); /* Green color when all autostart containers are started */
+}
+.folder.autostart-partial .folder-outer i.folder-load-status::before {
+  content: var(--folder-autostart-partial-icon);
+  color: var(
+    --folder-autostart-partial-icon-c
+  ); /* Orange when some autostart containers are started */
+}
+.folder.autostart-off .folder-outer i.folder-load-status::before {
+  content: var(--folder-autostart-off-icon);
+  color: var(
+    --folder-autostart-off-icon-c
+  ); /* Red when no autostart containers are started */
 }
