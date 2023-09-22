@@ -1,6 +1,6 @@
 # Folder.View Custom CSS Files
 
-**Current versions of the CSS styles require Folder.View version 2023.09.22**
+**Current versions of the CSS styles require Folder.View version 2023.09.22-1**
 
 Custom CSS styles for use with the Folder.View plugin for unRAID by scolcipitato.
 
