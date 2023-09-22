@@ -44,6 +44,11 @@ like https://htmlcolorcodes.com/color-picker/ */
   --container-stopped-icon-c: #f0000c; /* Normal stopped icon - default is rounded square */
   --container-autostart-started-icon-c: #4caf50; /* Indicates autostart container is started */
   --container-autostart-stopped-icon-c: #f0000c; /* Indicates autostart container is stopped */
+
+  /* ICON SIZES */
+  --folder-status-size: 16px;
+  --exfold-status-size: 20px;
+  --container-status-size: 16px;
 }
 
 /* Apply border-box to all elements inside the docker and vm panes */
@@ -167,14 +172,22 @@ height of the icon - builds on compressed styles */
 /*************************************************/
 
 /*************************************************/
-/* ICON HOVER EFFECTS */
+/* ICON SIZES */
 /*************************************************/
-/* Desaturate docker/vm container and folder icons, saturate on hover */
-#docker_view .outer img {
-  filter: saturate(0);
+/* Folder Status */
+#docker_view .outer.folder-docker i::before {
+  font-size: var(--folder-status-size);
 }
-#docker_view .outer:hover img {
-  filter: saturate(1);
+/* Expanded Folder Status */
+#docker_view
+  .folder-showcase-outer[expanded="true"]
+  .outer.folder-docker
+  i::before {
+  font-size: var(--exfold-status-size);
+}
+/* Container Tools */
+#docker_view .outer.folder-element-docker i::before {
+  font-size: var(--container-status-size);
 }
 
 /*************************************************/
@@ -291,4 +304,15 @@ denoting presence of autostart containers */
   color: var(
     --folder-autostart-off-icon-c
   ); /* Red when no autostart containers are started */
+}
+
+/*************************************************/
+/* LOGO ICON HOVER EFFECTS */
+/*************************************************/
+/* Desaturate docker/vm container and folder icons, saturate on hover */
+#docker_view .outer img {
+  filter: saturate(0);
+}
+#docker_view .outer:hover img {
+  filter: saturate(1);
 }
