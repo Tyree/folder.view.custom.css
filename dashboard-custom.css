@@ -228,16 +228,12 @@ height of the icon - builds on compressed styles */
   color: var(--container-stopped-icon-c);
 }
 /* Spin Icon - Started */
-#docker_view
-  .outer:not(.autostart, .autostart-full, .autostart-partial, .autostart-off)
-  i.started.fa-spin::before {
+#docker_view .outer i.started.fa-spin::before {
   content: var(--container-spin-started-icon);
   color: var(--container-spin-started-icon-c);
 }
 /* Spin Icon - Stopped */
-#docker_view
-  .outer:not(.autostart, .autostart-full, .autostart-partial, .autostart-off)
-  i.stopped.fa-spin::before {
+#docker_view .outer i.stopped.fa-spin::before {
   content: var(--container-spin-stopped-icon);
   color: var(--container-spin-stopped-icon-c);
 }
@@ -261,18 +257,6 @@ height of the icon - builds on compressed styles */
     --container-autostart-stopped-icon
   ); /* Replace the red square with a different icon */
   color: var(--container-autostart-stopped-icon-c);
-}
-#docker_view .outer:not(.folder-docker).autostart.started i.fa-spin::before {
-  content: var(
-    --container-spin-started-icon
-  ); /* Replace the spinner with a different icon */
-  color: var(--container-spin-started-icon-c);
-}
-#docker_view .outer:not(.folder-docker).autostart.stopped i.fa-spin::before {
-  content: var(
-    --container-spin-stopped-icon
-  ); /* Replace the spinner with a different icon */
-  color: var(--container-spin-stopped-icon-c);
 }
 
 /* Folder Icons */

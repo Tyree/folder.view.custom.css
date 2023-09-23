@@ -21,6 +21,8 @@ like https://htmlcolorcodes.com/color-picker/ */
   --folder-autostart-full-icon: "\f144"; /* Indicate ALL autostart containers within the folder are started */
   --folder-autostart-partial-icon: "\f144"; /* Indicates SOME autostart containers within the folder are started */
   --folder-autostart-off-icon: "\f144"; /* Indicates NO autostart containers within the folder are started */
+  --folder-spin-started-icon: "\f110"; /* Spin icon temporarily shown when a folder is changing all containers from started to stopped */
+  --folder-spin-stopped-icon: "\f110"; /* Spin icon temporarily shown when a folder is changing all containers from started to stopped */
 
   --container-started-icon: "\f04b"; /* Normal started icon - default is play triangle */
   --container-stopped-icon: "\f04d"; /* Normal stopped icon - default is rounded square */
@@ -39,6 +41,8 @@ like https://htmlcolorcodes.com/color-picker/ */
   --folder-autostart-full-icon-c: #4caf50; /* Indicate ALL autostart containers within the folder are started */
   --folder-autostart-partial-icon-c: #e68a00; /* Indicates SOME autostart containers within the folder are started */
   --folder-autostart-off-icon-c: #f0000c; /* Indicates NO autostart containers within the folder are started */
+  --folder-spin-started-icon-c: #e68a00; /* Spin icon temporarily shown when a folder is changing all containers from started to stopped */
+  --folder-spin-stopped-icon-c: #d6ff20; /* Spin icon temporarily shown when a folder is changing all containers from started to stopped */
 
   --container-spin-started-icon-c: #e68a00; /* Spin icon temporarily shown when a container is changing from started to stopped */
   --container-spin-stopped-icon-c: #d6ff20; /* Spin icon temporarily shown when a container is changing from stopped to started */
@@ -94,6 +98,16 @@ like https://htmlcolorcodes.com/color-picker/ */
   content: var(--folder-stopped-icon);
   color: var(--folder-stopped-icon-c);
 }
+/* Folder Spin Icon - Started */
+.folder .outer.folder-outer i.started.fa-spin::before {
+  content: var(--folder-spin-started-icon);
+  color: var(--folder-spin-started-icon-c);
+}
+/* Folder Spin Icon - Stopped */
+.folder .outer.folder-outer i.stopped.fa-spin::before {
+  content: var(--folder-spin-stopped-icon);
+  color: var(--folder-spin-stopped-icon-c);
+}
 
 /* Container Started Icon */
 .outer:not(.folder-outer, .autostart) i.started:not(.fa-spin)::before {
@@ -106,12 +120,12 @@ like https://htmlcolorcodes.com/color-picker/ */
   color: var(--container-stopped-icon-c);
 }
 /* Container Spin Icon - Started */
-.outer:not(.folder-outer, .autostart) i.started.fa-spin::before {
+.outer:not(.folder-outer) i.started.fa-spin::before {
   content: var(--container-spin-started-icon);
   color: var(--container-spin-started-icon-c);
 }
 /* Container Spin Icon - Stopped */
-.outer:not(.folder-outer, .autostart) i.stopped.fa-spin::before {
+.outer:not(.folder-outer) i.stopped.fa-spin::before {
   content: var(--container-spin-stopped-icon);
   color: var(--container-spin-stopped-icon-c);
 }
@@ -131,18 +145,6 @@ like https://htmlcolorcodes.com/color-picker/ */
     --container-autostart-stopped-icon
   ); /* Replace the red square with a different icon */
   color: var(--container-autostart-stopped-icon-c);
-}
-.outer:not(.folder-outer).autostart i.started.fa-spin::before {
-  content: var(
-    --container-spin-started-icon
-  ); /* Replace the spinner with a different icon */
-  color: var(--container-spin-started-icon-c);
-}
-.outer:not(.folder-outer).autostart i.stopped.fa-spin::before {
-  content: var(
-    --container-spin-stopped-icon
-  ); /* Replace the spinner with a different icon */
-  color: var(--container-spin-stopped-icon-c);
 }
 
 /* Folder Icons */
