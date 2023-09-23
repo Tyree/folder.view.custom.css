@@ -134,13 +134,13 @@ like https://htmlcolorcodes.com/color-picker/ */
 }
 .outer:not(.folder-outer).autostart i.started.fa-spin::before {
   content: var(
-    --container-spin-icon
+    --container-spin-started-icon
   ); /* Replace the spinner with a different icon */
   color: var(--container-spin-started-icon-c);
 }
 .outer:not(.folder-outer).autostart i.stopped.fa-spin::before {
   content: var(
-    --container-spin-icon
+    --container-spin-stopped-icon
   ); /* Replace the spinner with a different icon */
   color: var(--container-spin-stopped-icon-c);
 }
