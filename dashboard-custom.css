@@ -30,7 +30,8 @@ like https://htmlcolorcodes.com/color-picker/ */
   --container-stopped-icon: "\f04d"; /* Normal stopped icon - default is rounded square */
   --container-autostart-started-icon: "\f144"; /* Indicates autostart container is started */
   --container-autostart-stopped-icon: "\f28d"; /* Indicates autostart container is stopped */
-  --container-spin-icon: "\f110"; /* Spin icon temporarily shown between container stopping and starting */
+  --container-spin-started-icon: "\f110"; /* Spin icon temporarily shown when a container is changing from started to stopped */
+  --container-spin-stopped-icon: "\f110"; /* Spin icon temporarily shown when a container is changing from stopped to started */
 
   /* ICON COLORS */
   --folder-started-icon-c: #4caf50; /* Normal started icon - default is green */
@@ -38,18 +39,23 @@ like https://htmlcolorcodes.com/color-picker/ */
   --folder-autostart-full-icon-c: #4caf50; /* Indicate ALL autostart containers within the folder are started */
   --folder-autostart-partial-icon-c: #e68a00; /* Indicates SOME autostart containers within the folder are started */
   --folder-autostart-off-icon-c: #f0000c; /* Indicates NO autostart containers within the folder are started */
-  --container-spin-icon-c: #e68a00; /* Spin icon temporarily shown between container stopping and starting */
 
+  --container-spin-started-icon-c: #e68a00; /* Spin icon temporarily shown when a container is changing from started to stopped */
+  --container-spin-stopped-icon-c: #d6ff20; /* Spin icon temporarily shown when a container is changing from stopped to started */
   --container-started-icon-c: #4caf50; /* Normal started icon - default is play triangle */
   --container-stopped-icon-c: #f0000c; /* Normal stopped icon - default is rounded square */
   --container-autostart-started-icon-c: #4caf50; /* Indicates autostart container is started */
   --container-autostart-stopped-icon-c: #f0000c; /* Indicates autostart container is stopped */
 
   /* ICON SIZES */
-  --folder-status-size: 16px;
-  --exfold-status-size: 20px;
-  --container-status-size: 16px;
+  --folder-status-size: 16px; /* Compacted folder started/stopped icon */
+  --exfold-status-size: 20px; /* Expanded folder started/stopped icon */
+  --container-status-size: 15px; /* Normal container started/stopped icon */
+  --container-autostart-status-size: 16px; /* Autostart container started/stopped icon */
 }
+/*************************************************/
+/* END OF VARIABLES */
+/*************************************************/
 
 /* Apply border-box to all elements inside the docker and vm panes */
 #docker_view *,
@@ -185,13 +191,17 @@ height of the icon - builds on compressed styles */
   i::before {
   font-size: var(--exfold-status-size);
 }
-/* Container Tools */
+/* Container Status */
 #docker_view .outer.folder-element-docker i::before {
   font-size: var(--container-status-size);
 }
+/* Container Autostart Status */
+#docker_view .outer.folder-element-docker.autostart i::before {
+  font-size: var(--container-atostart-status-size);
+}
 
 /*************************************************/
-/* DEFAULT STARTED/STOPPED ICONS - DASH */
+/* DEFAULT STARTED/STOPPED ICONS */
 /*************************************************/
 /* Started Icon */
 #docker_view
@@ -217,12 +227,19 @@ height of the icon - builds on compressed styles */
   content: var(--container-stopped-icon);
   color: var(--container-stopped-icon-c);
 }
-/* Spin Icon */
+/* Spin Icon - Started */
 #docker_view
   .outer:not(.autostart, .autostart-full, .autostart-partial, .autostart-off)
-  i.fa-spin::before {
-  content: var(--container-spin-icon);
-  color: var(--container-spin-icon-c);
+  i.started.fa-spin::before {
+  content: var(--container-spin-started-icon);
+  color: var(--container-spin-started-icon-c);
+}
+/* Spin Icon - Stopped */
+#docker_view
+  .outer:not(.autostart, .autostart-full, .autostart-partial, .autostart-off)
+  i.stopped.fa-spin::before {
+  content: var(--container-spin-stopped-icon);
+  color: var(--container-spin-stopped-icon-c);
 }
 
 /*************************************************/
@@ -245,12 +262,17 @@ height of the icon - builds on compressed styles */
   ); /* Replace the red square with a different icon */
   color: var(--container-autostart-stopped-icon-c);
 }
-#docker_view .outer:not(.folder-docker).started i.fa-spin::before,
-#docker_view .outer:not(.folder-docker).stopped i.fa-spin::before {
+#docker_view .outer:not(.folder-docker).autostart.started i.fa-spin::before {
   content: var(
-    --container-spin-icon
+    --container-spin-started-icon
   ); /* Replace the spinner with a different icon */
-  color: var(--container-spin-icon-c);
+  color: var(--container-spin-started-icon-c);
+}
+#docker_view .outer:not(.folder-docker).autostart.stopped i.fa-spin::before {
+  content: var(
+    --container-spin-stopped-icon
+  ); /* Replace the spinner with a different icon */
+  color: var(--container-spin-stopped-icon-c);
 }
 
 /* Folder Icons */
