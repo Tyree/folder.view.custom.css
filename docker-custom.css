@@ -7,7 +7,7 @@ https://github.com/scolcipitato/folder.view */
 /*************************************************/
 /* See https://fontawesome.com/icons for icons.
 Find an icon you'd like to use, click on it and copy
-the unicode fromt he top right corner. Example: f144
+the unicode from the top right corner. Example: f144
 Paste this within the " " below to change the icon.
 Be sure to leave the \ at the beginning of the code
 as shown below.
@@ -15,6 +15,24 @@ For colors - look up a hex color convertor online
 like https://htmlcolorcodes.com/color-picker/ */
 /*************************************************/
 :root {
+  /* COLOR SCHEME - BASED ON UNRAID STOCK BLACK THEME */
+  /* Change these colors to your preferences */
+  --docker-accent1: #ff8c2f;
+  --docker-accent2: #3e6dba;
+  --docker-accent3: #4f8a10;
+  --docker-light1: #f2f2f2;
+  --docker-light2: #787878;
+  --docker-light3: #444444;
+  --docker-light4: #303030;
+  --docker-dark1: #262626;
+  --docker-dark2: #212121;
+  --docker-dark3: #1c1b1b;
+  --docker-dark4: #191818;
+  --docker-interface-alert: #f0000c;
+  --docker-interface-warn: #ff8c2f;
+  --docker-interface-attention: #d6ff20;
+  --docker-interface-good: #4caf50;
+
   /* ICONS - See https://fontawesome.com/icons */
   --folder-started-icon: "\f04b"; /* Normal started icon - default is play triangle */
   --folder-stopped-icon: "\f04d"; /* Normal stopped icon - default is rounded square */
@@ -36,20 +54,20 @@ like https://htmlcolorcodes.com/color-picker/ */
   --container-logs-icon: "\f0c9";
 
   /* ICON COLORS */
-  --folder-started-icon-c: #4caf50; /* Normal started icon - default is green */
-  --folder-stopped-icon-c: #f0000c; /* Normal stopped icon - default is red */
-  --folder-autostart-full-icon-c: #4caf50; /* Indicate ALL autostart containers within the folder are started */
-  --folder-autostart-partial-icon-c: #e68a00; /* Indicates SOME autostart containers within the folder are started */
-  --folder-autostart-off-icon-c: #f0000c; /* Indicates NO autostart containers within the folder are started */
-  --folder-spin-started-icon-c: #e68a00; /* Spin icon temporarily shown when a folder is changing all containers from started to stopped */
-  --folder-spin-stopped-icon-c: #d6ff20; /* Spin icon temporarily shown when a folder is changing all containers from started to stopped */
+  --folder-started-icon-c: var(--docker-interface-good); /* Normal started icon - default is green */
+  --folder-stopped-icon-c: var(--docker-interface-alert); /* Normal stopped icon - default is red */
+  --folder-autostart-full-icon-c: var(--docker-interface-good); /* Indicate ALL autostart containers within the folder are started */
+  --folder-autostart-partial-icon-c: var(--docker-interface-warn); /* Indicates SOME autostart containers within the folder are started */
+  --folder-autostart-off-icon-c: var(--docker-interface-alert); /* Indicates NO autostart containers within the folder are started */
+  --folder-spin-started-icon-c: var(--docker-interface-warn); /* Spin icon temporarily shown when a folder is changing all containers from started to stopped */
+  --folder-spin-stopped-icon-c: var(--docker-interface-attention); /* Spin icon temporarily shown when a folder is changing all containers from started to stopped */
 
-  --container-spin-started-icon-c: #e68a00; /* Spin icon temporarily shown when a container is changing from started to stopped */
-  --container-spin-stopped-icon-c: #d6ff20; /* Spin icon temporarily shown when a container is changing from stopped to started */
-  --container-started-icon-c: #4caf50; /* Normal started icon - default is play triangle */
-  --container-stopped-icon-c: #f0000c; /* Normal stopped icon - default is rounded square */
-  --container-autostart-started-icon-c: #4caf50; /* Indicates autostart container is started */
-  --container-autostart-stopped-icon-c: #f0000c; /* Indicates autostart container is stopped */
+  --container-spin-started-icon-c: var(--docker-interface-warn); /* Spin icon temporarily shown when a container is changing from started to stopped */
+  --container-spin-stopped-icon-c: var(--docker-interface-attention); /* Spin icon temporarily shown when a container is changing from stopped to started */
+  --container-started-icon-c: var(--docker-interface-good); /* Normal started icon - default is play triangle */
+  --container-stopped-icon-c: var(--docker-interface-alert); /* Normal stopped icon - default is rounded square */
+  --container-autostart-started-icon-c: var(--docker-interface-good); /* Indicates autostart container is started */
+  --container-autostart-stopped-icon-c: var(--docker-interface-alert); /* Indicates autostart container is stopped */
 
   /* ICON SIZES */
   --folder-status-size: 16px; /* Compacted folder started/stopped icon */
