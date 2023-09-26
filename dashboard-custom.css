@@ -52,13 +52,21 @@ like https://htmlcolorcodes.com/color-picker/ */
   --dash-interface-attention: #d6ff20;
   --dash-interface-good: #4caf50; */
 
+  /* Default container name text size and weight */
+  --container-name-text-size: 1.3rem;
+  --container-name-text-weight: 1.3rem;
+
   /* EXPANDED FOLDER HEADER AND "DRAWER" */
   --exfold-header-brdr-c: var(--dash-foreline4); /* Border color for the header */
   --exfold-header-bg-c: var(--dash-foreline4); /* Background color for the header */
   --exfold-drawer-brdr-c: var(--dash-foreline4); /* Border color for the container "drawer" */
   --exfold-drawer-bg-c: var(--dash-backfill3); /* Background color for the container "drawer" */
-  --exfold-contname-text-c: var(--dash-foreline1); /* Color for the folder name */
-  --exfold-contname-text-size: 2rem; /* Size for the folder name */
+  --exfold-foldername-text-c: var(--dash-foreline1); /* Color for the folder name */
+  --exfold-foldername-text-size: 2rem; /* Size for the folder name */
+  --exfold-foldername-text-weight: bold; /* Weight for the folder name */
+  --exfold-contname-text-c: inherit; /* Color for the container name when inside a folder */
+  --exfold-contname-text-size: 1.4rem; /* Size for the container name when inside a folder */
+  --exfold-contname-text-weight: bold; /* Weight for the container name when inside a folder */
 
   /* STARTED/STOPPED ICONS - See https://fontawesome.com/icons */
   --folder-started-icon: "\f04b"; /* Normal started icon - default is play triangle */
@@ -164,6 +172,12 @@ the folders and containers to the same height of the icon */
   padding: 0 20px;
 }
 
+/* Container text size */
+#docker_view .inner:not(.folder-inner-docker) {
+  font-size: var(--container-name-text-size);
+  font-weight: var(--container-name-text-weight);
+}
+
 /* Hide the "started" and "stopped" text so that only
 the green arrow or red square shows on containers */
 #docker_view .outer:not(.folder-docker) .state {
@@ -203,9 +217,17 @@ height of the icon - builds on compressed styles */
   margin-left: 55px;
 }
 
-/* Increase the font size for the folder name */
+/* Font size for the folder name */
 #docker_view .folder-showcase-outer[expanded="true"] .folder-appname-docker {
+  font-size: var(--exfold-foldername-text-size);
+  font-weight: var(--exfold-foldername-text-weight);
+  color: var(--exfold-foldername-text-c);
+}
+
+/* Font size for the container name inside a folder */
+#docker_view .folder-showcase-outer[expanded="true"] .inner:not(.folder-inner-docker) {
   font-size: var(--exfold-contname-text-size);
+  font-weight: var(--exfold-contname-text-weight);
   color: var(--exfold-contname-text-c);
 }
 
@@ -279,37 +301,6 @@ height of the icon - builds on compressed styles */
 }
 
 /* Folder Icons */
-/* Add a triangle icon beside the standard Started/Stopped icon 
-Uncomment these rules and comment the icon replace rules below
-To add an autostart status icon instead of replacing the default icon*/
-/* #docker_view .folder-showcase-outer:not(.no-autostart) .state::before {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-size: 1.3rem;
-  margin-right: 4px;
-} */
-/* Green color when all autostart containers are started */
-/* #docker_view .autostart-full .state::before {
-  content: var(--folder-autostart-full-icon);
-  color: var(
-    --folder-autostart-full-icon-c
-  );
-} */
-/* Orange when some autostart containers are started */
-/* #docker_view .autostart-partial .state::before {
-  content: var(--folder-autostart-partial-icon);
-  color: var(
-    --folder-autostart-partial-icon-c
-  ); 
-} */
-/* Red when no autostart containers are started */
-/* #docker_view .autostart-off .state::before {
-  content: var(--folder-autostart-off-icon);
-  color: var(
-    --folder-autostart-off-icon-c
-  ); 
-} */
-
 /* Replace the default container status icon with an icon
 denoting presence of autostart containers */
 #docker_view .outer.folder-docker.autostart-full i::before {
