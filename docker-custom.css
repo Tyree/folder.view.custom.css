@@ -32,6 +32,7 @@ like https://htmlcolorcodes.com/color-picker/ */
   --docker-accent3: #4f8a10;
   --docker-link: #486dba;
   --docker-linkhov: #2cabe3;
+  --docker-link-tool: #616161;
   --docker-foreline1: #f2f2f2;
   --docker-foreline2: #a1a1a1;
   --docker-foreline3: #787878;
@@ -136,13 +137,13 @@ like https://htmlcolorcodes.com/color-picker/ */
   /* CONTAINER TOOL ICONS - WEBUI, TERMINAL, LOGS */
   --container-tools-size: 14px;
   --container-webui-icon: "\f0ac";
-  --container-webui-icon-c: var(--docker-link);
+  --container-webui-icon-c: var(--docker-link-tool);
   --container-webui-iconhover-c: var(--docker-linkhov);
   --container-console-icon: "\f120";
-  --container-console-icon-c: var(--docker-link);
+  --container-console-icon-c: var(--docker-link-tool);
   --container-console-iconhover-c: var(--docker-linkhov);
   --container-logs-icon: "\f0c9";
-  --container-logs-icon-c: var(--docker-link);
+  --container-logs-icon-c: var(--docker-link-tool);
   --container-logs-iconhover-c: var(--docker-linkhov);
 }
 /*************************************************/
@@ -158,14 +159,14 @@ like https://htmlcolorcodes.com/color-picker/ */
   box-sizing: border-box;
 }
 
-/* Style all links */
-#docker_containers a,
-#docker_containers a:link,
-#docker_containers a:visited {
+/* Style all links that are not container tools */
+#docker_containers :not(.folder-element-custom-btn) > a,
+#docker_containers :not(.folder-element-custom-btn) > a:link,
+#docker_containers :not(.folder-element-custom-btn) > a:visited {
   color: var(--docker-link);
   text-decoration: none;
 }
-#docker_containers a:hover {
+#docker_containers :not(.folder-element-custom-btn) > a:hover {
   color: var(--docker-linkhov);
   text-decoration: none;
 }
