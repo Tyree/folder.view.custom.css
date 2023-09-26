@@ -32,7 +32,8 @@ like https://htmlcolorcodes.com/color-picker/ */
   --docker-accent3: #4f8a10;
   --docker-link: #486dba;
   --docker-linkhov: #2cabe3;
-  --docker-link-tool: #616161;
+  --docker-tool-link: #616161;
+  --docker-tool-linkhov: #2cabe3;
   --docker-foreline1: #f2f2f2;
   --docker-foreline2: #a1a1a1;
   --docker-foreline3: #787878;
