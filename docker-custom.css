@@ -32,7 +32,8 @@ like https://htmlcolorcodes.com/color-picker/ */
   --docker-accent3: #4f8a10;
   --docker-link: #486dba;
   --docker-linkhov: #2cabe3;
-  --docker-link-tool: #616161;
+  --docker-tool-link: #616161;
+  --docker-tool-linkhov: #2cabe3;
   --docker-foreline1: #f2f2f2;
   --docker-foreline2: #a1a1a1;
   --docker-foreline3: #787878;
@@ -137,14 +138,14 @@ like https://htmlcolorcodes.com/color-picker/ */
   /* CONTAINER TOOL ICONS - WEBUI, TERMINAL, LOGS */
   --container-tools-size: 14px;
   --container-webui-icon: "\f0ac";
-  --container-webui-icon-c: var(--docker-link-tool);
-  --container-webui-iconhover-c: var(--docker-linkhov);
+  --container-webui-icon-c: var(--docker-tool-link);
+  --container-webui-iconhover-c: var(--docker-tool-linkhov);
   --container-console-icon: "\f120";
-  --container-console-icon-c: var(--docker-link-tool);
-  --container-console-iconhover-c: var(--docker-linkhov);
+  --container-console-icon-c: var(--docker-tool-link);
+  --container-console-iconhover-c: var(--docker-tool-linkhov);
   --container-logs-icon: "\f0c9";
-  --container-logs-icon-c: var(--docker-link-tool);
-  --container-logs-iconhover-c: var(--docker-linkhov);
+  --container-logs-icon-c: var(--docker-tool-link);
+  --container-logs-iconhover-c: var(--docker-tool-linkhov);
 }
 /*************************************************/
 /* END OF VARIABLES */
