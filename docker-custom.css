@@ -32,37 +32,58 @@ like https://htmlcolorcodes.com/color-picker/ */
   --docker-accent3: #4f8a10;
   --docker-link: #486dba;
   --docker-linkhov: #2cabe3;
-  --docker-light1: #f2f2f2;
-  --docker-light2: #787878;
-  --docker-light3: #444444;
-  --docker-light4: #303030;
-  --docker-dark1: #262626;
-  --docker-dark2: #212121;
-  --docker-dark3: #1c1b1b;
-  --docker-dark4: #191818;
+  --docker-foreline1: #f2f2f2;
+  --docker-foreline2: #a1a1a1;
+  --docker-foreline3: #787878;
+  --docker-foreline4: #444444;
+  --docker-backfill1: #262626;
+  --docker-backfill2: #212121;
+  --docker-backfill3: #1c1b1b;
+  --docker-backfill4: #191818;
   --docker-interface-alert: #f0000c;
   --docker-interface-warn: #ff8c2f;
   --docker-interface-attention: #d6ff20;
   --docker-interface-good: #4caf50;
 
-  /* Folder Area */
+  /* COLOR SCHEME - BASED ON UNRAID STOCK WHITE THEME */
+  /* --docker-accent1: #ff8c2f;
+  --docker-accent2: #3e6dba;
+  --docker-accent3: #4f8a10;
+  --docker-link: #486dba;
+  --docker-linkhov: #2cabe3;
+  --docker-foreline1: #1c1b1b;
+  --docker-foreline2: #4e4e4e;
+  --docker-foreline3: #a8a8a8;
+  --docker-foreline4: #dcdcdc;
+  --docker-backfill1: #e8e8e8;
+  --docker-backfill2: #f2f2f2;
+  --docker-backfill3: #f5f5f5;
+  --docker-backfill4: #ffffff;
+  --docker-interface-alert: #f0000c;
+  --docker-interface-warn: #ff8c2f;
+  --docker-interface-attention: #d6ff20;
+  --docker-interface-good: #4caf50; */
+
+  /* Folder Name/Logo Area */
   --folderbox-width: 250px; /* May need to be increased if --folder-name-text-size is too big */
-  --folderbox-brdr-c: var(--docker-light1);
+  --folderbox-height: calc(var(--folder-logo-size) + (var(--folderbox-padding-topbottom) * 2) + (var(--folderbox-brdr-width-topbottom) * 2));
+  --folderbox-padding-topbottom: 7px;
+  --folderbox-padding-leftright: 10px;
+  --folderbox-brdr-c: var(--docker-foreline1);
   --folderbox-brdr-width-topbottom: 1px;
   --folderbox-brdr-width-left: 8px;
-  --folderbox-brdr-width-right: 1px;
-  --folder-logo-size: 38px;
+  --folderbox-brdr-width-right: 3px;
+
+  --folder-logo-size: 40px;
+  --folder-logo-mrgright: 8px;
   --folder-name-text-size: 1.5rem;
   --folder-name-text-weight: bold;
   --folder-startstop-text-size: 1.2rem; /* 0 to hide */
   --folder-startstop-text-mrgleft: 7px; /* 0 to hide */
 
   /* Folder/Container Preview Row */
-  /* Height must be the sum of
-  (--container-logo-mrgtopbottom x 2) + (--folderpreview-brdr-width-topbottom x 2) + --container-logo-size
-  Default 14px + 2px + 38px = 54px */
   --folderpreview-height: calc(var(--container-logo-size) + (var(--container-logo-mrgtopbottom) * 2) + (var(--folderpreview-brdr-width-topbottom) * 2));
-  --folderpreview-brdr-c: var(--docker-light1);
+  --folderpreview-brdr-c: var(--docker-foreline1);
   --folderpreview-brdr-width-topbottom: 1px;
   --folderpreview-brdr-width-left: 8px;
   --folderpreview-brdr-width-right: 1px;
@@ -128,10 +149,25 @@ like https://htmlcolorcodes.com/color-picker/ */
 /* END OF VARIABLES */
 /*************************************************/
 
+/*************************************************/
+/* BASICS */
+/*************************************************/
 /* Apply border-box to all elements inside the docker table */
 #docker_containers,
 #docker_containers * {
   box-sizing: border-box;
+}
+
+/* Style all links */
+#docker_containers a,
+#docker_containers a:link,
+#docker_containers a:visited {
+  color: var(--docker-link);
+  text-decoration: none;
+}
+#docker_containers a:hover {
+  color: var(--docker-linkhov);
+  text-decoration: none;
 }
 
 /*************************************************/ /*************************************************/
@@ -153,8 +189,8 @@ like https://htmlcolorcodes.com/color-picker/ */
   border-color: var(--folderbox-brdr-c) !important;
   border-width: var(--folderbox-brdr-width-topbottom) var(--folderbox-brdr-width-right) var(--folderbox-brdr-width-topbottom) var(--folderbox-brdr-width-left) !important;
   border-radius: 4px;
-  padding: 4px 7px;
-  height: 54px;
+  padding: var(--folderbox-padding-topbottom) var(--folderbox-padding-leftright);
+  height: var(--folderbox-height);
   display: flex;
   align-items: center;
 }
@@ -168,7 +204,7 @@ like https://htmlcolorcodes.com/color-picker/ */
 .folder-outer img.img {
   width: var(--folder-logo-size);
   height: var(--folder-logo-size);
-  margin-right: 5px;
+  margin-right: var(--folder-logo-mrgright);
 }
 /* Folder name text */
 .folder-outer .folder-appname {
@@ -395,63 +431,77 @@ denoting presence of autostart containers */
 /*************************************************/
 /* VARIABLES */
 :root {
-  /* Color Scheme - Edit to your preferences */
-  --advc-cscheme-accent1: #ff8c2f; /* Main accent color */
-  --advc-cscheme-accent2: #3e6dba; /* Secondary accent color */
-  --advc-cscheme-light1: #f2f2f2; /* Light */
-  --advc-cscheme-light2: #a1a1a1; /* Lighter */
-  --advc-cscheme-light3: #787878; /* Lightest */
-  --advc-cscheme-dark1: #262626; /* Dark */
-  --advc-cscheme-dark2: #212121; /* Darker */
-  --advc-cscheme-dark3: #1c1b1b; /* Darkerer */
-  --advc-cscheme-dark4: #191818; /* Darkest */
+  /* COLOR SCHEME - BASED ON UNRAID STOCK BLACK THEME */
+  /* Change these colors to your preferences */
+  --advc-cscheme-accent1: #ff8c2f;
+  --advc-cscheme-accent2: #3e6dba;
+  --advc-cscheme-foreline1: #f2f2f2;
+  --advc-cscheme-foreline2: #a1a1a1;
+  --advc-cscheme-foreline3: #787878;
+  --advc-cscheme-foreline4: #444444;
+  --advc-cscheme-backfill1: #262626;
+  --advc-cscheme-backfill2: #212121;
+  --advc-cscheme-backfill3: #1c1b1b;
+  --advc-cscheme-backfill4: #191818;
+
+  /* COLOR SCHEME - BASED ON UNRAID STOCK WHITE THEME */
+  /* --advc-cscheme-accent1: #ff8c2f;
+  --advc-cscheme-accent2: #3e6dba;
+  --advc-cscheme-foreline1: #1c1b1b;
+  --advc-cscheme-foreline2: #4e4e4e;
+  --advc-cscheme-foreline3: #a8a8a8;
+  --advc-cscheme-foreline4: #dcdcdc;
+  --advc-cscheme-backfill1: #e8e8e8;
+  --advc-cscheme-backfill2: #f2f2f2;
+  --advc-cscheme-backfill3: #f5f5f5;
+  --advc-cscheme-backfill4: #ffffff; */
 
   /* Outer box for the context window */
-  --advc-tooltip-brdr-c: var(--advc-cscheme-dark3);
+  --advc-tooltip-brdr-c: var(--advc-cscheme-backfill3);
   --advc-tooltip-brdr-accent-c: var(--advc-cscheme-accent1);
-  --advc-tooltip-text-c: var(--advc-cscheme-light1);
-  --advc-tooltip-bg-c: var(--advc-cscheme-dark1);
+  --advc-tooltip-text-c: var(--advc-cscheme-foreline1);
+  --advc-tooltip-bg-c: var(--advc-cscheme-backfill1);
 
   /* Top row with container name and CPU usage */
-  --advc-headrow-bg-c: var(--advc-cscheme-dark2);
-  --advc-headrow-brdr-c: var(--advc-cscheme-dark3);
+  --advc-headrow-bg-c: var(--advc-cscheme-backfill2);
+  --advc-headrow-brdr-c: var(--advc-cscheme-backfill3);
 
   /* Top container name and stats areas */
-  --advc-contname-area-brdr-rt-c: var(--advc-cscheme-dark4);
-  --advc-contstat-area-bg-c: var(--advc-cscheme-dark3);
-  --advc-contstat-hdr-bg-c: var(--advc-cscheme-dark1);
-  --advc-contstat-cpumeter-bg-c: var(--advc-cscheme-light2);
+  --advc-contname-area-brdr-rt-c: var(--advc-cscheme-backfill4);
+  --advc-contstat-area-bg-c: var(--advc-cscheme-backfill3);
+  --advc-contstat-hdr-bg-c: var(--advc-cscheme-backfill1);
+  --advc-contstat-cpumeter-bg-c: var(--advc-cscheme-foreline2);
   --advc-contstat-cpumeter-text-c: var(--advc-cscheme-accent1);
   --advc-contstat-cpumeter-meter-c: var(--advc-cscheme-accent1);
 
   /* Action buttons down the left side */
-  --advc-contbtns-brdr-rt-c: var(--advc-cscheme-dark4);
-  --advc-contbtns-bg-img: linear-gradient(to bottom, var(--advc-cscheme-dark2), var(--advc-cscheme-dark3));
-  --advc-contbtns-text-c: var(--advc-cscheme-light2);
-  --advc-contbtns-texthover-c: var(--advc-cscheme-light1);
+  --advc-contbtns-brdr-rt-c: var(--advc-cscheme-backfill4);
+  --advc-contbtns-bg-img: linear-gradient(to bottom, var(--advc-cscheme-backfill2), var(--advc-cscheme-backfill3));
+  --advc-contbtns-text-c: var(--advc-cscheme-foreline2);
+  --advc-contbtns-texthover-c: var(--advc-cscheme-foreline1);
 
   /* Container ID and Repo Box */
-  --advc-continfo-bg-c: var(--advc-cscheme-dark2);
-  --advc-continfo-brdr-c: var(--advc-cscheme-dark3);
-  --advc-continfo-text-c: var(--advc-cscheme-light2);
+  --advc-continfo-bg-c: var(--advc-cscheme-backfill2);
+  --advc-continfo-brdr-c: var(--advc-cscheme-backfill3);
+  --advc-continfo-text-c: var(--advc-cscheme-foreline2);
 
   /* Tabs along the top of the CPU/Mem Graph, Port Mappings, and Vol Mappings */
-  --advc-grapharea-tabs-deftext-c: var(--advc-cscheme-light2);
-  --advc-grapharea-tabs-deftexthover-c: var(--advc-cscheme-light1);
-  --advc-grapharea-tabs-activetext-c: var(--advc-cscheme-light1);
-  --advc-grapharea-tabs-activetexthover-c: var(--advc-cscheme-light1);
-  --advc-grapharea-tabs-default-bg-c: var(--advc-cscheme-dark2);
+  --advc-grapharea-tabs-deftext-c: var(--advc-cscheme-foreline2);
+  --advc-grapharea-tabs-deftexthover-c: var(--advc-cscheme-foreline1);
+  --advc-grapharea-tabs-activetext-c: var(--advc-cscheme-foreline1);
+  --advc-grapharea-tabs-activetexthover-c: var(--advc-cscheme-foreline1);
+  --advc-grapharea-tabs-default-bg-c: var(--advc-cscheme-backfill2);
   --advc-grapharea-tabs-active-bg-c: var(--advc-cscheme-accent1);
-  --advc-grapharea-tabs-defhover-bg-c: var(--advc-cscheme-dark1);
+  --advc-grapharea-tabs-defhover-bg-c: var(--advc-cscheme-backfill1);
   --advc-grapharea-tabs-acthover-bg-c: var(--advc-cscheme-accent1);
-  --advc-grapharea-tabs-default-brdr-c: var(--advc-cscheme-dark2);
-  --advc-grapharea-tabs-active-brdr-c: var(--advc-cscheme-dark2);
+  --advc-grapharea-tabs-default-brdr-c: var(--advc-cscheme-backfill2);
+  --advc-grapharea-tabs-active-brdr-c: var(--advc-cscheme-backfill2);
   --advc-grapharea-tabs-defhover-brdr-c: var(--advc-cscheme-accent1);
-  --advc-grapharea-tabs-acthover-brdr-c: var(--advc-cscheme-dark2);
+  --advc-grapharea-tabs-acthover-brdr-c: var(--advc-cscheme-backfill2);
 
   /* Top border for the Streaming CPU/Mem Graph Area */
   --advc-grapharea-brdr-top-c: var(--advc-cscheme-accent1);
-  --advc-grapharea-brdr-c: var(--advc-cscheme-dark3);
+  --advc-grapharea-brdr-c: var(--advc-cscheme-backfill3);
 
   /* Streaming CPU/Mem Graph Lines */
   --folder-view-graph-cpu: var(--advc-cscheme-accent1);
@@ -466,7 +516,7 @@ denoting presence of autostart containers */
 .tooltipster-sidetip.tooltipster-top .tooltipster-box {
   border: 2px solid var(--advc-tooltip-brdr-c) !important;
   border-radius: 8px;
-  box-shadow: 1px 1px 10px 3px var(--advc-cscheme-dark4);
+  box-shadow: 1px 1px 10px 3px var(--advc-cscheme-backfill4);
 }
 .tooltipster-sidetip.tooltipster-bottom .tooltipster-box {
   border-top: 3px solid var(--advc-tooltip-brdr-accent-c) !important;

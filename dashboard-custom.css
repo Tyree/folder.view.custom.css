@@ -20,25 +20,44 @@ like https://htmlcolorcodes.com/color-picker/ */
   --dash-accent1: #ff8c2f;
   --dash-accent2: #3e6dba;
   --dash-accent3: #4f8a10;
-  --dash-light1: #f2f2f2;
-  --dash-light2: #787878;
-  --dash-light3: #444444;
-  --dash-light4: #303030;
-  --dash-dark1: #262626;
-  --dash-dark2: #212121;
-  --dash-dark3: #1c1b1b;
-  --dash-dark4: #191818;
+  --dash-foreline1: #f2f2f2;
+  --dash-foreline3: #a1a1a1;
+  --dash-foreline3: #787878;
+  --dash-foreline4: #444444;
+  --dash-backfill1: #262626;
+  --dash-backfill2: #212121;
+  --dash-backfill3: #1c1b1b;
+  --dash-backfill4: #191818;
   --dash-interface-alert: #f0000c;
   --dash-interface-warn: #ff8c2f;
   --dash-interface-attention: #d6ff20;
   --dash-interface-good: #4caf50;
 
+  /* COLOR SCHEME - BASED ON UNRAID STOCK WHITE THEME */
+  /* --dash-accent1: #ff8c2f;
+  --dash-accent2: #3e6dba;
+  --dash-accent3: #4f8a10;
+  --dash-accent1: #ff8c2f;
+  --dash-accent2: #3e6dba;
+  --dash-foreline1: #1c1b1b;
+  --dash-foreline2: #4e4e4e;
+  --dash-foreline3: #a8a8a8;
+  --dash-foreline4: #dcdcdc;
+  --dash-backfill1: #e8e8e8;
+  --dash-backfill2: #f2f2f2;
+  --dash-backfill3: #f5f5f5;
+  --dash-backfill4: #ffffff;
+  --dash-interface-alert: #f0000c;
+  --dash-interface-warn: #ff8c2f;
+  --dash-interface-attention: #d6ff20;
+  --dash-interface-good: #4caf50; */
+
   /* EXPANDED FOLDER HEADER AND "DRAWER" */
-  --exfold-header-brdr-c: var(--dash-light4); /* Border color for the header */
-  --exfold-header-bg-c: var(--dash-light4); /* Background color for the header */
-  --exfold-drawer-brdr-c: var(--dash-light4); /* Border color for the container "drawer" */
-  --exfold-drawer-bg-c: var(--dash-dark3); /* Background color for the container "drawer" */
-  --exfold-contname-text-c: var(--dash-light1); /* Color for the folder name */
+  --exfold-header-brdr-c: var(--dash-foreline4); /* Border color for the header */
+  --exfold-header-bg-c: var(--dash-foreline4); /* Background color for the header */
+  --exfold-drawer-brdr-c: var(--dash-foreline4); /* Border color for the container "drawer" */
+  --exfold-drawer-bg-c: var(--dash-backfill3); /* Background color for the container "drawer" */
+  --exfold-contname-text-c: var(--dash-foreline1); /* Color for the folder name */
   --exfold-contname-text-size: 2rem; /* Size for the folder name */
 
   /* STARTED/STOPPED ICONS - See https://fontawesome.com/icons */
