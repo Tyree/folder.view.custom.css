@@ -2,6 +2,16 @@
 Autostart Icon styles require version 2023.09.22.1 or greater
 https://github.com/scolcipitato/folder.view */
 
+/*************************************************/ /*
+INSTRUCTIONS:
+This file is separated into sections. Remove the parts you don't want to utilize.
+ 1 VARIABLES - USED BY 'DOCKER TABLE' & 'STARTED/STOPPED ICONS' SECTIONS *KEEP*
+ 2 DOCKER TABLE STYLES -  Styles the docker table itself
+ 3 STARTED/STOPPED ICONS -  Deals specifically with the Started/Stopped icons in the table
+                            -Can be used independently from docker table styles
+ 4 ADVANCED CONTEXT TOOLTIP DARK MODE - Dark mode scheme for the advanced context menu
+*/ /*************************************************/
+
 /*************************************************/
 /* VARIABLES - Change these settings to your preference */
 /*************************************************/
@@ -20,6 +30,8 @@ like https://htmlcolorcodes.com/color-picker/ */
   --docker-accent1: #ff8c2f;
   --docker-accent2: #3e6dba;
   --docker-accent3: #4f8a10;
+  --docker-link: #486dba;
+  --docker-linkhov: #2cabe3;
   --docker-light1: #f2f2f2;
   --docker-light2: #787878;
   --docker-light3: #444444;
@@ -33,7 +45,37 @@ like https://htmlcolorcodes.com/color-picker/ */
   --docker-interface-attention: #d6ff20;
   --docker-interface-good: #4caf50;
 
-  /* ICONS - See https://fontawesome.com/icons */
+  /* Folder Area */
+  --folderbox-width: 250px; /* May need to be increased if --folder-name-text-size is too big */
+  --folderbox-brdr-c: var(--docker-light1);
+  --folderbox-brdr-width-topbottom: 1px;
+  --folderbox-brdr-width-left: 8px;
+  --folderbox-brdr-width-right: 1px;
+  --folder-logo-size: 38px;
+  --folder-name-text-size: 1.5rem;
+  --folder-name-text-weight: bold;
+  --folder-startstop-text-size: 1.2rem; /* 0 to hide */
+  --folder-startstop-text-mrgleft: 7px; /* 0 to hide */
+
+  /* Folder/Container Preview Row */
+  /* Height must be the sum of
+  (--container-logo-mrgtopbottom x 2) + (--folderpreview-brdr-width-topbottom x 2) + --container-logo-size
+  Default 14px + 2px + 38px = 54px */
+  --folderpreview-height: calc(var(--container-logo-size) + (var(--container-logo-mrgtopbottom) * 2) + (var(--folderpreview-brdr-width-topbottom) * 2));
+  --folderpreview-brdr-c: var(--docker-light1);
+  --folderpreview-brdr-width-topbottom: 1px;
+  --folderpreview-brdr-width-left: 8px;
+  --folderpreview-brdr-width-right: 1px;
+
+  /* Container */
+  --container-logo-size: 38px;
+  --container-logo-mrgtopbottom: 7px;
+  --container-name-text-size: 1.3rem;
+  --container-name-text-weight: bold;
+  --container-startstop-text-size: 0; /* default 1.1rem */
+  --container-startstop-text-mrgleft: 0; /* default 7px */
+
+  /* STARTED/STOPPED ICONS - See https://fontawesome.com/icons */
   --folder-started-icon: "\f04b"; /* Normal started icon - default is play triangle */
   --folder-stopped-icon: "\f04d"; /* Normal stopped icon - default is rounded square */
   --folder-autostart-full-icon: "\f144"; /* Indicate ALL autostart containers within the folder are started */
@@ -49,11 +91,7 @@ like https://htmlcolorcodes.com/color-picker/ */
   --container-spin-started-icon: "\f110"; /* Spin icon temporarily shown when a container is changing from started to stopped */
   --container-spin-stopped-icon: "\f110"; /* Spin icon temporarily shown when a container is changing from stopped to started */
 
-  --container-webui-icon: "\f57d";
-  --container-terminal-icon: "\f120";
-  --container-logs-icon: "\f0c9";
-
-  /* ICON COLORS */
+  /* STARTED/STOPPED ICON COLORS */
   --folder-started-icon-c: var(--docker-interface-good); /* Normal started icon - default is green */
   --folder-stopped-icon-c: var(--docker-interface-alert); /* Normal stopped icon - default is red */
   --folder-autostart-full-icon-c: var(--docker-interface-good); /* Indicate ALL autostart containers within the folder are started */
@@ -69,18 +107,199 @@ like https://htmlcolorcodes.com/color-picker/ */
   --container-autostart-started-icon-c: var(--docker-interface-good); /* Indicates autostart container is started */
   --container-autostart-stopped-icon-c: var(--docker-interface-alert); /* Indicates autostart container is stopped */
 
-  /* ICON SIZES */
+  /* STARTED/STOPPED ICON SIZES */
   --folder-status-size: 16px; /* Compacted folder started/stopped icon */
   --container-status-size: 15px; /* Normal container started/stopped icon */
   --container-autostart-status-size: 16px; /* Autostart container started/stopped icon */
+
+  /* CONTAINER TOOL ICONS - WEBUI, TERMINAL, LOGS */
   --container-tools-size: 14px;
+  --container-webui-icon: "\f0ac";
+  --container-webui-icon-c: var(--docker-link);
+  --container-webui-iconhover-c: var(--docker-linkhov);
+  --container-console-icon: "\f120";
+  --container-console-icon-c: var(--docker-link);
+  --container-console-iconhover-c: var(--docker-linkhov);
+  --container-logs-icon: "\f0c9";
+  --container-logs-icon-c: var(--docker-link);
+  --container-logs-iconhover-c: var(--docker-linkhov);
 }
 /*************************************************/
 /* END OF VARIABLES */
 /*************************************************/
 
+/* Apply border-box to all elements inside the docker table */
+#docker_containers,
+#docker_containers * {
+  box-sizing: border-box;
+}
+
+/*************************************************/ /*************************************************/
+/*************************************************/ /*************************************************/
+/*************************************************/ /*************************************************/
+/* 1 DOCKER TABLE STYLES */
 /*************************************************/
-/* ICON SIZES */
+/*************************************************/
+
+/*************************************************/
+/* FOLDER NAME AREA */
+/*************************************************/
+.folder .folder-name {
+  width: var(--folderbox-width);
+}
+/* Wrapper around folder icon, name, and toggle */
+.folder .folder-name-sub {
+  border-style: solid !important;
+  border-color: var(--folderbox-brdr-c) !important;
+  border-width: var(--folderbox-brdr-width-topbottom) var(--folderbox-brdr-width-right) var(--folderbox-brdr-width-topbottom) var(--folderbox-brdr-width-left) !important;
+  border-radius: 4px;
+  padding: 4px 7px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+}
+.folder .folder-outer {
+  display: block;
+  height: var(--folder-logo-size);
+  margin-bottom: 0;
+  width: calc(var(--folderbox-width) - 25px);
+}
+/* Folder image */
+.folder-outer img.img {
+  width: var(--folder-logo-size);
+  height: var(--folder-logo-size);
+  margin-right: 5px;
+}
+/* Folder name text */
+.folder-outer .folder-appname {
+  font-size: var(--folder-name-text-size);
+  font-weight: var(--folder-name-text-weight);
+}
+/* Folder toggle open button */
+button.folder-dropwdown {
+  float: none;
+}
+/* Version column */
+.folder .updatecolumn {
+  text-align: center;
+}
+/* Started/Stopped Text for Folders */
+.outer.folder-outer .state {
+  font-size: var(--folder-startstop-text-size);
+  margin-left: var(--folder-startstop-text-mrgleft);
+}
+
+/*************************************************/
+/* VERSION COLUMN */
+/*************************************************/
+.folder .folder-update {
+  width: 100px;
+}
+/*************************************************/
+/* CONTAINER PREVIEW ROW */
+/*************************************************/
+/* Wrapper for all containers in the preview */
+.folder .folder-preview {
+  border-style: solid !important;
+  border-color: var(--folderpreview-brdr-c) !important;
+  border-width: var(--folderpreview-brdr-width-topbottom) var(--folderpreview-brdr-width-right) var(--folderpreview-brdr-width-topbottom) var(--folderpreview-brdr-width-left) !important;
+  height: var(--folderpreview-height);
+  align-items: start;
+}
+
+/* Vertical lines between containers - if enabled */
+.folder-preview .folder-preview-divider {
+  float: none;
+  height: var(--container-logo-size);
+  margin: var(--container-logo-mrgtopbottom) 5px var(--container-logo-mrgtopbottom) 10px;
+  border: 1px solid var(--folderpreview-brdr-c) !important;
+}
+
+/*************************************************/
+/* CONTAINER IN PREVIEW ROW */
+/*************************************************/
+/* Container image */
+.folder-preview-wrapper .outer img.img {
+  width: var(--container-logo-size);
+  height: var(--container-logo-size);
+  margin-right: 5px;
+}
+/* Container name */
+.folder-preview-wrapper .appname {
+  font-size: var(--container-name-text-size);
+  font-weight: var(--container-name-text-weight);
+}
+/* Outer wrapper around individual containers in preview */
+.folder-preview .folder-preview-wrapper {
+  margin-top: var(--container-logo-mrgtopbottom);
+  height: auto;
+}
+/* Started/Stopped Text for Containers */
+.outer:not(.folder-outer) .state {
+  font-size: var(--container-startstop-text-size);
+  margin-left: var(--container-startstop-text-mrgleft);
+}
+/* Container Tools */
+.outer:not(.folder-outer) .folder-element-custom-btn i::before {
+  font-size: var(--container-tools-size);
+}
+/* Console Icon */
+.outer:not(.folder-outer) .folder-element-console a,
+.outer:not(.folder-outer) .folder-element-console a:link,
+.outer:not(.folder-outer) .folder-element-console a:visited {
+  color: var(--container-console-icon-c);
+}
+.outer:not(.folder-outer) .folder-element-console a:hover {
+  color: var(--container-console-iconhover-c);
+}
+.outer:not(.folder-outer) .folder-element-console i::before {
+  content: var(--container-console-icon);
+}
+/* WebUI Icon */
+.outer:not(.folder-outer) .folder-element-webui a,
+.outer:not(.folder-outer) .folder-element-webui a:link,
+.outer:not(.folder-outer) .folder-element-webui a:visited {
+  color: var(--container-webui-icon-c);
+}
+.outer:not(.folder-outer) .folder-element-webui a:hover {
+  color: var(--container-webui-iconhover-c);
+}
+.outer:not(.folder-outer) .folder-element-webui i::before {
+  content: var(--container-webui-icon);
+}
+/* Logs Icon */
+.outer:not(.folder-outer) .folder-element-logs a,
+.outer:not(.folder-outer) .folder-element-logs a:link,
+.outer:not(.folder-outer) .folder-element-logs a:visited {
+  color: var(--container-logs-icon-c);
+}
+.outer:not(.folder-outer) .folder-element-logs a:hover {
+  color: var(--container-logs-iconhover-c);
+}
+.outer:not(.folder-outer) .folder-element-logs i::before {
+  content: var(--container-logs-icon);
+}
+
+/*************************************************/
+/* CONTAINER LOGO ICON HOVER EFFECTS */
+/*************************************************/
+/* Desaturate docker container icons, saturate on hover */
+.folder-preview-wrapper img {
+  filter: saturate(0);
+}
+.folder-preview-wrapper:hover img {
+  filter: saturate(1);
+}
+
+/*************************************************/ /*************************************************/
+/*************************************************/ /*************************************************/
+/*************************************************/ /*************************************************/
+/* 2 STARTED/STOPPED ICONS */
+/*************************************************/
+/*************************************************/
+
+/*************************************************/
+/* STARTED/STOPPED ICON SIZES */
 /*************************************************/
 /* Folder Status */
 .outer.folder-outer i.folder-load-status::before {
@@ -93,10 +312,6 @@ like https://htmlcolorcodes.com/color-picker/ */
 /* Container Autostart Status */
 .outer:not(.folder-outer).autostart i[id*="folder-load"]::before {
   font-size: var(--container-autostart-status-size);
-}
-/* Container Tools */
-.outer:not(.folder-outer) .folder-element-custom-btn i::before {
-  font-size: var(--container-tools-size);
 }
 
 /*************************************************/
@@ -173,37 +388,28 @@ denoting presence of autostart containers */
   color: var(--folder-autostart-off-icon-c); /* Red when no autostart containers are started */
 }
 
-/*************************************************/
-/* CONTAINER LOGO ICON HOVER EFFECTS */
-/*************************************************/
-/* Desaturate docker container icons, saturate on hover */
-.folder-preview-wrapper img {
-  filter: saturate(0);
-}
-.folder-preview-wrapper:hover img {
-  filter: saturate(1);
-}
-
-/*************************************************/
-/* ADVANCED CONTEXT TOOLTIP DARK MODE */
+/*************************************************/ /*************************************************/
+/*************************************************/ /*************************************************/
+/*************************************************/ /*************************************************/
+/* 3 ADVANCED CONTEXT TOOLTIP DARK MODE */
 /*************************************************/
 /* VARIABLES */
 :root {
   /* Color Scheme - Edit to your preferences */
   --advc-cscheme-accent1: #ff8c2f; /* Main accent color */
-  --advc-cscheme-accent2: #2cabe3; /* Secondary accent color */
-  --advc-cscheme-light1: #ffffff; /* Light */
-  --advc-cscheme-light2: #cccccc; /* Lighter */
-  --advc-cscheme-light3: #a1a1a1; /* Lightest */
-  --advc-cscheme-dark1: #212121; /* Dark */
-  --advc-cscheme-dark2: #1c1b1b; /* Darker */
-  --advc-cscheme-dark3: #191818; /* Darkerer */
-  --advc-cscheme-dark4: #000000; /* Darkest */
+  --advc-cscheme-accent2: #3e6dba; /* Secondary accent color */
+  --advc-cscheme-light1: #f2f2f2; /* Light */
+  --advc-cscheme-light2: #a1a1a1; /* Lighter */
+  --advc-cscheme-light3: #787878; /* Lightest */
+  --advc-cscheme-dark1: #262626; /* Dark */
+  --advc-cscheme-dark2: #212121; /* Darker */
+  --advc-cscheme-dark3: #1c1b1b; /* Darkerer */
+  --advc-cscheme-dark4: #191818; /* Darkest */
 
   /* Outer box for the context window */
   --advc-tooltip-brdr-c: var(--advc-cscheme-dark3);
   --advc-tooltip-brdr-accent-c: var(--advc-cscheme-accent1);
-  --advc-tooltip-text-c: var(--advc-cscheme-light3);
+  --advc-tooltip-text-c: var(--advc-cscheme-light1);
   --advc-tooltip-bg-c: var(--advc-cscheme-dark1);
 
   /* Top row with container name and CPU usage */
@@ -222,6 +428,7 @@ denoting presence of autostart containers */
   --advc-contbtns-brdr-rt-c: var(--advc-cscheme-dark4);
   --advc-contbtns-bg-img: linear-gradient(to bottom, var(--advc-cscheme-dark2), var(--advc-cscheme-dark3));
   --advc-contbtns-text-c: var(--advc-cscheme-light2);
+  --advc-contbtns-texthover-c: var(--advc-cscheme-light1);
 
   /* Container ID and Repo Box */
   --advc-continfo-bg-c: var(--advc-cscheme-dark2);
@@ -230,7 +437,7 @@ denoting presence of autostart containers */
 
   /* Tabs along the top of the CPU/Mem Graph, Port Mappings, and Vol Mappings */
   --advc-grapharea-tabs-deftext-c: var(--advc-cscheme-light2);
-  --advc-grapharea-tabs-deftexthover-c: var(--advc-cscheme-light2);
+  --advc-grapharea-tabs-deftexthover-c: var(--advc-cscheme-light1);
   --advc-grapharea-tabs-activetext-c: var(--advc-cscheme-light1);
   --advc-grapharea-tabs-activetexthover-c: var(--advc-cscheme-light1);
   --advc-grapharea-tabs-default-bg-c: var(--advc-cscheme-dark2);
@@ -250,14 +457,16 @@ denoting presence of autostart containers */
   --folder-view-graph-cpu: var(--advc-cscheme-accent1);
   --folder-view-graph-mem: var(--advc-cscheme-accent2);
 }
+/*************************************************/
 /* END OF VARIABLES */
+/*************************************************/
 
 /* Outer box of the context window */
 .tooltipster-sidetip.tooltipster-bottom .tooltipster-box,
 .tooltipster-sidetip.tooltipster-top .tooltipster-box {
   border: 2px solid var(--advc-tooltip-brdr-c) !important;
   border-radius: 8px;
-  box-shadow: 1px 1px 10px 3px var(--advc-cscheme-dark2);
+  box-shadow: 1px 1px 10px 3px var(--advc-cscheme-dark4);
 }
 .tooltipster-sidetip.tooltipster-bottom .tooltipster-box {
   border-top: 3px solid var(--advc-tooltip-brdr-accent-c) !important;
@@ -338,6 +547,7 @@ denoting presence of autostart containers */
 }
 .preview-outbox .action li a:hover {
   background-image: var(--advc-contbtns-bg-img);
+  color: var(--advc-contbtns-texthover-c);
 }
 
 /* Container ID and repo info box */
@@ -373,9 +583,9 @@ denoting presence of autostart containers */
 .preview-outbox .ui-state-default a:visited {
   color: var(--advc-grapharea-tabs-deftext-c);
 }
-.preview-outbox .ui-state-default-ui-state-hover a,
-.preview-outbox .ui-state-default-ui-state-hover a:link,
-.preview-outbox .ui-state-default-ui-state-hover a:visited {
+.preview-outbox .ui-state-default.ui-state-hover a,
+.preview-outbox .ui-state-default.ui-state-hover a:link,
+.preview-outbox .ui-state-default.ui-state-hover a:visited {
   color: var(--advc-grapharea-tabs-deftexthover-c);
 }
 .preview-outbox .ui-state-default.ui-state-active a,
@@ -408,3 +618,6 @@ denoting presence of autostart containers */
   border-top: 2px solid var(--advc-grapharea-brdr-top-c) !important;
   font-size: 1.5rem;
 }
+/*************************************************/
+/* END OF - ADVANCED CONTEXT TOOLTIP DARK MODE */
+/*************************************************/
