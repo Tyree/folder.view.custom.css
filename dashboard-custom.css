@@ -41,7 +41,7 @@ like https://htmlcolorcodes.com/color-picker/ */
   --exfold-contname-text-c: var(--dash-light1); /* Color for the folder name */
   --exfold-contname-text-size: 2rem; /* Size for the folder name */
 
-  /* ICONS - See https://fontawesome.com/icons */
+  /* STARTED/STOPPED ICONS - See https://fontawesome.com/icons */
   --folder-started-icon: "\f04b"; /* Normal started icon - default is play triangle */
   --folder-stopped-icon: "\f04d"; /* Normal stopped icon - default is rounded square */
   --folder-autostart-full-icon: "\f144"; /* Indicate ALL autostart containers within the folder are started */
@@ -55,7 +55,7 @@ like https://htmlcolorcodes.com/color-picker/ */
   --container-spin-started-icon: "\f110"; /* Spin icon temporarily shown when a container is changing from started to stopped */
   --container-spin-stopped-icon: "\f110"; /* Spin icon temporarily shown when a container is changing from stopped to started */
 
-  /* ICON COLORS */
+  /* STARTED/STOPPED ICON COLORS */
   --folder-started-icon-c: var(--dash-interface-good); /* Normal started icon - default is green */
   --folder-stopped-icon-c: var(--dash-interface-alert); /* Normal stopped icon - default is red */
   --folder-autostart-full-icon-c: var(--dash-interface-good); /* Indicate ALL autostart containers within the folder are started */
@@ -69,7 +69,7 @@ like https://htmlcolorcodes.com/color-picker/ */
   --container-autostart-started-icon-c: var(--dash-interface-good); /* Indicates autostart container is started */
   --container-autostart-stopped-icon-c: var(--dash-interface-alert); /* Indicates autostart container is stopped */
 
-  /* ICON SIZES */
+  /* STARTED/STOPPED ICON SIZES */
   --folder-status-size: 16px; /* Compacted folder started/stopped icon */
   --exfold-status-size: 20px; /* Expanded folder started/stopped icon */
   --container-status-size: 15px; /* Normal container started/stopped icon */
@@ -203,7 +203,7 @@ height of the icon - builds on compressed styles */
 /*************************************************/
 
 /*************************************************/
-/* ICON SIZES */
+/* STARTED/STOPPED ICON SIZES */
 /*************************************************/
 /* Folder Status */
 #docker_view .outer.folder-docker i::before {
