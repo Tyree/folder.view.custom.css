@@ -1,0 +1,60 @@
+/*************************************************/
+/* ADVANCED VIEW STYLES */
+/*************************************************/
+/* Width of the CPU/MEM Load column */
+#docker_containers th.load,
+#docker_containers td.advanced {
+  width: 80px;
+}
+
+/* Hide header text for load and uptime columns */
+#docker_containers th.load,
+#docker_containers th.five {
+  font-size: 0;
+}
+
+/* Text for the folder's CPU usage */
+#docker_containers .folder-cpu {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--docker-accent2);
+}
+/* Text for the container CPU usage */
+#docker_containers span[class*="cpu-"]:not(.folder-cpu) {
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--docker-accent2);
+}
+
+/* Text for the folder's Memory usage */
+#docker_containers .folder-mem {
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--docker-accent2);
+}
+/* Text for the container Memory usage */
+#docker_containers span[class*="mem-"]:not(.folder-mem) {
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--docker-accent2);
+}
+
+/* CPU Meter */
+#docker_containers .usage-disk {
+  height: 8px;
+  margin: 0;
+  background: var(--docker-foreline4);
+  background-color: var(--docker-foreline4);
+  margin-bottom: 4px;
+}
+#docker_containers .usage-disk > span:first-child {
+  height: 8px;
+  background-color: var(--docker-accent3);
+}
+#docker_containers .usage-disk span:nth-child(2) {
+  display: inline-block;
+  height: 8px;
+}
+#docker_containers .usage-disk + br {
+  display: none;
+}

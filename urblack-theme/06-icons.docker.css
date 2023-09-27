@@ -1,0 +1,132 @@
+/*************************************************/
+/* CONTAINER TOOLS ICONS */
+/*************************************************/
+/* Container Tools Size */
+.outer:not(.folder-outer) .folder-element-custom-btn i::before {
+  font-size: var(--container-tools-size);
+}
+/* Console Icon */
+.outer:not(.folder-outer) .folder-element-console a,
+.outer:not(.folder-outer) .folder-element-console a:link,
+.outer:not(.folder-outer) .folder-element-console a:visited {
+  color: var(--container-console-icon-c);
+}
+.outer:not(.folder-outer) .folder-element-console a:hover {
+  color: var(--container-console-iconhover-c);
+}
+.outer:not(.folder-outer) .folder-element-console i::before {
+  content: var(--container-console-icon);
+}
+/* WebUI Icon */
+.outer:not(.folder-outer) .folder-element-webui a,
+.outer:not(.folder-outer) .folder-element-webui a:link,
+.outer:not(.folder-outer) .folder-element-webui a:visited {
+  color: var(--container-webui-icon-c);
+}
+.outer:not(.folder-outer) .folder-element-webui a:hover {
+  color: var(--container-webui-iconhover-c);
+}
+.outer:not(.folder-outer) .folder-element-webui i::before {
+  content: var(--container-webui-icon);
+}
+/* Logs Icon */
+.outer:not(.folder-outer) .folder-element-logs a,
+.outer:not(.folder-outer) .folder-element-logs a:link,
+.outer:not(.folder-outer) .folder-element-logs a:visited {
+  color: var(--container-logs-icon-c);
+}
+.outer:not(.folder-outer) .folder-element-logs a:hover {
+  color: var(--container-logs-iconhover-c);
+}
+.outer:not(.folder-outer) .folder-element-logs i::before {
+  content: var(--container-logs-icon);
+}
+
+/*************************************************/
+/* STARTED/STOPPED ICON SIZES */
+/*************************************************/
+/* Folder Status */
+.outer.folder-outer i.folder-load-status::before {
+  font-size: var(--folder-status-size);
+}
+/* Container Status */
+.outer:not(.folder-outer) i[id*="folder-load"]::before {
+  font-size: var(--container-status-size);
+}
+/* Container Autostart Status */
+.outer:not(.folder-outer).autostart i[id*="folder-load"]::before {
+  font-size: var(--container-autostart-status-size);
+}
+
+/*************************************************/
+/* DEFAULT STARTED/STOPPED ICONS */
+/*************************************************/
+/* Folder Started Icon */
+.folder:not(.autostart-full, .autostart-partial, .autostart-off) .outer.folder-outer i.started:not(.fa-spin)::before {
+  content: var(--folder-started-icon);
+  color: var(--folder-started-icon-c);
+}
+/* Folder Stopped Icon */
+.folder:not(.autostart-full, .autostart-partial, .autostart-off) .outer.folder-outer i.stopped:not(.fa-spin)::before {
+  content: var(--folder-stopped-icon);
+  color: var(--folder-stopped-icon-c);
+}
+/* Folder Spin Icon - Started */
+.folder .outer.folder-outer i.started.fa-spin::before {
+  content: var(--folder-spin-started-icon);
+  color: var(--folder-spin-started-icon-c);
+}
+/* Folder Spin Icon - Stopped */
+.folder .outer.folder-outer i.stopped.fa-spin::before {
+  content: var(--folder-spin-stopped-icon);
+  color: var(--folder-spin-stopped-icon-c);
+}
+
+/* Container Started Icon */
+.outer:not(.folder-outer, .autostart) i.started:not(.fa-spin)::before {
+  content: var(--container-started-icon);
+  color: var(--container-started-icon-c);
+}
+/* Container Stopped Icon */
+.outer:not(.folder-outer, .autostart) i.stopped:not(.fa-spin)::before {
+  content: var(--container-stopped-icon);
+  color: var(--container-stopped-icon-c);
+}
+/* Container Spin Icon - Started */
+.outer:not(.folder-outer) i.started.fa-spin::before {
+  content: var(--container-spin-started-icon);
+  color: var(--container-spin-started-icon-c);
+}
+/* Container Spin Icon - Stopped */
+.outer:not(.folder-outer) i.stopped.fa-spin::before {
+  content: var(--container-spin-stopped-icon);
+  color: var(--container-spin-stopped-icon-c);
+}
+
+/*************************************************/
+/* AUTOSTART ICONS */
+/*************************************************/
+/* Container Icons */
+.outer:not(.folder-outer).autostart i.started:not(.fa-spin)::before {
+  content: var(--container-autostart-started-icon); /* Replace the green triangle with a different icon */
+  color: var(--container-autostart-started-icon-c);
+}
+.outer:not(.folder-outer).autostart i.stopped:not(.fa-spin)::before {
+  content: var(--container-autostart-stopped-icon); /* Replace the red square with a different icon */
+  color: var(--container-autostart-stopped-icon-c);
+}
+/* Folder Icons */
+/* Replace the folder's default ontainer status icon with an icon
+denoting presence of autostart containers */
+.folder.autostart-full .folder-outer i.folder-load-status::before {
+  content: var(--folder-autostart-full-icon);
+  color: var(--folder-autostart-full-icon-c); /* Green color when all autostart containers are started */
+}
+.folder.autostart-partial .folder-outer i.folder-load-status::before {
+  content: var(--folder-autostart-partial-icon);
+  color: var(--folder-autostart-partial-icon-c); /* Orange when some autostart containers are started */
+}
+.folder.autostart-off .folder-outer i.folder-load-status::before {
+  content: var(--folder-autostart-off-icon);
+  color: var(--folder-autostart-off-icon-c); /* Red when no autostart containers are started */
+}

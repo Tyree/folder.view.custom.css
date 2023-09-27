@@ -20,6 +20,9 @@ like https://htmlcolorcodes.com/color-picker/ */
   --dash-accent1: #ff8c2f;
   --dash-accent2: #3e6dba;
   --dash-accent3: #4f8a10;
+  --dash-folder-update: #3e6dba;
+  --dash-exfolder-update: #ff8c2f;
+  --dash-cont-update: #ff8c2f;
   --dash-foreline1: #f2f2f2;
   --dash-foreline3: #a1a1a1;
   --dash-foreline3: #787878;
@@ -52,9 +55,17 @@ like https://htmlcolorcodes.com/color-picker/ */
   --dash-interface-attention: #d6ff20;
   --dash-interface-good: #4caf50; */
 
+  /* Compressed folder name text size and weight */
+  --folder-name-text-size: 1.4rem;
+  --folder-name-text-weight: bold;
+  /* Folder with update text */
+  --folder-name-update-text-c: var(--dash-folder-update);
+
   /* Default container name text size and weight */
   --container-name-text-size: 1.3rem;
-  --container-name-text-weight: 1.3rem;
+  --container-name-text-weight: normal;
+  /* Container with update text */
+  --container-name-update-text-c: var(--dash-cont-update);
 
   /* EXPANDED FOLDER HEADER AND "DRAWER" */
   --exfold-header-brdr-c: var(--dash-foreline4); /* Border color for the header */
@@ -62,6 +73,7 @@ like https://htmlcolorcodes.com/color-picker/ */
   --exfold-drawer-brdr-c: var(--dash-foreline4); /* Border color for the container "drawer" */
   --exfold-drawer-bg-c: var(--dash-backfill3); /* Background color for the container "drawer" */
   --exfold-foldername-text-c: var(--dash-foreline1); /* Color for the folder name */
+  --exfold-foldername-updatetext-c: var(--dash-exfolder-update); /* Color for the folder name with an update */
   --exfold-foldername-text-size: 2rem; /* Size for the folder name */
   --exfold-foldername-text-weight: bold; /* Weight for the folder name */
   --exfold-contname-text-c: inherit; /* Color for the container name when inside a folder */
@@ -172,10 +184,22 @@ the folders and containers to the same height of the icon */
   padding: 0 20px;
 }
 
-/* Container text size */
+/* Compressed Folder text */
+#docker_view .inner.folder-inner-docker {
+  font-size: var(--folder-name-text-size);
+  font-weight: var(--folder-name-text-weight);
+}
+#docker_view .inner.folder-inner-docker .blue-text {
+  color: var(--folder-name-update-text-c); /* Folder with update */
+}
+
+/* Container text */
 #docker_view .inner:not(.folder-inner-docker) {
   font-size: var(--container-name-text-size);
   font-weight: var(--container-name-text-weight);
+}
+#docker_view .inner:not(.folder-inner-docker) .blue-text {
+  color: var(--container-name-update-text-c); /* Container with update */
 }
 
 /* Hide the "started" and "stopped" text so that only
@@ -217,14 +241,17 @@ height of the icon - builds on compressed styles */
   margin-left: 55px;
 }
 
-/* Font size for the folder name */
+/* Font for the folder name */
 #docker_view .folder-showcase-outer[expanded="true"] .folder-appname-docker {
   font-size: var(--exfold-foldername-text-size);
   font-weight: var(--exfold-foldername-text-weight);
   color: var(--exfold-foldername-text-c);
 }
+#docker_view .folder-showcase-outer[expanded="true"] .folder-appname-docker.blue-text {
+  color: var(--exfold-foldername-updatetext-c);
+}
 
-/* Font size for the container name inside a folder */
+/* Font for the container name inside a folder */
 #docker_view .folder-showcase-outer[expanded="true"] .inner:not(.folder-inner-docker) {
   font-size: var(--exfold-contname-text-size);
   font-weight: var(--exfold-contname-text-weight);

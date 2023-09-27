@@ -34,6 +34,11 @@ like https://htmlcolorcodes.com/color-picker/ */
   --docker-linkhov: #2cabe3;
   --docker-tool-link: #616161;
   --docker-tool-linkhov: #2cabe3;
+<<<<<<< HEAD
+=======
+  --docker-cont-update: #ff8c2f;
+  --docker-cont-updatehov: #ffc04c;
+>>>>>>> 7f8a837b737b7272f925a24694cb8e2a63648693
   --docker-foreline1: #f2f2f2;
   --docker-foreline2: #a1a1a1;
   --docker-foreline3: #787878;
@@ -66,6 +71,10 @@ like https://htmlcolorcodes.com/color-picker/ */
   --docker-interface-attention: #d6ff20;
   --docker-interface-good: #4caf50; */
 
+  /* Passed/Warning/Green/Orange Text */
+  --warn-orange-text-c: var(--docker-accent1);
+  --pass-green-text-c: var(--docker-accent3);
+
   /* Folder Name/Logo Area */
   --folderbox-width: 250px; /* May need to be increased if --folder-name-text-size is too big */
   --folderbox-height: calc(var(--folder-logo-size) + (var(--folderbox-padding-topbottom) * 2) + (var(--folderbox-brdr-width-topbottom) * 2));
@@ -95,6 +104,8 @@ like https://htmlcolorcodes.com/color-picker/ */
   --container-logo-mrgtopbottom: 7px;
   --container-name-text-size: 1.3rem;
   --container-name-text-weight: bold;
+  --container-name-update-text-c: var(--docker-cont-update);
+  --container-name-update-texthov-c: var(--docker-cont-updatehov);
   --container-startstop-text-size: 0; /* default 1.1rem */
   --container-startstop-text-mrgleft: 0; /* default 7px */
 
@@ -151,6 +162,13 @@ like https://htmlcolorcodes.com/color-picker/ */
 /* END OF VARIABLES */
 /*************************************************/
 
+/*************************************************/ /*************************************************/
+/*************************************************/ /*************************************************/
+/*************************************************/ /*************************************************/
+/* 1 DOCKER TABLE STYLES */
+/*************************************************/
+/*************************************************/
+
 /*************************************************/
 /* BASICS */
 /*************************************************/
@@ -172,12 +190,29 @@ like https://htmlcolorcodes.com/color-picker/ */
   text-decoration: none;
 }
 
-/*************************************************/ /*************************************************/
-/*************************************************/ /*************************************************/
-/*************************************************/ /*************************************************/
-/* 1 DOCKER TABLE STYLES */
-/*************************************************/
-/*************************************************/
+/* Style all container names with updates available */
+#docker_containers :not(.folder-element-custom-btn) > a.orange-text,
+#docker_containers :not(.folder-element-custom-btn) > a.orange-text:link,
+#docker_containers :not(.folder-element-custom-btn) > a.orange-text:visited {
+  color: var(--container-name-update-text-c);
+  text-decoration: none;
+  font-weight: bold;
+}
+#docker_containers :not(.folder-element-custom-btn) > a.orange-text:hover {
+  color: var(--container-name-update-texthov-c);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#docker_containers .orange-text,
+#docker_containers .warning {
+  color: var(--warn-orange-text-c);
+}
+#docker_containers .green,
+#docker_containers .green-text,
+#docker_containers .passed {
+  color: var(--pass-green-text-c);
+}
 
 /*************************************************/
 /* FOLDER NAME AREA */
@@ -233,6 +268,7 @@ button.folder-dropwdown {
 .folder .folder-update {
   width: 100px;
 }
+
 /*************************************************/
 /* CONTAINER PREVIEW ROW */
 /*************************************************/
@@ -327,6 +363,67 @@ button.folder-dropwdown {
 }
 .folder-preview-wrapper:hover img {
   filter: saturate(1);
+}
+
+/*************************************************/
+/* ADVANCED VIEW STYLES */
+/*************************************************/
+/* Width of the CPU/MEM Load column */
+#docker_containers th.load,
+#docker_containers td.advanced {
+  width: 80px;
+}
+
+/* Hide header text for load and uptime columns */
+#docker_containers th.load,
+#docker_containers th.five {
+  font-size: 0;
+}
+
+/* Text for the folder's CPU usage */
+#docker_containers .folder-cpu {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--docker-accent2);
+}
+/* Text for the container CPU usage */
+#docker_containers span[class*="cpu-"]:not(.folder-cpu) {
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--docker-accent2);
+}
+
+/* Text for the folder's Memory usage */
+#docker_containers .folder-mem {
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--docker-accent2);
+}
+/* Text for the container Memory usage */
+#docker_containers span[class*="mem-"]:not(.folder-mem) {
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--docker-accent2);
+}
+
+/* CPU Meter */
+#docker_containers .usage-disk {
+  height: 8px;
+  margin: 0;
+  background: var(--docker-foreline4);
+  background-color: var(--docker-foreline4);
+  margin-bottom: 4px;
+}
+#docker_containers .usage-disk > span:first-child {
+  height: 8px;
+  background-color: var(--docker-accent3);
+}
+#docker_containers .usage-disk span:nth-child(2) {
+  display: inline-block;
+  height: 8px;
+}
+#docker_containers .usage-disk + br {
+  display: none;
 }
 
 /*************************************************/ /*************************************************/

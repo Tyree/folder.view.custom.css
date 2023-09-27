@@ -1,0 +1,65 @@
+/*************************************************/
+/* VARIABLES FOR ICONS IN DOCKER TABLE - 
+Change these settings to your preference */
+/*************************************************/
+/* See https://fontawesome.com/icons for icons.
+Find an icon you'd like to use, click on it and copy
+the unicode from the top right corner. Example: f144
+Paste this within the " " below to change the icon.
+Be sure to leave the \ at the beginning of the code
+as shown below.
+For colors - Use the variables in the color scheme file
+OR
+look up a hex color convertor online
+like https://htmlcolorcodes.com/color-picker/ */
+/*************************************************/
+:root {
+  /* STARTED/STOPPED ICONS - See https://fontawesome.com/icons */
+  --folder-started-icon: "\f04b"; /* Normal started icon - default is play triangle */
+  --folder-stopped-icon: "\f04d"; /* Normal stopped icon - default is rounded square */
+  --folder-autostart-full-icon: "\f144"; /* Indicate ALL autostart containers within the folder are started */
+  --folder-autostart-partial-icon: "\f144"; /* Indicates SOME autostart containers within the folder are started */
+  --folder-autostart-off-icon: "\f144"; /* Indicates NO autostart containers within the folder are started */
+  --folder-spin-started-icon: "\f110"; /* Spin icon temporarily shown when a folder is changing all containers from started to stopped */
+  --folder-spin-stopped-icon: "\f110"; /* Spin icon temporarily shown when a folder is changing all containers from started to stopped */
+
+  --container-started-icon: "\f04b"; /* Normal started icon - default is play triangle */
+  --container-stopped-icon: "\f04d"; /* Normal stopped icon - default is rounded square */
+  --container-autostart-started-icon: "\f144"; /* Indicates autostart container is started */
+  --container-autostart-stopped-icon: "\f28d"; /* Indicates autostart container is stopped */
+  --container-spin-started-icon: "\f110"; /* Spin icon temporarily shown when a container is changing from started to stopped */
+  --container-spin-stopped-icon: "\f110"; /* Spin icon temporarily shown when a container is changing from stopped to started */
+
+  /* STARTED/STOPPED ICON COLORS */
+  --folder-started-icon-c: var(--cscheme-interface-passed); /* Normal started icon - default is green */
+  --folder-stopped-icon-c: var(--cscheme-interface-alert); /* Normal stopped icon - default is red */
+  --folder-autostart-full-icon-c: var(--cscheme-interface-passed); /* Indicate ALL autostart containers within the folder are started */
+  --folder-autostart-partial-icon-c: var(--cscheme-interface-warn); /* Indicates SOME autostart containers within the folder are started */
+  --folder-autostart-off-icon-c: var(--cscheme-interface-alert); /* Indicates NO autostart containers within the folder are started */
+  --folder-spin-started-icon-c: var(--cscheme-interface-warn); /* Spin icon temporarily shown when a folder is changing all containers from started to stopped */
+  --folder-spin-stopped-icon-c: var(--cscheme-interface-attention); /* Spin icon temporarily shown when a folder is changing all containers from started to stopped */
+
+  --container-spin-started-icon-c: var(--cscheme-interface-warn); /* Spin icon temporarily shown when a container is changing from started to stopped */
+  --container-spin-stopped-icon-c: var(--cscheme-interface-attention); /* Spin icon temporarily shown when a container is changing from stopped to started */
+  --container-started-icon-c: var(--cscheme-interface-passed); /* Normal started icon - default is play triangle */
+  --container-stopped-icon-c: var(--cscheme-interface-alert); /* Normal stopped icon - default is rounded square */
+  --container-autostart-started-icon-c: var(--cscheme-interface-passed); /* Indicates autostart container is started */
+  --container-autostart-stopped-icon-c: var(--cscheme-interface-alert); /* Indicates autostart container is stopped */
+
+  /* STARTED/STOPPED ICON SIZES */
+  --folder-status-size: 16px; /* Compacted folder started/stopped icon */
+  --container-status-size: 15px; /* Normal container started/stopped icon */
+  --container-autostart-status-size: 16px; /* Autostart container started/stopped icon */
+
+  /* CONTAINER TOOL ICONS - WEBUI, CONSOLE, LOGS */
+  --container-tools-size: 14px;
+  --container-webui-icon: "\f0ac";
+  --container-webui-icon-c: var(--cscheme-tool-link);
+  --container-webui-iconhover-c: var(--cscheme-tool-linkhov);
+  --container-console-icon: "\f120";
+  --container-console-icon-c: var(--cscheme-tool-link);
+  --container-console-iconhover-c: var(--cscheme-tool-linkhov);
+  --container-logs-icon: "\f0c9";
+  --container-logs-icon-c: var(--cscheme-tool-link);
+  --container-logs-iconhover-c: var(--cscheme-tool-linkhov);
+}
