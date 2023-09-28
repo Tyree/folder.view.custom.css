@@ -79,7 +79,7 @@ like https://htmlcolorcodes.com/color-picker/ */
   --folderbox-height: calc(var(--folder-logo-size) + (var(--folderbox-padding-topbottom) * 2) + (var(--folderbox-brdr-width-topbottom) * 2));
   --folderbox-padding-topbottom: 7px;
   --folderbox-padding-leftright: 10px;
-  --folderbox-brdr-c: var(--cscheme-foreline1);
+  --folderbox-brdr-c: var(--cscheme-foreline3);
   --folderbox-brdr-width-topbottom: 1px;
   --folderbox-brdr-width-left: 8px;
   --folderbox-brdr-width-right: 3px;
@@ -93,7 +93,7 @@ like https://htmlcolorcodes.com/color-picker/ */
 
   /* Folder/Container Preview Row */
   --folderpreview-height: calc(var(--container-logo-size) + (var(--container-logo-mrgtopbottom) * 2) + (var(--folderpreview-brdr-width-topbottom) * 2));
-  --folderpreview-brdr-c: var(--cscheme-foreline1);
+  --folderpreview-brdr-c: var(--cscheme-foreline3);
   --folderpreview-brdr-width-topbottom: 1px;
   --folderpreview-brdr-width-left: 8px;
   --folderpreview-brdr-width-right: 1px;
