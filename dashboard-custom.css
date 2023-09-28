@@ -17,63 +17,64 @@ like https://htmlcolorcodes.com/color-picker/ */
 :root {
   /* COLOR SCHEME - BASED ON UNRAID STOCK BLACK THEME */
   /* Change these colors to your preferences */
-  --dash-accent1: #ff8c2f;
-  --dash-accent2: #3e6dba;
-  --dash-accent3: #4f8a10;
-  --dash-folder-update: #3e6dba;
-  --dash-exfolder-update: #ff8c2f;
-  --dash-cont-update: #ff8c2f;
-  --dash-foreline1: #f2f2f2;
-  --dash-foreline3: #a1a1a1;
-  --dash-foreline3: #787878;
-  --dash-foreline4: #444444;
-  --dash-backfill1: #262626;
-  --dash-backfill2: #212121;
-  --dash-backfill3: #1c1b1b;
-  --dash-backfill4: #191818;
-  --dash-interface-alert: #f0000c;
-  --dash-interface-warn: #ff8c2f;
-  --dash-interface-attention: #d6ff20;
-  --dash-interface-good: #4caf50;
+  --cscheme-accent1: #ff8c2f;
+  --cscheme-accent2: #3e6dba;
+  --cscheme-accent3: #4f8a10;
+  --cscheme-folder-update: #3e6dba;
+  --cscheme-exfolder-update: #2cabe3;
+  --cscheme-cont-update: #ff8c2f;
+  --cscheme-foreline1: #f2f2f2;
+  --cscheme-foreline3: #a1a1a1;
+  --cscheme-foreline3: #787878;
+  --cscheme-foreline4: #444444;
+  --cscheme-backfill1: #262626;
+  --cscheme-backfill2: #212121;
+  --cscheme-backfill3: #1c1b1b;
+  --cscheme-backfill4: #191818;
+  --cscheme-interface-alert: #f0000c;
+  --cscheme-interface-warn: #ff8c2f;
+  --cscheme-interface-attention: #d6ff20;
+  --cscheme-interface-good: #4caf50;
+  --cscheme-interface-accent: #2cabe3;
 
   /* COLOR SCHEME - BASED ON UNRAID STOCK WHITE THEME */
-  /* --dash-accent1: #ff8c2f;
-  --dash-accent2: #3e6dba;
-  --dash-accent3: #4f8a10;
-  --dash-accent1: #ff8c2f;
-  --dash-accent2: #3e6dba;
-  --dash-foreline1: #1c1b1b;
-  --dash-foreline2: #4e4e4e;
-  --dash-foreline3: #a8a8a8;
-  --dash-foreline4: #dcdcdc;
-  --dash-backfill1: #e8e8e8;
-  --dash-backfill2: #f2f2f2;
-  --dash-backfill3: #f5f5f5;
-  --dash-backfill4: #ffffff;
-  --dash-interface-alert: #f0000c;
-  --dash-interface-warn: #ff8c2f;
-  --dash-interface-attention: #d6ff20;
-  --dash-interface-good: #4caf50; */
+  /* --cscheme-accent1: #ff8c2f;
+  --cscheme-accent2: #3e6dba;
+  --cscheme-accent3: #4f8a10;
+  --cscheme-accent1: #ff8c2f;
+  --cscheme-accent2: #3e6dba;
+  --cscheme-foreline1: #1c1b1b;
+  --cscheme-foreline2: #4e4e4e;
+  --cscheme-foreline3: #a8a8a8;
+  --cscheme-foreline4: #dcdcdc;
+  --cscheme-backfill1: #e8e8e8;
+  --cscheme-backfill2: #f2f2f2;
+  --cscheme-backfill3: #f5f5f5;
+  --cscheme-backfill4: #ffffff;
+  --cscheme-interface-alert: #f0000c;
+  --cscheme-interface-warn: #ff8c2f;
+  --cscheme-interface-attention: #d6ff20;
+  --cscheme-interface-good: #4caf50; */
 
   /* Compressed folder name text size and weight */
   --folder-name-text-size: 1.4rem;
   --folder-name-text-weight: bold;
   /* Folder with update text */
-  --folder-name-update-text-c: var(--dash-folder-update);
+  --folder-name-update-text-c: var(--cscheme-folder-update);
 
   /* Default container name text size and weight */
   --container-name-text-size: 1.3rem;
   --container-name-text-weight: normal;
   /* Container with update text */
-  --container-name-update-text-c: var(--dash-cont-update);
+  --container-name-update-text-c: var(--cscheme-cont-update);
 
   /* EXPANDED FOLDER HEADER AND "DRAWER" */
-  --exfold-header-brdr-c: var(--dash-foreline4); /* Border color for the header */
-  --exfold-header-bg-c: var(--dash-foreline4); /* Background color for the header */
-  --exfold-drawer-brdr-c: var(--dash-foreline4); /* Border color for the container "drawer" */
-  --exfold-drawer-bg-c: var(--dash-backfill3); /* Background color for the container "drawer" */
-  --exfold-foldername-text-c: var(--dash-foreline1); /* Color for the folder name */
-  --exfold-foldername-updatetext-c: var(--dash-exfolder-update); /* Color for the folder name with an update */
+  --exfold-header-brdr-c: var(--cscheme-foreline4); /* Border color for the header */
+  --exfold-header-bg-c: var(--cscheme-foreline4); /* Background color for the header */
+  --exfold-drawer-brdr-c: var(--cscheme-foreline4); /* Border color for the container "drawer" */
+  --exfold-drawer-bg-c: var(--cscheme-backfill3); /* Background color for the container "drawer" */
+  --exfold-foldername-text-c: var(--cscheme-foreline1); /* Color for the folder name */
+  --exfold-foldername-updatetext-c: var(--cscheme-exfolder-update); /* Color for the folder name with an update */
   --exfold-foldername-text-size: 2rem; /* Size for the folder name */
   --exfold-foldername-text-weight: bold; /* Weight for the folder name */
   --exfold-contname-text-c: inherit; /* Color for the container name when inside a folder */
@@ -95,18 +96,18 @@ like https://htmlcolorcodes.com/color-picker/ */
   --container-spin-stopped-icon: "\f110"; /* Spin icon temporarily shown when a container is changing from stopped to started */
 
   /* STARTED/STOPPED ICON COLORS */
-  --folder-started-icon-c: var(--dash-interface-good); /* Normal started icon - default is green */
-  --folder-stopped-icon-c: var(--dash-interface-alert); /* Normal stopped icon - default is red */
-  --folder-autostart-full-icon-c: var(--dash-interface-good); /* Indicate ALL autostart containers within the folder are started */
-  --folder-autostart-partial-icon-c: var(--dash-interface-warn); /* Indicates SOME autostart containers within the folder are started */
-  --folder-autostart-off-icon-c: var(--dash-interface-alert); /* Indicates NO autostart containers within the folder are started */
+  --folder-started-icon-c: var(--cscheme-interface-good); /* Normal started icon - default is green */
+  --folder-stopped-icon-c: var(--cscheme-interface-alert); /* Normal stopped icon - default is red */
+  --folder-autostart-full-icon-c: var(--cscheme-interface-good); /* Indicate ALL autostart containers within the folder are started */
+  --folder-autostart-partial-icon-c: var(--cscheme-interface-warn); /* Indicates SOME autostart containers within the folder are started */
+  --folder-autostart-off-icon-c: var(--cscheme-interface-alert); /* Indicates NO autostart containers within the folder are started */
 
-  --container-spin-started-icon-c: var(--dash-interface-warn); /* Spin icon temporarily shown when a container is changing from started to stopped */
-  --container-spin-stopped-icon-c: var(--dash-interface-attention); /* Spin icon temporarily shown when a container is changing from stopped to started */
-  --container-started-icon-c: var(--dash-interface-good); /* Normal started icon - default is play triangle */
-  --container-stopped-icon-c: var(--dash-interface-alert); /* Normal stopped icon - default is rounded square */
-  --container-autostart-started-icon-c: var(--dash-interface-good); /* Indicates autostart container is started */
-  --container-autostart-stopped-icon-c: var(--dash-interface-alert); /* Indicates autostart container is stopped */
+  --container-spin-started-icon-c: var(--cscheme-interface-warn); /* Spin icon temporarily shown when a container is changing from started to stopped */
+  --container-spin-stopped-icon-c: var(--cscheme-interface-attention); /* Spin icon temporarily shown when a container is changing from stopped to started */
+  --container-started-icon-c: var(--cscheme-interface-good); /* Normal started icon - default is play triangle */
+  --container-stopped-icon-c: var(--cscheme-interface-alert); /* Normal stopped icon - default is rounded square */
+  --container-autostart-started-icon-c: var(--cscheme-interface-good); /* Indicates autostart container is started */
+  --container-autostart-stopped-icon-c: var(--cscheme-interface-alert); /* Indicates autostart container is stopped */
 
   /* STARTED/STOPPED ICON SIZES */
   --folder-status-size: 16px; /* Compacted folder started/stopped icon */
