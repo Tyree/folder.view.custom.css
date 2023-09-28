@@ -58,3 +58,15 @@
 #docker_containers .usage-disk + br {
   display: none;
 }
+
+/* Autostart column */
+#docker_containers th.nine {
+  width: 90px;
+  padding: 0;
+}
+
+/* Uptime column */
+#docker_containers th.five {
+  width: 0;
+  padding: 0;
+}
