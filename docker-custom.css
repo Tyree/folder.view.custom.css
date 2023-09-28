@@ -27,57 +27,59 @@ like https://htmlcolorcodes.com/color-picker/ */
 :root {
   /* COLOR SCHEME - BASED ON UNRAID STOCK BLACK THEME */
   /* Change these colors to your preferences */
-  --docker-accent1: #ff8c2f;
-  --docker-accent2: #3e6dba;
-  --docker-accent3: #4f8a10;
-  --docker-link: #486dba;
-  --docker-linkhov: #2cabe3;
-  --docker-tool-link: #616161;
-  --docker-tool-linkhov: #2cabe3;
-  --docker-cont-update: #ff8c2f;
-  --docker-cont-updatehov: #ffc04c;
-  --docker-foreline1: #f2f2f2;
-  --docker-foreline2: #a1a1a1;
-  --docker-foreline3: #787878;
-  --docker-foreline4: #444444;
-  --docker-backfill1: #262626;
-  --docker-backfill2: #212121;
-  --docker-backfill3: #1c1b1b;
-  --docker-backfill4: #191818;
-  --docker-interface-alert: #f0000c;
-  --docker-interface-warn: #ff8c2f;
-  --docker-interface-attention: #d6ff20;
-  --docker-interface-good: #4caf50;
+  --cscheme-accent1: #ff8c2f;
+  --cscheme-accent2: #3e6dba;
+  --cscheme-accent3: #4f8a10;
+  --cscheme-link: #486dba;
+  --cscheme-linkhov: #2cabe3;
+  --cscheme-tool-link: #616161;
+  --cscheme-tool-linkhov: #2cabe3;
+  --cscheme-cont-update: #ff8c2f;
+  --cscheme-cont-updatehov: #ffc04c;
+  --cscheme-foreline1: #f2f2f2;
+  --cscheme-foreline2: #a1a1a1;
+  --cscheme-foreline3: #787878;
+  --cscheme-foreline4: #444444;
+  --cscheme-backfill1: #262626;
+  --cscheme-backfill2: #212121;
+  --cscheme-backfill3: #1c1b1b;
+  --cscheme-backfill4: #191818;
+  --cscheme-interface-alert: #f0000c;
+  --cscheme-interface-warn: #ff8c2f;
+  --cscheme-interface-attention: #d6ff20;
+  --cscheme-interface-good: #4caf50;
+  --cscheme-interface-accent: #2cabe3;
 
   /* COLOR SCHEME - BASED ON UNRAID STOCK WHITE THEME */
-  /* --docker-accent1: #ff8c2f;
-  --docker-accent2: #3e6dba;
-  --docker-accent3: #4f8a10;
-  --docker-link: #486dba;
-  --docker-linkhov: #2cabe3;
-  --docker-foreline1: #1c1b1b;
-  --docker-foreline2: #4e4e4e;
-  --docker-foreline3: #a8a8a8;
-  --docker-foreline4: #dcdcdc;
-  --docker-backfill1: #e8e8e8;
-  --docker-backfill2: #f2f2f2;
-  --docker-backfill3: #f5f5f5;
-  --docker-backfill4: #ffffff;
-  --docker-interface-alert: #f0000c;
-  --docker-interface-warn: #ff8c2f;
-  --docker-interface-attention: #d6ff20;
-  --docker-interface-good: #4caf50; */
+  /* --cscheme-accent1: #ff8c2f;
+  --cscheme-accent2: #3e6dba;
+  --cscheme-accent3: #4f8a10;
+  --cscheme-link: #486dba;
+  --cscheme-linkhov: #2cabe3;
+  --cscheme-foreline1: #1c1b1b;
+  --cscheme-foreline2: #4e4e4e;
+  --cscheme-foreline3: #a8a8a8;
+  --cscheme-foreline4: #dcdcdc;
+  --cscheme-backfill1: #e8e8e8;
+  --cscheme-backfill2: #f2f2f2;
+  --cscheme-backfill3: #f5f5f5;
+  --cscheme-backfill4: #ffffff;
+  --cscheme-interface-alert: #f0000c;
+  --cscheme-interface-warn: #ff8c2f;
+  --cscheme-interface-attention: #d6ff20;
+  --cscheme-interface-good: #4caf50; */
 
   /* Passed/Warning/Green/Orange Text */
-  --warn-orange-text-c: var(--docker-accent1);
-  --pass-green-text-c: var(--docker-accent3);
+  --warn-orange-text-c: var(--cscheme-interface-warn);
+  --pass-green-text-c: var(--cscheme-interface-good);
+  --accent-blue-text-c: var(--cscheme-interface-accent);
 
   /* Folder Name/Logo Area */
   --folderbox-width: 250px; /* May need to be increased if --folder-name-text-size is too big */
   --folderbox-height: calc(var(--folder-logo-size) + (var(--folderbox-padding-topbottom) * 2) + (var(--folderbox-brdr-width-topbottom) * 2));
   --folderbox-padding-topbottom: 7px;
   --folderbox-padding-leftright: 10px;
-  --folderbox-brdr-c: var(--docker-foreline1);
+  --folderbox-brdr-c: var(--cscheme-foreline1);
   --folderbox-brdr-width-topbottom: 1px;
   --folderbox-brdr-width-left: 8px;
   --folderbox-brdr-width-right: 3px;
@@ -91,7 +93,7 @@ like https://htmlcolorcodes.com/color-picker/ */
 
   /* Folder/Container Preview Row */
   --folderpreview-height: calc(var(--container-logo-size) + (var(--container-logo-mrgtopbottom) * 2) + (var(--folderpreview-brdr-width-topbottom) * 2));
-  --folderpreview-brdr-c: var(--docker-foreline1);
+  --folderpreview-brdr-c: var(--cscheme-foreline1);
   --folderpreview-brdr-width-topbottom: 1px;
   --folderpreview-brdr-width-left: 8px;
   --folderpreview-brdr-width-right: 1px;
@@ -101,8 +103,8 @@ like https://htmlcolorcodes.com/color-picker/ */
   --container-logo-mrgtopbottom: 7px;
   --container-name-text-size: 1.3rem;
   --container-name-text-weight: bold;
-  --container-name-update-text-c: var(--docker-cont-update);
-  --container-name-update-texthov-c: var(--docker-cont-updatehov);
+  --container-name-update-text-c: var(--cscheme-cont-update);
+  --container-name-update-texthov-c: var(--cscheme-cont-updatehov);
   --container-startstop-text-size: 0; /* default 1.1rem */
   --container-startstop-text-mrgleft: 0; /* default 7px */
 
@@ -123,20 +125,20 @@ like https://htmlcolorcodes.com/color-picker/ */
   --container-spin-stopped-icon: "\f110"; /* Spin icon temporarily shown when a container is changing from stopped to started */
 
   /* STARTED/STOPPED ICON COLORS */
-  --folder-started-icon-c: var(--docker-interface-good); /* Normal started icon - default is green */
-  --folder-stopped-icon-c: var(--docker-interface-alert); /* Normal stopped icon - default is red */
-  --folder-autostart-full-icon-c: var(--docker-interface-good); /* Indicate ALL autostart containers within the folder are started */
-  --folder-autostart-partial-icon-c: var(--docker-interface-warn); /* Indicates SOME autostart containers within the folder are started */
-  --folder-autostart-off-icon-c: var(--docker-interface-alert); /* Indicates NO autostart containers within the folder are started */
-  --folder-spin-started-icon-c: var(--docker-interface-warn); /* Spin icon temporarily shown when a folder is changing all containers from started to stopped */
-  --folder-spin-stopped-icon-c: var(--docker-interface-attention); /* Spin icon temporarily shown when a folder is changing all containers from started to stopped */
+  --folder-started-icon-c: var(--cscheme-interface-good); /* Normal started icon - default is green */
+  --folder-stopped-icon-c: var(--cscheme-interface-alert); /* Normal stopped icon - default is red */
+  --folder-autostart-full-icon-c: var(--cscheme-interface-good); /* Indicate ALL autostart containers within the folder are started */
+  --folder-autostart-partial-icon-c: var(--cscheme-interface-warn); /* Indicates SOME autostart containers within the folder are started */
+  --folder-autostart-off-icon-c: var(--cscheme-interface-alert); /* Indicates NO autostart containers within the folder are started */
+  --folder-spin-started-icon-c: var(--cscheme-interface-warn); /* Spin icon temporarily shown when a folder is changing all containers from started to stopped */
+  --folder-spin-stopped-icon-c: var(--cscheme-interface-attention); /* Spin icon temporarily shown when a folder is changing all containers from started to stopped */
 
-  --container-spin-started-icon-c: var(--docker-interface-warn); /* Spin icon temporarily shown when a container is changing from started to stopped */
-  --container-spin-stopped-icon-c: var(--docker-interface-attention); /* Spin icon temporarily shown when a container is changing from stopped to started */
-  --container-started-icon-c: var(--docker-interface-good); /* Normal started icon - default is play triangle */
-  --container-stopped-icon-c: var(--docker-interface-alert); /* Normal stopped icon - default is rounded square */
-  --container-autostart-started-icon-c: var(--docker-interface-good); /* Indicates autostart container is started */
-  --container-autostart-stopped-icon-c: var(--docker-interface-alert); /* Indicates autostart container is stopped */
+  --container-spin-started-icon-c: var(--cscheme-interface-warn); /* Spin icon temporarily shown when a container is changing from started to stopped */
+  --container-spin-stopped-icon-c: var(--cscheme-interface-attention); /* Spin icon temporarily shown when a container is changing from stopped to started */
+  --container-started-icon-c: var(--cscheme-interface-good); /* Normal started icon - default is play triangle */
+  --container-stopped-icon-c: var(--cscheme-interface-alert); /* Normal stopped icon - default is rounded square */
+  --container-autostart-started-icon-c: var(--cscheme-interface-good); /* Indicates autostart container is started */
+  --container-autostart-stopped-icon-c: var(--cscheme-interface-alert); /* Indicates autostart container is stopped */
 
   /* STARTED/STOPPED ICON SIZES */
   --folder-status-size: 16px; /* Compacted folder started/stopped icon */
@@ -146,14 +148,14 @@ like https://htmlcolorcodes.com/color-picker/ */
   /* CONTAINER TOOL ICONS - WEBUI, TERMINAL, LOGS */
   --container-tools-size: 14px;
   --container-webui-icon: "\f0ac";
-  --container-webui-icon-c: var(--docker-tool-link);
-  --container-webui-iconhover-c: var(--docker-tool-linkhov);
+  --container-webui-icon-c: var(--cscheme-tool-link);
+  --container-webui-iconhover-c: var(--cscheme-tool-linkhov);
   --container-console-icon: "\f120";
-  --container-console-icon-c: var(--docker-tool-link);
-  --container-console-iconhover-c: var(--docker-tool-linkhov);
+  --container-console-icon-c: var(--cscheme-tool-link);
+  --container-console-iconhover-c: var(--cscheme-tool-linkhov);
   --container-logs-icon: "\f0c9";
-  --container-logs-icon-c: var(--docker-tool-link);
-  --container-logs-iconhover-c: var(--docker-tool-linkhov);
+  --container-logs-icon-c: var(--cscheme-tool-link);
+  --container-logs-iconhover-c: var(--cscheme-tool-linkhov);
 }
 /*************************************************/
 /* END OF VARIABLES */
@@ -179,11 +181,11 @@ like https://htmlcolorcodes.com/color-picker/ */
 #docker_containers :not(.folder-element-custom-btn) > a,
 #docker_containers :not(.folder-element-custom-btn) > a:link,
 #docker_containers :not(.folder-element-custom-btn) > a:visited {
-  color: var(--docker-link);
+  color: var(--cscheme-link);
   text-decoration: none;
 }
 #docker_containers :not(.folder-element-custom-btn) > a:hover {
-  color: var(--docker-linkhov);
+  color: var(--cscheme-linkhov);
   text-decoration: none;
 }
 
@@ -201,6 +203,7 @@ like https://htmlcolorcodes.com/color-picker/ */
   font-weight: bold;
 }
 
+/* Warning and Passed Text */
 #docker_containers .orange-text,
 #docker_containers .warning {
   color: var(--warn-orange-text-c);
@@ -209,6 +212,19 @@ like https://htmlcolorcodes.com/color-picker/ */
 #docker_containers .green-text,
 #docker_containers .passed {
   color: var(--pass-green-text-c);
+}
+#docker_containers .blue-text {
+  color: var(--accent-blue-text-c);
+}
+
+/* Autostart switches */
+#docker_containers .switch-button-background.checked,
+.preview-status .switch-button-background.checked {
+  background-color: var(--cscheme-interface-good);
+}
+#docker_containers .switch-button-label.on,
+.preview-status .switch-button-label.on {
+  color: var(--cscheme-interface-good);
 }
 
 /*************************************************/
@@ -408,39 +424,39 @@ button.folder-dropwdown {
 #docker_containers .folder-cpu {
   font-size: 18px;
   font-weight: bold;
-  color: var(--docker-accent2);
+  color: var(--cscheme-accent2);
 }
 /* Text for the container CPU usage */
 #docker_containers span[class*="cpu-"]:not(.folder-cpu) {
   font-size: 14px;
   font-weight: normal;
-  color: var(--docker-accent2);
+  color: var(--cscheme-accent2);
 }
 
 /* Text for the folder's Memory usage */
 #docker_containers .folder-mem {
   font-size: 11px;
   font-weight: bold;
-  color: var(--docker-accent2);
+  color: var(--cscheme-accent2);
 }
 /* Text for the container Memory usage */
 #docker_containers span[class*="mem-"]:not(.folder-mem) {
   font-size: 11px;
   font-weight: bold;
-  color: var(--docker-accent2);
+  color: var(--cscheme-accent2);
 }
 
 /* CPU Meter */
 #docker_containers .usage-disk {
   height: 8px;
   margin: 0;
-  background: var(--docker-foreline4);
-  background-color: var(--docker-foreline4);
+  background: var(--cscheme-foreline4);
+  background-color: var(--cscheme-foreline4);
   margin-bottom: 4px;
 }
 #docker_containers .usage-disk > span:first-child {
   height: 8px;
-  background-color: var(--docker-accent3);
+  background-color: var(--cscheme-accent3);
 }
 #docker_containers .usage-disk span:nth-child(2) {
   display: inline-block;
@@ -453,9 +469,9 @@ button.folder-dropwdown {
 /* Container ID and repo */
 #docker_containers .folder-element .ct-name .advanced {
   padding: 5px 10px;
-  border: 1px solid var(--docker-foreline4);
+  border: 1px solid var(--cscheme-foreline4);
   border-radius: 5px;
-  background-color: var(--docker-backfill4);
+  background-color: var(--cscheme-backfill4);
 }
 
 /* Uptime column */
@@ -568,92 +584,87 @@ denoting presence of autostart containers */
 /*************************************************/
 /* VARIABLES */
 :root {
-  /* COLOR SCHEME - BASED ON UNRAID STOCK BLACK THEME */
-  /* Change these colors to your preferences */
-  --advc-cscheme-accent1: #ff8c2f;
-  --advc-cscheme-accent2: #3e6dba;
-  --advc-cscheme-foreline1: #f2f2f2;
-  --advc-cscheme-foreline2: #a1a1a1;
-  --advc-cscheme-foreline3: #787878;
-  --advc-cscheme-foreline4: #444444;
-  --advc-cscheme-backfill1: #262626;
-  --advc-cscheme-backfill2: #212121;
-  --advc-cscheme-backfill3: #1c1b1b;
-  --advc-cscheme-backfill4: #191818;
-
-  /* COLOR SCHEME - BASED ON UNRAID STOCK WHITE THEME */
-  /* --advc-cscheme-accent1: #ff8c2f;
-  --advc-cscheme-accent2: #3e6dba;
-  --advc-cscheme-foreline1: #1c1b1b;
-  --advc-cscheme-foreline2: #4e4e4e;
-  --advc-cscheme-foreline3: #a8a8a8;
-  --advc-cscheme-foreline4: #dcdcdc;
-  --advc-cscheme-backfill1: #e8e8e8;
-  --advc-cscheme-backfill2: #f2f2f2;
-  --advc-cscheme-backfill3: #f5f5f5;
-  --advc-cscheme-backfill4: #ffffff; */
-
   /* Outer box for the context window */
-  --advc-tooltip-brdr-c: var(--advc-cscheme-backfill3);
-  --advc-tooltip-brdr-accent-c: var(--advc-cscheme-accent1);
-  --advc-tooltip-text-c: var(--advc-cscheme-foreline1);
-  --advc-tooltip-bg-c: var(--advc-cscheme-backfill1);
+  --advc-tooltip-brdr-c: var(--cscheme-backfill3);
+  --advc-tooltip-brdr-accent-c: var(--cscheme-accent1);
+  --advc-tooltip-text-c: var(--cscheme-foreline1);
+  --advc-tooltip-bg-c: var(--cscheme-backfill1);
 
   /* Top row with container name and CPU usage */
-  --advc-headrow-bg-c: var(--advc-cscheme-backfill2);
-  --advc-headrow-brdr-c: var(--advc-cscheme-backfill3);
+  --advc-headrow-bg-c: var(--cscheme-backfill2);
+  --advc-headrow-brdr-c: var(--cscheme-backfill3);
 
   /* Top container name and stats areas */
-  --advc-contname-area-brdr-rt-c: var(--advc-cscheme-backfill4);
-  --advc-contstat-area-bg-c: var(--advc-cscheme-backfill3);
-  --advc-contstat-hdr-bg-c: var(--advc-cscheme-backfill1);
-  --advc-contstat-cpumeter-bg-c: var(--advc-cscheme-foreline2);
-  --advc-contstat-cpumeter-text-c: var(--advc-cscheme-accent1);
-  --advc-contstat-cpumeter-meter-c: var(--advc-cscheme-accent1);
+  --advc-contname-area-brdr-rt-c: var(--cscheme-backfill4);
+  --advc-contstat-area-bg-c: var(--cscheme-backfill3);
+  --advc-contstat-hdr-bg-c: var(--cscheme-backfill1);
+  --advc-contstat-cpumeter-bg-c: var(--cscheme-foreline2);
+  --advc-contstat-cpumeter-text-c: var(--cscheme-accent1);
+  --advc-contstat-cpumeter-meter-c: var(--cscheme-accent1);
 
   /* Action buttons down the left side */
-  --advc-contbtns-brdr-rt-c: var(--advc-cscheme-backfill4);
-  --advc-contbtns-bg-img: linear-gradient(to bottom, var(--advc-cscheme-backfill2), var(--advc-cscheme-backfill3));
-  --advc-contbtns-text-c: var(--advc-cscheme-foreline2);
-  --advc-contbtns-texthover-c: var(--advc-cscheme-foreline1);
+  --advc-contbtns-brdr-rt-c: var(--cscheme-backfill4);
+  --advc-contbtns-bg-img: linear-gradient(to bottom, var(--cscheme-backfill2), var(--cscheme-backfill3));
+  --advc-contbtns-text-c: var(--cscheme-foreline2);
+  --advc-contbtns-texthover-c: var(--cscheme-foreline1);
 
   /* Container ID and Repo Box */
-  --advc-continfo-bg-c: var(--advc-cscheme-backfill2);
-  --advc-continfo-brdr-c: var(--advc-cscheme-backfill3);
-  --advc-continfo-text-c: var(--advc-cscheme-foreline2);
+  --advc-continfo-bg-c: var(--cscheme-backfill2);
+  --advc-continfo-brdr-c: var(--cscheme-backfill3);
+  --advc-continfo-text-c: var(--cscheme-foreline2);
 
   /* Tabs along the top of the CPU/Mem Graph, Port Mappings, and Vol Mappings */
-  --advc-grapharea-tabs-deftext-c: var(--advc-cscheme-foreline2);
-  --advc-grapharea-tabs-deftexthover-c: var(--advc-cscheme-foreline1);
-  --advc-grapharea-tabs-activetext-c: var(--advc-cscheme-foreline1);
-  --advc-grapharea-tabs-activetexthover-c: var(--advc-cscheme-foreline1);
-  --advc-grapharea-tabs-default-bg-c: var(--advc-cscheme-backfill2);
-  --advc-grapharea-tabs-active-bg-c: var(--advc-cscheme-accent1);
-  --advc-grapharea-tabs-defhover-bg-c: var(--advc-cscheme-backfill1);
-  --advc-grapharea-tabs-acthover-bg-c: var(--advc-cscheme-accent1);
-  --advc-grapharea-tabs-default-brdr-c: var(--advc-cscheme-backfill2);
-  --advc-grapharea-tabs-active-brdr-c: var(--advc-cscheme-backfill2);
-  --advc-grapharea-tabs-defhover-brdr-c: var(--advc-cscheme-accent1);
-  --advc-grapharea-tabs-acthover-brdr-c: var(--advc-cscheme-backfill2);
+  --advc-grapharea-tabs-deftext-c: var(--cscheme-foreline2);
+  --advc-grapharea-tabs-deftexthover-c: var(--cscheme-foreline1);
+  --advc-grapharea-tabs-activetext-c: var(--cscheme-foreline1);
+  --advc-grapharea-tabs-activetexthover-c: var(--cscheme-foreline1);
+  --advc-grapharea-tabs-default-bg-c: var(--cscheme-backfill2);
+  --advc-grapharea-tabs-active-bg-c: var(--cscheme-accent1);
+  --advc-grapharea-tabs-defhover-bg-c: var(--cscheme-backfill1);
+  --advc-grapharea-tabs-acthover-bg-c: var(--cscheme-accent1);
+  --advc-grapharea-tabs-default-brdr-c: var(--cscheme-backfill2);
+  --advc-grapharea-tabs-active-brdr-c: var(--cscheme-backfill2);
+  --advc-grapharea-tabs-defhover-brdr-c: var(--cscheme-accent1);
+  --advc-grapharea-tabs-acthover-brdr-c: var(--cscheme-backfill2);
 
   /* Top border for the Streaming CPU/Mem Graph Area */
-  --advc-grapharea-brdr-top-c: var(--advc-cscheme-accent1);
-  --advc-grapharea-brdr-c: var(--advc-cscheme-backfill3);
+  --advc-grapharea-brdr-top-c: var(--cscheme-accent1);
+  --advc-grapharea-brdr-c: var(--cscheme-backfill3);
 
   /* Streaming CPU/Mem Graph Lines */
-  --folder-view-graph-cpu: var(--advc-cscheme-accent1);
-  --folder-view-graph-mem: var(--advc-cscheme-accent2);
+  --folder-view-graph-cpu: var(--cscheme-accent1);
+  --folder-view-graph-mem: var(--cscheme-accent2);
 }
 /*************************************************/
 /* END OF VARIABLES */
 /*************************************************/
+
+/* Apply border-box to all elements inside the context menu */
+.preview-outbox,
+.preview-outbox * {
+  box-sizing: border-box;
+}
+
+/* Warning and Passed Text */
+.preview-outbox .orange-text,
+.preview-outbox .warning {
+  color: var(--warn-orange-text-c);
+}
+.preview-outbox .green,
+.preview-outbox .green-text,
+.preview-outbox .passed {
+  color: var(--pass-green-text-c);
+}
+.preview-outbox .blue-text {
+  color: var(--accent-blue-text-c);
+}
 
 /* Outer box of the context window */
 .tooltipster-sidetip.tooltipster-bottom .tooltipster-box,
 .tooltipster-sidetip.tooltipster-top .tooltipster-box {
   border: 2px solid var(--advc-tooltip-brdr-c) !important;
   border-radius: 8px;
-  box-shadow: 1px 1px 10px 3px var(--advc-cscheme-backfill4);
+  box-shadow: 1px 1px 10px 3px var(--cscheme-backfill4);
 }
 .tooltipster-sidetip.tooltipster-bottom .tooltipster-box {
   border-top: 3px solid var(--advc-tooltip-brdr-accent-c) !important;
@@ -678,6 +689,7 @@ denoting presence of autostart containers */
 
 /* Container name box */
 .preview-outbox .preview-name {
+  padding-left: 10px;
   border-right: 1px solid var(--advc-contname-area-brdr-rt-c);
 }
 
@@ -702,14 +714,39 @@ denoting presence of autostart containers */
 }
 
 /* CPU usage meter */
+.preview-outbox .status-stats {
+  padding-right: 20px;
+}
+/* Text for the container CPU usage */
+.preview-outbox span[class*="cpu-"] {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--cscheme-accent2);
+}
 .preview-outbox .usage-disk.mm {
-  height: 6px;
+  height: 10px;
+  margin-bottom: 10px;
+  margin-right: 0;
   background: var(--advc-contstat-cpumeter-bg-c);
   color: var(--advc-contstat-cpumeter-text-c);
 }
 .preview-outbox .usage-disk.mm > span:first-child {
   background-color: var(--advc-contstat-cpumeter-meter-c);
-  height: 6px;
+  height: 10px;
+}
+.preview-outbox .usage-disk span:nth-child(2) {
+  display: inline-block;
+  height: 8px;
+}
+.preview-outbox .usage-disk + br {
+  display: none;
+}
+
+/* Text for the container Memory usage */
+.preview-outbox span[class*="mem-"] {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--cscheme-accent2);
 }
 
 .preview-outbox .action-info {
@@ -745,6 +782,9 @@ denoting presence of autostart containers */
 }
 
 /* Tabs/buttons at top of graph area */
+.preview-outbox ul.info-tabs {
+  height: 30px;
+}
 .preview-outbox .ui-state-default {
   background: var(--advc-grapharea-tabs-default-bg-c);
   border-color: var(--advc-grapharea-tabs-default-brdr-c);
@@ -791,6 +831,9 @@ denoting presence of autostart containers */
 /* End of: Tabs/buttons at top of graph area */
 
 /* Graph area */
+.preview-outbox div[id*="comb-grapth-"] {
+  height: 393px !important;
+}
 .preview-outbox div[id*="comb-grapth-"] canvas {
   padding: 2px;
   border: 1px solid var(--advc-grapharea-brdr-c);
@@ -800,8 +843,11 @@ denoting presence of autostart containers */
 /* Port Mappings and Volume Mappings areas */
 .preview-outbox .info-ports,
 .preview-outbox .info-volumes {
-  padding-top: 8px;
+  height: 393px !important;
+  overflow: auto;
+  padding: 8px;
   color: var(--text-hover) !important;
+  border: 1px solid var(--advc-grapharea-brdr-c) !important;
   border-top: 2px solid var(--advc-grapharea-brdr-top-c) !important;
   font-size: 1.5rem;
 }
