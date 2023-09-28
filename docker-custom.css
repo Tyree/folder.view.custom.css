@@ -351,6 +351,33 @@ button.folder-dropwdown {
   content: var(--container-logs-icon);
 }
 
+/* Autostart column */
+#docker_containers th.nine {
+  width: 110px;
+  padding: 0;
+}
+
+/*************************************************/
+/* EXPANDED FOLDER CONTAINER ROW */
+/*************************************************/
+/* Cell for container name */
+#docker_containers .folder-element .ct-name {
+  padding-right: 20px !important;
+}
+
+/* Container name text */
+#docker_containers tr.folder-element .appname {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Wait form on autostart containers */
+#docker_containers tr.folder-element td:nth-child(7) span:last-of-type {
+  float: none !important;
+  display: block;
+  margin-left: 10px;
+}
+
 /*************************************************/
 /* CONTAINER LOGO ICON HOVER EFFECTS */
 /*************************************************/
@@ -423,10 +450,12 @@ button.folder-dropwdown {
   display: none;
 }
 
-/* Autostart column */
-#docker_containers th.nine {
-  width: 90px;
-  padding: 0;
+/* Container ID and repo */
+#docker_containers .folder-element .ct-name .advanced {
+  padding: 5px 10px;
+  border: 1px solid var(--docker-foreline4);
+  border-radius: 5px;
+  background-color: var(--docker-backfill4);
 }
 
 /* Uptime column */
