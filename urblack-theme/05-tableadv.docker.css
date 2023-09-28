@@ -59,10 +59,12 @@
   display: none;
 }
 
-/* Autostart column */
-#docker_containers th.nine {
-  width: 90px;
-  padding: 0;
+/* Container ID and repo */
+#docker_containers .folder-element .ct-name .advanced {
+  padding: 5px 10px;
+  border: 1px solid var(--docker-foreline4);
+  border-radius: 5px;
+  background-color: var(--docker-backfill4);
 }
 
 /* Uptime column */
