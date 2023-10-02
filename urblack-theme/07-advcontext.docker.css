@@ -253,6 +253,7 @@
   height: 356px !important;
 }
 .preview-outbox div[id*="comb-grapth-"] canvas {
+  height: 356px !important;
   padding: 2px;
   border: 1px solid var(--advc-grapharea-brdr-c);
   border-top: 2px solid var(--advc-grapharea-brdr-top-c);

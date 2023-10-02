@@ -62,11 +62,11 @@ Disable for icons to be full color at all times */
 /* Autostart switches */
 #docker_containers .switch-button-background.checked,
 .preview-status .switch-button-background.checked {
-  background-color: var(--cscheme-interface-good);
+  background-color: var(--cscheme-interface-passed);
 }
 #docker_containers .switch-button-label.on,
 .preview-status .switch-button-label.on {
-  color: var(--cscheme-interface-good);
+  color: var(--cscheme-interface-passed);
 }
 
 /*************************************************/
