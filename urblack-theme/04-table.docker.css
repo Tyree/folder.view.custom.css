@@ -1,4 +1,16 @@
 /*************************************************/
+/* CONTAINER LOGO ICON HOVER EFFECTS - 
+Disable for icons to be full color at all times */
+/*************************************************/
+/* Desaturate docker container icons, saturate on hover */
+.folder-preview-wrapper img {
+  filter: saturate(0);
+}
+.folder-preview-wrapper:hover img {
+  filter: saturate(1);
+}
+
+/*************************************************/
 /* BASICS */
 /*************************************************/
 /* Apply border-box to all elements inside the docker table */
@@ -11,11 +23,11 @@
 #docker_containers :not(.folder-element-custom-btn) > a,
 #docker_containers :not(.folder-element-custom-btn) > a:link,
 #docker_containers :not(.folder-element-custom-btn) > a:visited {
-  color: var(--docker-link);
+  color: var(--cscheme-link);
   text-decoration: none;
 }
 #docker_containers :not(.folder-element-custom-btn) > a:hover {
-  color: var(--docker-linkhov);
+  color: var(--cscheme-linkhov);
   text-decoration: none;
 }
 
@@ -33,6 +45,7 @@
   font-weight: bold;
 }
 
+/* Warning and Passed Text */
 #docker_containers .orange-text,
 #docker_containers .warning {
   color: var(--warn-orange-text-c);
@@ -41,6 +54,19 @@
 #docker_containers .green-text,
 #docker_containers .passed {
   color: var(--pass-green-text-c);
+}
+#docker_containers .blue-text {
+  color: var(--accent-blue-text-c);
+}
+
+/* Autostart switches */
+#docker_containers .switch-button-background.checked,
+.preview-status .switch-button-background.checked {
+  background-color: var(--cscheme-interface-good);
+}
+#docker_containers .switch-button-label.on,
+.preview-status .switch-button-label.on {
+  color: var(--cscheme-interface-good);
 }
 
 /*************************************************/
@@ -121,6 +147,13 @@ button.folder-dropwdown {
 /*************************************************/
 /* CONTAINER IN PREVIEW ROW */
 /*************************************************/
+/* Outer wrapper around individual containers in preview */
+.folder-preview .folder-preview-wrapper {
+  float: none;
+  margin-left: var(--container-logo-mrgleft);
+  margin-top: var(--container-logo-mrgtopbottom);
+  height: auto;
+}
 /* Container image */
 .folder-preview-wrapper .outer img.img {
   width: var(--container-logo-size);
@@ -131,11 +164,6 @@ button.folder-dropwdown {
 .folder-preview-wrapper .appname {
   font-size: var(--container-name-text-size);
   font-weight: var(--container-name-text-weight);
-}
-/* Outer wrapper around individual containers in preview */
-.folder-preview .folder-preview-wrapper {
-  margin-top: var(--container-logo-mrgtopbottom);
-  height: auto;
 }
 /* Started/Stopped Text for Containers */
 .outer:not(.folder-outer) .state {
@@ -150,33 +178,24 @@ button.folder-dropwdown {
 }
 
 /*************************************************/
-/* EXPANDED FOLDER CONTAINER ROW */
+/* EXPANDED FOLDER AND NO FOLDER CONTAINER ROW */
 /*************************************************/
 /* Cell for container name */
-#docker_containers .folder-element .ct-name {
-  padding-right: 20px !important;
+#docker_containers .folder-element .ct-name,
+#docker_containers .ct-name:not(.folder-name) {
+  width: auto !important;
+  padding: 8px 20px 8px var(--container-nofold-namebox-padding-left) !important;
 }
 
 /* Container name text */
-#docker_containers tr.folder-element .appname {
+#docker_containers .inner:not(.folder-inner) .appname {
   font-size: 1.4rem;
   font-weight: bold;
 }
 
 /* Wait form on autostart containers */
-#docker_containers tr.folder-element td:nth-child(7) span:last-of-type {
+#docker_containers tr.sortable:not(.folder) td:nth-child(7) span:last-of-type {
   float: none !important;
   display: block;
   margin-left: 10px;
-}
-
-/*************************************************/
-/* CONTAINER LOGO ICON HOVER EFFECTS */
-/*************************************************/
-/* Desaturate docker container icons, saturate on hover */
-.folder-preview-wrapper img {
-  filter: saturate(0);
-}
-.folder-preview-wrapper:hover img {
-  filter: saturate(1);
 }

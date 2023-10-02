@@ -23,6 +23,7 @@ like https://htmlcolorcodes.com/color-picker/ */
   --cscheme-interface-warn: #ff8c2f;
   --cscheme-interface-attention: #d6ff20;
   --cscheme-interface-passed: #4caf50;
+  --cscheme-interface-accent: #2cabe3;
 
   --cscheme-link: #486dba; /* Text links within the docker table */
   --cscheme-linkhov: #2cabe3; /* Text links - hover */

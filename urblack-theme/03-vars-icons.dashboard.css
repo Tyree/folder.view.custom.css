@@ -29,17 +29,17 @@ like https://htmlcolorcodes.com/color-picker/ */
   --container-spin-stopped-icon: "\f110"; /* Spin icon temporarily shown when a container is changing from stopped to started */
 
   /* STARTED/STOPPED ICON COLORS */
-  --folder-started-icon-c: var(--cscheme-interface-passed); /* Normal started icon - default is green */
+  --folder-started-icon-c: var(--cscheme-interface-good); /* Normal started icon - default is green */
   --folder-stopped-icon-c: var(--cscheme-interface-alert); /* Normal stopped icon - default is red */
-  --folder-autostart-full-icon-c: var(--cscheme-interface-passed); /* Indicate ALL autostart containers within the folder are started */
+  --folder-autostart-full-icon-c: var(--cscheme-interface-good); /* Indicate ALL autostart containers within the folder are started */
   --folder-autostart-partial-icon-c: var(--cscheme-interface-warn); /* Indicates SOME autostart containers within the folder are started */
   --folder-autostart-off-icon-c: var(--cscheme-interface-alert); /* Indicates NO autostart containers within the folder are started */
 
   --container-spin-started-icon-c: var(--cscheme-interface-warn); /* Spin icon temporarily shown when a container is changing from started to stopped */
   --container-spin-stopped-icon-c: var(--cscheme-interface-attention); /* Spin icon temporarily shown when a container is changing from stopped to started */
-  --container-started-icon-c: var(--cscheme-interface-passed); /* Normal started icon - default is play triangle */
+  --container-started-icon-c: var(--cscheme-interface-good); /* Normal started icon - default is play triangle */
   --container-stopped-icon-c: var(--cscheme-interface-alert); /* Normal stopped icon - default is rounded square */
-  --container-autostart-started-icon-c: var(--cscheme-interface-passed); /* Indicates autostart container is started */
+  --container-autostart-started-icon-c: var(--cscheme-interface-good); /* Indicates autostart container is started */
   --container-autostart-stopped-icon-c: var(--cscheme-interface-alert); /* Indicates autostart container is stopped */
 
   /* STARTED/STOPPED ICON SIZES */

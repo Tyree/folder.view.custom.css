@@ -1,3 +1,15 @@
+/*************************************************/
+/* LOGO ICON HOVER EFFECTS - 
+Disable for icons to be full color at all times */
+/*************************************************/
+/* Desaturate docker/vm container and folder icons, saturate on hover */
+#docker_view .outer img {
+  filter: saturate(0);
+}
+#docker_view .outer:hover img {
+  filter: saturate(1);
+}
+
 /* Apply border-box to all elements inside the docker and vm panes */
 #docker_view *,
 #vm_view * {
@@ -50,8 +62,8 @@ the folders and containers to the same height of the icon */
   border-radius: 10px;
   border-width: 1px;
   border-style: solid;
-  border-color: var(--dash-exfold-drawer-brdr-c);
-  background-color: var(--dash-exfold-drawer-bg-c);
+  border-color: var(--exfold-drawer-brdr-c);
+  background-color: var(--exfold-drawer-bg-c);
 }
 #docker_view .folder-showcase-outer[expanded="true"]:not(:last-child) {
   margin-bottom: 20px; /* Only apply 20px margin if it's NOT the last element */
@@ -66,8 +78,8 @@ the folders and containers to the same height of the icon */
 
 /* Compressed Folder text */
 #docker_view .inner.folder-inner-docker {
-  font-size: var(--dash-folder-name-text-size);
-  font-weight: var(--dash-folder-name-text-weight);
+  font-size: var(--folder-name-text-size);
+  font-weight: var(--folder-name-text-weight);
 }
 #docker_view .inner.folder-inner-docker .blue-text {
   color: var(--folder-name-update-text-c); /* Folder with update */
@@ -75,28 +87,17 @@ the folders and containers to the same height of the icon */
 
 /* Container text */
 #docker_view .inner:not(.folder-inner-docker) {
-  font-size: var(--dash-container-name-text-size);
-  font-weight: var(--dash-container-name-text-weight);
+  font-size: var(--container-name-text-size);
+  font-weight: var(--container-name-text-weight);
 }
 #docker_view .inner:not(.folder-inner-docker) .blue-text {
-  color: var(--dash-container-name-update-text-c); /* Container with update */
+  color: var(--container-name-update-text-c); /* Container with update */
 }
 
 /* Hide the "started" and "stopped" text so that only
 the green arrow or red square shows on containers */
 #docker_view .outer:not(.folder-docker) .state {
   opacity: 0;
-}
-
-/*************************************************/
-/* LOGO ICON HOVER EFFECTS */
-/*************************************************/
-/* Desaturate docker/vm container and folder icons, saturate on hover */
-#docker_view .outer img {
-  filter: saturate(0);
-}
-#docker_view .outer:hover img {
-  filter: saturate(1);
 }
 
 /*************************************************/
@@ -112,8 +113,8 @@ the green arrow or red square shows on containers */
   display: block;
   float: none;
   padding: 8px;
-  border: 1px solid var(--dash-exfold-header-brdr-c);
-  background: var(--dash-exfold-header-bg-c);
+  border: 1px solid var(--exfold-header-brdr-c);
+  background: var(--exfold-header-bg-c);
   border-radius: 10px;
   margin: -1px -1px 20px -1px;
 }
@@ -134,19 +135,19 @@ height of the icon - builds on compressed styles */
 
 /* Font for the folder name */
 #docker_view .folder-showcase-outer[expanded="true"] .folder-appname-docker {
-  font-size: var(--dash-exfold-foldername-text-size);
-  font-weight: var(--dash-exfold-foldername-text-weight);
-  color: var(--dash-exfold-foldername-text-c);
+  font-size: var(--exfold-foldername-text-size);
+  font-weight: var(--exfold-foldername-text-weight);
+  color: var(--exfold-foldername-text-c);
 }
 #docker_view .folder-showcase-outer[expanded="true"] .folder-appname-docker.blue-text {
-  color: var(--dash-exfold-foldername-updatetext-c);
+  color: var(--exfold-foldername-updatetext-c);
 }
 
 /* Font for the container name inside a folder */
 #docker_view .folder-showcase-outer[expanded="true"] .inner:not(.folder-inner-docker) {
-  font-size: var(--dash-exfold-contname-text-size);
-  font-weight: var(--dash-exfold-contname-text-weight);
-  color: var(--dash-exfold-contname-text-c);
+  font-size: var(--exfold-contname-text-size);
+  font-weight: var(--exfold-contname-text-weight);
+  color: var(--exfold-contname-text-c);
 }
 
 /* Down arrow icon */

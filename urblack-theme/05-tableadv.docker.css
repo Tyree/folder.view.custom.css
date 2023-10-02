@@ -17,39 +17,39 @@
 #docker_containers .folder-cpu {
   font-size: 18px;
   font-weight: bold;
-  color: var(--docker-accent2);
+  color: var(--cscheme-accent2);
 }
 /* Text for the container CPU usage */
 #docker_containers span[class*="cpu-"]:not(.folder-cpu) {
   font-size: 14px;
   font-weight: normal;
-  color: var(--docker-accent2);
+  color: var(--cscheme-accent2);
 }
 
 /* Text for the folder's Memory usage */
 #docker_containers .folder-mem {
   font-size: 11px;
   font-weight: bold;
-  color: var(--docker-accent2);
+  color: var(--cscheme-accent2);
 }
 /* Text for the container Memory usage */
 #docker_containers span[class*="mem-"]:not(.folder-mem) {
   font-size: 11px;
   font-weight: bold;
-  color: var(--docker-accent2);
+  color: var(--cscheme-accent2);
 }
 
 /* CPU Meter */
 #docker_containers .usage-disk {
   height: 8px;
   margin: 0;
-  background: var(--docker-foreline4);
-  background-color: var(--docker-foreline4);
+  background: var(--cscheme-foreline4);
+  background-color: var(--cscheme-foreline4);
   margin-bottom: 4px;
 }
 #docker_containers .usage-disk > span:first-child {
   height: 8px;
-  background-color: var(--docker-accent3);
+  background-color: var(--cscheme-accent3);
 }
 #docker_containers .usage-disk span:nth-child(2) {
   display: inline-block;
@@ -60,11 +60,12 @@
 }
 
 /* Container ID and repo */
-#docker_containers .folder-element .ct-name .advanced {
+#docker_containers .folder-element .ct-name .advanced,
+#docker_containers .outer:not(.folder-outer) + .advanced {
   padding: 5px 10px;
-  border: 1px solid var(--docker-foreline4);
+  border: 1px solid var(--cscheme-foreline4);
   border-radius: 5px;
-  background-color: var(--docker-backfill4);
+  background-color: var(--cscheme-backfill4);
 }
 
 /* Uptime column */

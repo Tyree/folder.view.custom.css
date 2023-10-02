@@ -3,15 +3,16 @@
 /*************************************************/
 :root {
   /* Passed/Warning/Green/Orange Text */
-  --warn-orange-text-c: var(--cscheme-accent1);
-  --pass-green-text-c: var(--cscheme-accent3);
+  --warn-orange-text-c: var(--cscheme-interface-warn);
+  --pass-green-text-c: var(--cscheme-interface-good);
+  --accent-blue-text-c: var(--cscheme-interface-accent);
 
   /* Folder Name/Logo Area */
   --folderbox-width: 250px; /* May need to be increased if --folder-name-text-size is too big */
   --folderbox-height: calc(var(--folder-logo-size) + (var(--folderbox-padding-topbottom) * 2) + (var(--folderbox-brdr-width-topbottom) * 2));
-  --folderbox-padding-topbottom: 7px;
+  --folderbox-padding-topbottom: 10px;
   --folderbox-padding-leftright: 10px;
-  --folderbox-brdr-c: var(--cscheme-foreline1);
+  --folderbox-brdr-c: var(--cscheme-foreline3);
   --folderbox-brdr-width-topbottom: 1px;
   --folderbox-brdr-width-left: 8px;
   --folderbox-brdr-width-right: 3px;
@@ -25,20 +26,22 @@
 
   /* Folder/Container Preview Row */
   --folderpreview-height: calc(var(--container-logo-size) + (var(--container-logo-mrgtopbottom) * 2) + (var(--folderpreview-brdr-width-topbottom) * 2));
-  --folderpreview-brdr-c: var(--cscheme-foreline1);
+  --folderpreview-brdr-c: var(--cscheme-foreline3);
   --folderpreview-brdr-width-topbottom: 1px;
   --folderpreview-brdr-width-left: 8px;
   --folderpreview-brdr-width-right: 1px;
 
   /* Container */
   --container-logo-size: 38px;
-  --container-logo-mrgtopbottom: 7px;
+  --container-logo-mrgtopbottom: 10px;
+  --container-logo-mrgleft: 10px;
   --container-name-text-size: 1.3rem;
   --container-name-text-weight: bold;
   --container-name-update-text-c: var(--cscheme-cont-update);
   --container-name-update-texthov-c: var(--cscheme-cont-updatehov);
   --container-startstop-text-size: 0; /* default 1.1rem */
   --container-startstop-text-mrgleft: 0; /* default 7px */
+  --container-nofold-namebox-padding-left: calc(6px + var(--folderbox-padding-leftright) + var(--folderbox-brdr-width-left));
 }
 /*************************************************/
 /* END OF VARIABLES */

@@ -19,7 +19,7 @@
   --advc-contstat-hdr-bg-c: var(--cscheme-backfill1);
   --advc-contstat-cpumeter-bg-c: var(--cscheme-foreline2);
   --advc-contstat-cpumeter-text-c: var(--cscheme-accent1);
-  --advc-contstat-cpumeter-meter-c: var(--cscheme-accent1);
+  --advc-contstat-cpumeter-meter-c: var(--cscheme-interface-passed);
 
   /* Action buttons down the left side */
   --advc-contbtns-brdr-rt-c: var(--cscheme-backfill4);
@@ -57,6 +57,26 @@
 /* END OF VARIABLES */
 /*************************************************/
 
+/* Apply border-box to all elements inside the context menu */
+.preview-outbox,
+.preview-outbox * {
+  box-sizing: border-box;
+}
+
+/* Warning and Passed Text */
+.preview-outbox .orange-text,
+.preview-outbox .warning {
+  color: var(--warn-orange-text-c);
+}
+.preview-outbox .green,
+.preview-outbox .green-text,
+.preview-outbox .passed {
+  color: var(--pass-green-text-c);
+}
+.preview-outbox .blue-text {
+  color: var(--accent-blue-text-c);
+}
+
 /* Outer box of the context window */
 .tooltipster-sidetip.tooltipster-bottom .tooltipster-box,
 .tooltipster-sidetip.tooltipster-top .tooltipster-box {
@@ -87,6 +107,7 @@
 
 /* Container name box */
 .preview-outbox .preview-name {
+  padding-left: 10px;
   border-right: 1px solid var(--advc-contname-area-brdr-rt-c);
 }
 
@@ -111,14 +132,39 @@
 }
 
 /* CPU usage meter */
+.preview-outbox .status-stats {
+  padding-right: 20px;
+}
+/* Text for the container CPU usage */
+.preview-outbox span[class*="cpu-"] {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--cscheme-accent2);
+}
 .preview-outbox .usage-disk.mm {
-  height: 6px;
+  height: 10px;
+  margin-bottom: 10px;
+  margin-right: 0;
   background: var(--advc-contstat-cpumeter-bg-c);
   color: var(--advc-contstat-cpumeter-text-c);
 }
 .preview-outbox .usage-disk.mm > span:first-child {
-  background-color: var(--advc-contstat-cpumeter-meter-c);
-  height: 6px;
+  background-color: var(--advc-contstat-cpumeter-meter-c) !important;
+  height: 10px;
+}
+.preview-outbox .usage-disk span:nth-child(2) {
+  display: inline-block;
+  height: 8px;
+}
+.preview-outbox .usage-disk + br {
+  display: none;
+}
+
+/* Text for the container Memory usage */
+.preview-outbox span[class*="mem-"] {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--cscheme-accent2);
 }
 
 .preview-outbox .action-info {
@@ -154,6 +200,9 @@
 }
 
 /* Tabs/buttons at top of graph area */
+.preview-outbox ul.info-tabs {
+  height: 30px;
+}
 .preview-outbox .ui-state-default {
   background: var(--advc-grapharea-tabs-default-bg-c);
   border-color: var(--advc-grapharea-tabs-default-brdr-c);
@@ -200,6 +249,9 @@
 /* End of: Tabs/buttons at top of graph area */
 
 /* Graph area */
+.preview-outbox div[id*="comb-grapth-"] {
+  height: 356px !important;
+}
 .preview-outbox div[id*="comb-grapth-"] canvas {
   padding: 2px;
   border: 1px solid var(--advc-grapharea-brdr-c);
@@ -209,8 +261,11 @@
 /* Port Mappings and Volume Mappings areas */
 .preview-outbox .info-ports,
 .preview-outbox .info-volumes {
-  padding-top: 8px;
+  height: 356px !important;
+  overflow: auto;
+  padding: 8px;
   color: var(--text-hover) !important;
+  border: 1px solid var(--advc-grapharea-brdr-c) !important;
   border-top: 2px solid var(--advc-grapharea-brdr-top-c) !important;
   font-size: 1.5rem;
 }
