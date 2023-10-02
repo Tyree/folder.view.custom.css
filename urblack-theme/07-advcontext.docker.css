@@ -1,0 +1,271 @@
+/*************************************************/
+/* 3 ADVANCED CONTEXT TOOLTIP */
+/*************************************************/
+/* VARIABLES */
+:root {
+  /* Outer box for the context window */
+  --advc-tooltip-brdr-c: var(--cscheme-backfill3);
+  --advc-tooltip-brdr-accent-c: var(--cscheme-accent1);
+  --advc-tooltip-text-c: var(--cscheme-foreline1);
+  --advc-tooltip-bg-c: var(--cscheme-backfill1);
+
+  /* Top row with container name and CPU usage */
+  --advc-headrow-bg-c: var(--cscheme-backfill2);
+  --advc-headrow-brdr-c: var(--cscheme-backfill3);
+
+  /* Top container name and stats areas */
+  --advc-contname-area-brdr-rt-c: var(--cscheme-backfill4);
+  --advc-contstat-area-bg-c: var(--cscheme-backfill3);
+  --advc-contstat-hdr-bg-c: var(--cscheme-backfill1);
+  --advc-contstat-cpumeter-bg-c: var(--cscheme-foreline2);
+  --advc-contstat-cpumeter-text-c: var(--cscheme-accent1);
+  --advc-contstat-cpumeter-meter-c: var(--cscheme-interface-passed);
+
+  /* Action buttons down the left side */
+  --advc-contbtns-brdr-rt-c: var(--cscheme-backfill4);
+  --advc-contbtns-bg-img: linear-gradient(to bottom, var(--cscheme-backfill2), var(--cscheme-backfill3));
+  --advc-contbtns-text-c: var(--cscheme-foreline2);
+  --advc-contbtns-texthover-c: var(--cscheme-foreline1);
+
+  /* Container ID and Repo Box */
+  --advc-continfo-bg-c: var(--cscheme-backfill2);
+  --advc-continfo-brdr-c: var(--cscheme-backfill3);
+  --advc-continfo-text-c: var(--cscheme-foreline2);
+
+  /* Tabs along the top of the CPU/Mem Graph, Port Mappings, and Vol Mappings */
+  --advc-grapharea-tabs-deftext-c: var(--cscheme-foreline2);
+  --advc-grapharea-tabs-deftexthover-c: var(--cscheme-foreline1);
+  --advc-grapharea-tabs-activetext-c: var(--cscheme-foreline1);
+  --advc-grapharea-tabs-activetexthover-c: var(--cscheme-foreline1);
+  --advc-grapharea-tabs-default-bg-c: var(--cscheme-backfill2);
+  --advc-grapharea-tabs-active-bg-c: var(--cscheme-accent1);
+  --advc-grapharea-tabs-defhover-bg-c: var(--cscheme-backfill1);
+  --advc-grapharea-tabs-acthover-bg-c: var(--cscheme-accent1);
+  --advc-grapharea-tabs-default-brdr-c: var(--cscheme-backfill2);
+  --advc-grapharea-tabs-active-brdr-c: var(--cscheme-backfill2);
+  --advc-grapharea-tabs-defhover-brdr-c: var(--cscheme-accent1);
+  --advc-grapharea-tabs-acthover-brdr-c: var(--cscheme-backfill2);
+
+  /* Top border for the Streaming CPU/Mem Graph Area */
+  --advc-grapharea-brdr-top-c: var(--cscheme-accent1);
+  --advc-grapharea-brdr-c: var(--cscheme-backfill3);
+
+  /* Streaming CPU/Mem Graph Lines */
+  --folder-view-graph-cpu: var(--cscheme-accent1);
+  --folder-view-graph-mem: var(--cscheme-accent2);
+}
+/* END OF VARIABLES */
+/*************************************************/
+
+/* Apply border-box to all elements inside the context menu */
+.preview-outbox,
+.preview-outbox * {
+  box-sizing: border-box;
+}
+
+/* Warning and Passed Text */
+.preview-outbox .orange-text,
+.preview-outbox .warning {
+  color: var(--warn-orange-text-c);
+}
+.preview-outbox .green,
+.preview-outbox .green-text,
+.preview-outbox .passed {
+  color: var(--pass-green-text-c);
+}
+.preview-outbox .blue-text {
+  color: var(--accent-blue-text-c);
+}
+
+/* Outer box of the context window */
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-box,
+.tooltipster-sidetip.tooltipster-top .tooltipster-box {
+  border: 2px solid var(--advc-tooltip-brdr-c) !important;
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px 3px var(--cscheme-backfill4);
+}
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-box {
+  border-top: 3px solid var(--advc-tooltip-brdr-accent-c) !important;
+}
+.tooltipster-sidetip.tooltipster-top .tooltipster-box {
+  border-bottom: 3px solid var(--advc-tooltip-brdr-accent-c) !important;
+}
+
+/* Inner box and main body of the context window */
+.preview-outbox {
+  padding: 8px;
+  color: var(--advc-tooltip-text-c);
+  background-color: var(--advc-tooltip-bg-c);
+}
+
+/* Top row with container name and CPU usage */
+.preview-outbox .first-row {
+  background-color: var(--advc-headrow-bg-c);
+  border-color: var(--advc-headrow-brdr-c);
+  margin-bottom: 4px;
+}
+
+/* Container name box */
+.preview-outbox .preview-name {
+  padding-left: 10px;
+  border-right: 1px solid var(--advc-contname-area-brdr-rt-c);
+}
+
+/* Container name */
+.preview-outbox .appname {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* CPU/Memory Usage box */
+.preview-outbox .preview-status {
+  background-color: var(--advc-contstat-area-bg-c);
+  padding: 4px 8px;
+  margin: 0;
+}
+
+/* CPU/Mem header box */
+.preview-outbox .status-header-version,
+.preview-outbox .status-header-stats,
+.preview-outbox .status-header-autostart {
+  background-color: var(--advc-contstat-area-hdr-bg-c);
+}
+
+/* CPU usage meter */
+.preview-outbox .status-stats {
+  padding-right: 20px;
+}
+/* Text for the container CPU usage */
+.preview-outbox span[class*="cpu-"] {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--cscheme-accent2);
+}
+.preview-outbox .usage-disk.mm {
+  height: 10px;
+  margin-bottom: 10px;
+  margin-right: 0;
+  background: var(--advc-contstat-cpumeter-bg-c);
+  color: var(--advc-contstat-cpumeter-text-c);
+}
+.preview-outbox .usage-disk.mm > span:first-child {
+  background-color: var(--advc-contstat-cpumeter-meter-c) !important;
+  height: 10px;
+}
+.preview-outbox .usage-disk span:nth-child(2) {
+  display: inline-block;
+  height: 8px;
+}
+.preview-outbox .usage-disk + br {
+  display: none;
+}
+
+/* Text for the container Memory usage */
+.preview-outbox span[class*="mem-"] {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--cscheme-accent2);
+}
+
+.preview-outbox .action-info {
+  padding-right: 5px;
+}
+
+/* Container control buttons column left */
+.preview-outbox .action-left {
+  border-right: 1px solid var(--advc-contbtns-brdr-rt-c);
+  padding-right: 5px;
+}
+/* Container control buttons column right */
+.preview-outbox .action-right {
+  padding-left: 5px;
+}
+
+/* Container control and project page buttons */
+.preview-outbox .action li a,
+.preview-outbox .action li a:link,
+.preview-outbox .action li a:visited {
+  color: var(--advc-contbtns-text-c);
+}
+.preview-outbox .action li a:hover {
+  background-image: var(--advc-contbtns-bg-img);
+  color: var(--advc-contbtns-texthover-c);
+}
+
+/* Container ID and repo info box */
+.preview-outbox .info-ct {
+  color: var(--advc-continfo-text-c);
+  background-color: var(--advc-continfo-bg-c);
+  border-color: var(--advc-continfo-brdr-c);
+}
+
+/* Tabs/buttons at top of graph area */
+.preview-outbox ul.info-tabs {
+  height: 30px;
+}
+.preview-outbox .ui-state-default {
+  background: var(--advc-grapharea-tabs-default-bg-c);
+  border-color: var(--advc-grapharea-tabs-default-brdr-c);
+  border-width: 1px 1px 0 1px;
+}
+.preview-outbox .ui-state-default.ui-state-hover {
+  background: var(--advc-grapharea-tabs-defhover-bg-c);
+  border-color: var(--advc-grapharea-tabs-defhover-brdr-c);
+  border-width: 1px 1px 0 1px;
+}
+.preview-outbox .ui-state-default.ui-state-active {
+  background: var(--advc-grapharea-tabs-active-bg-c);
+  border-color: var(--advc-grapharea-tabs-active-brdr-c);
+  border-width: 1px 1px 0 1px;
+}
+.preview-outbox .ui-state-default.ui-state-active.ui-state-hover {
+  background: var(--advc-grapharea-tabs-acthover-bg-c);
+  border-color: var(--advc-grapharea-tabs-acthover-brdr-c);
+  border-width: 1px 1px 0 1px;
+}
+.preview-outbox .ui-state-default a,
+.preview-outbox .ui-state-default a:link,
+.preview-outbox .ui-state-default a:visited {
+  color: var(--advc-grapharea-tabs-deftext-c);
+}
+.preview-outbox .ui-state-default.ui-state-hover a,
+.preview-outbox .ui-state-default.ui-state-hover a:link,
+.preview-outbox .ui-state-default.ui-state-hover a:visited {
+  color: var(--advc-grapharea-tabs-deftexthover-c);
+}
+.preview-outbox .ui-state-default.ui-state-active a,
+.preview-outbox .ui-state-default.ui-state-active a:link,
+.preview-outbox .ui-state-default.ui-state-active a:visited {
+  color: var(--advc-grapharea-tabs-activetext-c);
+  font-weight: bold;
+}
+.preview-outbox .ui-state-default.ui-state-active.ui-state-hover a,
+.preview-outbox .second-row .ui-state-default.ui-state-active.ui-state-hover a:link,
+.preview-outbox .second-row .ui-state-default.ui-state-active.ui-state-hover a:visited {
+  color: var(--advc-grapharea-tabs-activetexthover-c);
+  font-weight: bold;
+  cursor: default;
+}
+/* End of: Tabs/buttons at top of graph area */
+
+/* Graph area */
+.preview-outbox div[id*="comb-grapth-"] {
+  height: 356px !important;
+}
+.preview-outbox div[id*="comb-grapth-"] canvas {
+  padding: 2px;
+  border: 1px solid var(--advc-grapharea-brdr-c);
+  border-top: 2px solid var(--advc-grapharea-brdr-top-c);
+}
+
+/* Port Mappings and Volume Mappings areas */
+.preview-outbox .info-ports,
+.preview-outbox .info-volumes {
+  height: 356px !important;
+  overflow: auto;
+  padding: 8px;
+  color: var(--text-hover) !important;
+  border: 1px solid var(--advc-grapharea-brdr-c) !important;
+  border-top: 2px solid var(--advc-grapharea-brdr-top-c) !important;
+  font-size: 1.5rem;
+}
