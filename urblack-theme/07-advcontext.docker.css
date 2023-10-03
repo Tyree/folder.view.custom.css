@@ -58,8 +58,8 @@
 /*************************************************/
 
 /* Apply border-box to all elements inside the context menu */
-.preview-outbox,
-.preview-outbox * {
+.tooltipster-docker-folder .preview-outbox,
+.tooltipster-docker-folder .preview-outbox * {
   box-sizing: border-box;
 }
 
@@ -78,17 +78,22 @@
 }
 
 /* Outer box of the context window */
-.tooltipster-sidetip.tooltipster-bottom .tooltipster-box,
-.tooltipster-sidetip.tooltipster-top .tooltipster-box {
+.tooltipster-docker-folder.tooltipster-sidetip .tooltipster-box {
   border: 2px solid var(--advc-tooltip-brdr-c) !important;
   border-radius: 8px;
   box-shadow: 1px 1px 10px 3px var(--cscheme-backfill4);
 }
-.tooltipster-sidetip.tooltipster-bottom .tooltipster-box {
+.tooltipster-docker-folder.tooltipster-bottom .tooltipster-box {
   border-top: 3px solid var(--advc-tooltip-brdr-accent-c) !important;
 }
-.tooltipster-sidetip.tooltipster-top .tooltipster-box {
+.tooltipster-docker-folder.tooltipster-top .tooltipster-box {
   border-bottom: 3px solid var(--advc-tooltip-brdr-accent-c) !important;
+}
+.tooltipster-docker-folder.tooltipster-right .tooltipster-box {
+  border-left: 3px solid var(--advc-tooltip-brdr-accent-c) !important;
+}
+.tooltipster-docker-folder.tooltipster-left .tooltipster-box {
+  border-right: 3px solid var(--advc-tooltip-brdr-accent-c) !important;
 }
 
 /* Inner box and main body of the context window */
@@ -250,10 +255,10 @@
 
 /* Graph area */
 .preview-outbox div[id*="comb-grapth-"] {
-  height: 356px !important;
+  /* height: 356px !important; */
 }
 .preview-outbox div[id*="comb-grapth-"] canvas {
-  height: 356px !important;
+  /* height: 356px !important; */
   padding: 2px;
   border: 1px solid var(--advc-grapharea-brdr-c);
   border-top: 2px solid var(--advc-grapharea-brdr-top-c);
@@ -262,7 +267,7 @@
 /* Port Mappings and Volume Mappings areas */
 .preview-outbox .info-ports,
 .preview-outbox .info-volumes {
-  height: 356px !important;
+  /* height: 356px !important; */
   overflow: auto;
   padding: 8px;
   color: var(--text-hover) !important;
