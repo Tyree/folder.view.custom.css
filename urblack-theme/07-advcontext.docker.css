@@ -254,9 +254,9 @@
 /* End of: Tabs/buttons at top of graph area */
 
 /* Graph area */
-.preview-outbox div[id*="comb-grapth-"] {
-  /* height: 356px !important; */
-}
+/* .preview-outbox div[id*="comb-grapth-"] {
+  height: 356px !important;
+} */
 .preview-outbox div[id*="comb-grapth-"] canvas {
   /* height: 356px !important; */
   padding: 2px;
