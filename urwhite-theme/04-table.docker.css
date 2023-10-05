@@ -1,0 +1,201 @@
+/*************************************************/
+/* CONTAINER LOGO ICON HOVER EFFECTS - 
+Disable for icons to be full color at all times */
+/*************************************************/
+/* Desaturate docker container icons, saturate on hover */
+.folder-preview-wrapper img {
+  filter: saturate(0);
+}
+.folder-preview-wrapper:hover img {
+  filter: saturate(1);
+}
+
+/*************************************************/
+/* BASICS */
+/*************************************************/
+/* Apply border-box to all elements inside the docker table */
+#docker_containers,
+#docker_containers * {
+  box-sizing: border-box;
+}
+
+/* Style all links that are not container tools */
+#docker_containers :not(.folder-element-custom-btn) > a,
+#docker_containers :not(.folder-element-custom-btn) > a:link,
+#docker_containers :not(.folder-element-custom-btn) > a:visited {
+  color: var(--cscheme-link);
+  text-decoration: none;
+}
+#docker_containers :not(.folder-element-custom-btn) > a:hover {
+  color: var(--cscheme-linkhov);
+  text-decoration: none;
+}
+
+/* Style all container names with updates available */
+#docker_containers :not(.folder-element-custom-btn) > a.orange-text,
+#docker_containers :not(.folder-element-custom-btn) > a.orange-text:link,
+#docker_containers :not(.folder-element-custom-btn) > a.orange-text:visited {
+  color: var(--container-name-update-text-c);
+  text-decoration: none;
+  font-weight: bold;
+}
+#docker_containers :not(.folder-element-custom-btn) > a.orange-text:hover {
+  color: var(--container-name-update-texthov-c);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Warning and Passed Text */
+#docker_containers .orange-text,
+#docker_containers .warning {
+  color: var(--warn-orange-text-c);
+}
+#docker_containers .green,
+#docker_containers .green-text,
+#docker_containers .passed {
+  color: var(--pass-green-text-c);
+}
+#docker_containers .blue-text {
+  color: var(--accent-blue-text-c);
+}
+
+/* Autostart switches */
+#docker_containers .switch-button-background.checked,
+.preview-status .switch-button-background.checked {
+  background-color: var(--cscheme-interface-passed);
+}
+#docker_containers .switch-button-label.on,
+.preview-status .switch-button-label.on {
+  color: var(--cscheme-interface-passed);
+}
+
+/*************************************************/
+/* FOLDER NAME AREA */
+/*************************************************/
+.folder .folder-name {
+  width: var(--folderbox-width);
+}
+/* Wrapper around folder icon, name, and toggle */
+.folder .folder-name-sub {
+  border-style: solid !important;
+  border-color: var(--folderbox-brdr-c) !important;
+  border-width: var(--folderbox-brdr-width-topbottom) var(--folderbox-brdr-width-right) var(--folderbox-brdr-width-topbottom) var(--folderbox-brdr-width-left) !important;
+  border-radius: 4px;
+  padding: var(--folderbox-padding-topbottom) var(--folderbox-padding-leftright);
+  height: var(--folderbox-height);
+  display: flex;
+  align-items: center;
+}
+.folder .folder-outer {
+  display: block;
+  height: var(--folder-logo-size);
+  margin-bottom: 0;
+  width: calc(var(--folderbox-width) - 25px);
+}
+/* Folder image */
+.folder-outer img.img {
+  width: var(--folder-logo-size);
+  height: var(--folder-logo-size);
+  margin-right: var(--folder-logo-mrgright);
+}
+/* Folder name text */
+.folder-outer .folder-appname {
+  font-size: var(--folder-name-text-size);
+  font-weight: var(--folder-name-text-weight);
+}
+/* Folder toggle open button */
+button.folder-dropwdown {
+  float: none;
+}
+/* Version column */
+.folder .updatecolumn {
+  text-align: center;
+}
+/* Started/Stopped Text for Folders */
+.outer.folder-outer .state {
+  font-size: var(--folder-startstop-text-size);
+  margin-left: var(--folder-startstop-text-mrgleft);
+}
+
+/*************************************************/
+/* VERSION COLUMN */
+/*************************************************/
+.folder .folder-update {
+  width: 100px;
+}
+
+/*************************************************/
+/* CONTAINER PREVIEW ROW */
+/*************************************************/
+/* Wrapper for all containers in the preview */
+.folder .folder-preview {
+  border-style: solid !important;
+  border-color: var(--folderpreview-brdr-c) !important;
+  border-width: var(--folderpreview-brdr-width-topbottom) var(--folderpreview-brdr-width-right) var(--folderpreview-brdr-width-topbottom) var(--folderpreview-brdr-width-left) !important;
+  height: var(--folderpreview-height);
+  align-items: start;
+}
+
+/* Vertical lines between containers - if enabled */
+.folder-preview .folder-preview-divider {
+  float: none;
+  height: var(--container-logo-size);
+  margin: var(--container-logo-mrgtopbottom) 5px var(--container-logo-mrgtopbottom) 10px;
+  border: 1px solid var(--folderpreview-brdr-c) !important;
+}
+
+/*************************************************/
+/* CONTAINER IN PREVIEW ROW */
+/*************************************************/
+/* Outer wrapper around individual containers in preview */
+.folder-preview .folder-preview-wrapper {
+  float: none;
+  margin-left: var(--container-logo-mrgleft);
+  margin-top: var(--container-logo-mrgtopbottom);
+  height: auto;
+}
+/* Container image */
+.folder-preview-wrapper .outer img.img {
+  width: var(--container-logo-size);
+  height: var(--container-logo-size);
+  margin-right: 5px;
+}
+/* Container name */
+.folder-preview-wrapper .appname {
+  font-size: var(--container-name-text-size);
+  font-weight: var(--container-name-text-weight);
+}
+/* Started/Stopped Text for Containers */
+.outer:not(.folder-outer) .state {
+  font-size: var(--container-startstop-text-size);
+  margin-left: var(--container-startstop-text-mrgleft);
+}
+
+/* Autostart column */
+#docker_containers th.nine {
+  width: 110px;
+  padding: 0;
+}
+
+/*************************************************/
+/* EXPANDED FOLDER AND NO FOLDER CONTAINER ROW */
+/*************************************************/
+/* Cell for container name */
+#docker_containers .folder-element .ct-name,
+#docker_containers .ct-name:not(.folder-name) {
+  width: auto !important;
+  padding: 8px 20px 8px var(--container-nofold-namebox-padding-left) !important;
+}
+
+/* Container name text */
+#docker_containers .inner:not(.folder-inner) .appname {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Wait form on autostart containers */
+#docker_containers tr.sortable:not(.folder) td:nth-child(7) span:last-of-type {
+  float: none !important;
+  display: block;
+  margin-left: 10px;
+}

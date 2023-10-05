@@ -1,0 +1,29 @@
+/*************************************************/
+/* VARIABLES - Change these settings to your preference */
+/*************************************************/
+:root {
+  /* Compressed folder name text size and weight */
+  --folder-name-text-size: 1.4rem;
+  --folder-name-text-weight: bold;
+  /* Folder with update text */
+  --folder-name-update-text-c: var(--cscheme-folder-update);
+
+  /* Default container name text size and weight */
+  --container-name-text-size: 1.3rem;
+  --container-name-text-weight: normal;
+  /* Container with update text */
+  --container-name-update-text-c: var(--cscheme-cont-update);
+
+  /* EXPANDED FOLDER HEADER AND "DRAWER" */
+  --exfold-header-brdr-c: var(--cscheme-foreline4); /* Border color for the header */
+  --exfold-header-bg-c: var(--cscheme-foreline4); /* Background color for the header */
+  --exfold-drawer-brdr-c: var(--cscheme-foreline4); /* Border color for the container "drawer" */
+  --exfold-drawer-bg-c: var(--cscheme-backfill3); /* Background color for the container "drawer" */
+  --exfold-foldername-text-c: var(--cscheme-foreline1); /* Color for the folder name */
+  --exfold-foldername-updatetext-c: var(--cscheme-exfolder-update); /* Color for the folder name with an update */
+  --exfold-foldername-text-size: 2rem; /* Size for the folder name */
+  --exfold-foldername-text-weight: bold; /* Weight for the folder name */
+  --exfold-contname-text-c: inherit; /* Color for the container name when inside a folder */
+  --exfold-contname-text-size: 1.4rem; /* Size for the container name when inside a folder */
+  --exfold-contname-text-weight: bold; /* Weight for the container name when inside a folder */
+}
