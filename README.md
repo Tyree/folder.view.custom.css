@@ -19,11 +19,10 @@ If you have issues or customization suggestions, contact me on the unRAID forum.
 - To disable individual files, append _.disabled_ to the file name.
 - See individual theme README for explanation of the files included in the theme.
 
-## Icon Customization
+## Autostart Icon Customization
 
-Among other basic theme styling, these themes customize the icons on the Dashboard and Docker page. Special icons for autostart containers and the folders that hold autostart containers make it easy to see, at a glance, if all of your autostart containers are running as they should.
-Icons are fully customizable (design, color, and size) via custom properties (variables) at the top of each file.
-The Dashboard custom file also styles the expanded folders to make it clear which containers are inside.
+Among other basic theme styling, all themes customize the autostart icons on the Dashboard and Docker page. Special icons for autostart containers and the folders that hold autostart containers make it easy to see, at a glance, if all of your autostart containers are running as they should.
+Icons are fully customizable (design, color, and size) via custom properties (variables) in the 06-icons.dashboard.css and 06-icons.docker.css files.
 
 _See the individual theme README files for more information on that theme._
 
