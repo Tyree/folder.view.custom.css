@@ -12,7 +12,7 @@ Thanks for scolcipitato for the great plugin! If you have a lot of docker contai
 
 Folder.View plugin **[Support Page](https://forums.unraid.net/topic/142782-plugin-folderview/)** on the unRAID forum.
 
-If you have issues or customization suggestions, contact me on the unRAID forum. @Mattaton
+If you have issues or customization suggestions, contact me on the unRAID forum. **[@Mattaton](https://forums.unraid.net/profile/95289-mattaton/)**
 
 ## Installation Instructions:
 
