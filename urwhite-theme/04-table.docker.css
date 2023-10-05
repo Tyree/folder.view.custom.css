@@ -19,6 +19,14 @@ Disable for icons to be full color at all times */
   box-sizing: border-box;
 }
 
+/* Table row colors */
+#docker_containers.tablesorter {
+  background-color: var(--row-base-bg-c);
+}
+#docker_containers.tablesorter tbody tr:nth-child(even) {
+  background-color: var(--row-even-bg-c);
+}
+
 /* Style all links that are not container tools */
 #docker_containers :not(.folder-element-custom-btn) > a,
 #docker_containers :not(.folder-element-custom-btn) > a:link,

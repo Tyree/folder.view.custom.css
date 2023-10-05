@@ -7,6 +7,10 @@
   --pass-green-text-c: var(--cscheme-interface-good);
   --accent-blue-text-c: var(--cscheme-interface-accent);
 
+  /* Table Rows */
+  --row-base-bg-c: var(--cscheme-backfill4);
+  --row-even-bg-c: var(--cscheme-backfill2);
+
   /* Folder Name/Logo Area */
   --folderbox-width: 250px; /* May need to be increased if --folder-name-text-size is too big */
   --folderbox-height: calc(var(--folder-logo-size) + (var(--folderbox-padding-topbottom) * 2) + (var(--folderbox-brdr-width-topbottom) * 2));
