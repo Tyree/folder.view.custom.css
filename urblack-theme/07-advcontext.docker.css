@@ -66,15 +66,15 @@
 /* Warning and Passed Text */
 .preview-outbox .orange-text,
 .preview-outbox .warning {
-  color: var(--warn-orange-text-c);
+  color: var(--cscheme-interface-warn);
 }
 .preview-outbox .green,
 .preview-outbox .green-text,
 .preview-outbox .passed {
-  color: var(--pass-green-text-c);
+  color: var(--cscheme-interface-passed);
 }
 .preview-outbox .blue-text {
-  color: var(--accent-blue-text-c);
+  color: var(--cscheme-interface-accent);
 }
 
 /* Style all links */
