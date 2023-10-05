@@ -77,6 +77,18 @@
   color: var(--accent-blue-text-c);
 }
 
+/* Style all links */
+.preview-outbox a,
+.preview-outbox a:link,
+.preview-outbox a:visited {
+  color: var(--cscheme-link);
+  text-decoration: none;
+}
+.preview-outbox a:hover {
+  color: var(--cscheme-linkhov);
+  text-decoration: none;
+}
+
 /* Outer box of the context window */
 .tooltipster-docker-folder.tooltipster-sidetip .tooltipster-box {
   border: 2px solid var(--advc-tooltip-brdr-c) !important;

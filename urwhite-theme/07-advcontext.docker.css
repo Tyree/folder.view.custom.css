@@ -35,16 +35,16 @@
   /* Tabs along the top of the CPU/Mem Graph, Port Mappings, and Vol Mappings */
   --advc-grapharea-tabs-deftext-c: var(--cscheme-foreline2);
   --advc-grapharea-tabs-deftexthover-c: var(--cscheme-foreline1);
-  --advc-grapharea-tabs-activetext-c: var(--cscheme-foreline1);
-  --advc-grapharea-tabs-activetexthover-c: var(--cscheme-foreline1);
+  --advc-grapharea-tabs-activetext-c: var(--cscheme-backfill3);
+  --advc-grapharea-tabs-activetexthover-c: var(--cscheme-backfill3);
   --advc-grapharea-tabs-default-bg-c: var(--cscheme-backfill2);
   --advc-grapharea-tabs-active-bg-c: var(--cscheme-accent1);
   --advc-grapharea-tabs-defhover-bg-c: var(--cscheme-backfill1);
   --advc-grapharea-tabs-acthover-bg-c: var(--cscheme-accent1);
-  --advc-grapharea-tabs-default-brdr-c: var(--cscheme-backfill2);
-  --advc-grapharea-tabs-active-brdr-c: var(--cscheme-backfill2);
+  --advc-grapharea-tabs-default-brdr-c: var(--cscheme-foreline3);
+  --advc-grapharea-tabs-active-brdr-c: var(--cscheme-foreline3);
   --advc-grapharea-tabs-defhover-brdr-c: var(--cscheme-accent1);
-  --advc-grapharea-tabs-acthover-brdr-c: var(--cscheme-backfill2);
+  --advc-grapharea-tabs-acthover-brdr-c: var(--cscheme-foreline3);
 
   /* Top border for the Streaming CPU/Mem Graph Area */
   --advc-grapharea-brdr-top-c: var(--cscheme-accent1);
@@ -75,6 +75,18 @@
 }
 .preview-outbox .blue-text {
   color: var(--cscheme-interface-accent);
+}
+
+/* Style all links */
+.preview-outbox a,
+.preview-outbox a:link,
+.preview-outbox a:visited {
+  color: var(--cscheme-link);
+  text-decoration: none;
+}
+.preview-outbox a:hover {
+  color: var(--cscheme-linkhov);
+  text-decoration: none;
 }
 
 /* Outer box of the context window */
