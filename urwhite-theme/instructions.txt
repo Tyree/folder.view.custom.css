@@ -1,3 +1,0 @@
-Use of this custom CSS requires FolderView 2023.09.30.2 or later.
-
-Full instructions to be added. See GitHub Readme and instructions within CSS files for now.
