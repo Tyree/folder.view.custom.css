@@ -5,7 +5,7 @@
 :root {
   /* Outer box for the context window */
   --advc-tooltip-brdr-c: var(--cscheme-backfill3);
-  --advc-tooltip-brdr-accent-c: var(--cscheme-accent2);
+  --advc-tooltip-brdr-accent-c: var(--cscheme-link);
   --advc-tooltip-text-c: var(--cscheme-foreline3);
   --advc-tooltip-bg-c: var(--cscheme-backfill2);
 
