@@ -7,9 +7,10 @@ Dashboard and Docker table have been fully themed with easy-to-access variables 
 
 ## Files in the theme folder
 
-File naming determines load order. Do not change the naming of these files unless you know what you're doing.
+File naming determines load order. _Do not change the naming of these files unless you know what you're doing._
 
-- **01-colors.dashboard-docker.css:** _Color scheme file. Stores all colors used by other dashboard and docker page CSS files._
+- **01-colors.dashboard-docker.css:**
+  _Color scheme file. Stores all colors used by other dashboard and docker page CSS files._
 - **02-vars.dashboard.css:** _Variables used by other dashboard CSS files. Most editing can be done in this file._
 - **02-vars.docker.css:** _Variables used by other docker page CSS files. Most editing can be done in this file._
 - **03-vars-icons.dashboard.css:** _Variables pertaining specifically to icons on the dashboard._
