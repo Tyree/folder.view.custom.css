@@ -23,6 +23,19 @@ File naming determines load order. _Do not change the naming of these files unle
 
 ## Sample Images
 
+_Icons in these images are desaturated by the CSS rules and saturate on hover. These rules are easily disable by commenting out the code or deleting it.
+The code can be found in the **04-dash.dashboard.css:** and **04-table.docker.css:** files._
+
+### Example:
+
+````/* Desaturate docker/vm container and folder icons, saturate on hover */
+#docker_view .outer img {
+  filter: saturate(0);
+}
+#docker_view .outer:hover img {
+  filter: saturate(1);
+}```
+
 Dashboard Folders Collapsed
 
 ![dashboard closed](gray_theme_dashboard-closed.png)
@@ -38,3 +51,4 @@ Docker Table
 Advanced Context Menu
 
 ![advanced context menu](gray_theme_docker_adv.png)
+````
