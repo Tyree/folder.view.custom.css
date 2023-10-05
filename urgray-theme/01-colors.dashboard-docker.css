@@ -1,0 +1,36 @@
+/*************************************************/
+/* COLOR SCHEME - BASED ON UNRAID STOCK GRAY THEME
+Change these settings to your preference */
+/*************************************************/
+/* Look up a hex color convertor online
+like https://htmlcolorcodes.com/color-picker/ */
+/*************************************************/
+:root {
+  --cscheme-accent1: #ff8c2f;
+  --cscheme-accent2: #0072c6;
+  --cscheme-accent3: #4f8a10;
+
+  --cscheme-foreline1: #b0b0b0;
+  --cscheme-foreline2: #9b9b9b;
+  --cscheme-foreline3: #606e7f;
+  --cscheme-foreline4: #606060;
+  --cscheme-backfill1: #323432;
+  --cscheme-backfill2: #1b1d1b;
+  --cscheme-backfill3: #141613;
+  --cscheme-backfill4: #121510;
+
+  --cscheme-interface-alert: #f0000c;
+  --cscheme-interface-warn: #ff8c2f;
+  --cscheme-interface-attention: #d6ff20;
+  --cscheme-interface-passed: #4caf50;
+  --cscheme-interface-accent: #2cabe3;
+
+  --cscheme-link: #486dba; /* Text links within the docker table */
+  --cscheme-linkhov: #2cabe3; /* Text links - hover */
+  --cscheme-tool-link: #616161; /* Container tools - WebUI, Console, Logs */
+  --cscheme-tool-linkhov: #2cabe3; /* Container tools - hover */
+  --cscheme-cont-update: #ff8c2f; /* Container with update */
+  --cscheme-cont-updatehov: #ffc04c; /* Container with update - hover (only in docker table) */
+  --cscheme-folder-update: #0072c6; /* Folder on dashboard with update within */
+  --cscheme-exfolder-update: #ff8c2f; /* Expanded folder on dashboard with update within */
+}

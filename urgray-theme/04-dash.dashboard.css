@@ -1,0 +1,163 @@
+/*************************************************/
+/* LOGO ICON HOVER EFFECTS - 
+Disable for icons to be full color at all times */
+/*************************************************/
+/* Desaturate docker/vm container and folder icons, saturate on hover */
+#docker_view .outer img {
+  filter: saturate(0);
+}
+#docker_view .outer:hover img {
+  filter: saturate(1);
+}
+
+/* Apply border-box to all elements inside the docker and vm panes */
+#docker_view *,
+#vm_view * {
+  box-sizing: border-box;
+}
+
+/* Add a padding left to the entire docker and vm icon area
+- this compensates for the expanded folder header */
+#docker_view tr:nth-child(2) td,
+#vm_view tr:nth-child(2) td {
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+/* Expand the clickable area of folders and containers
+to the full width of the wrapper */
+#docker_view .hand {
+  position: absolute;
+  z-index: 50;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+}
+
+/* Set a height on the name/text area of
+the folders and containers to the same height of the icon */
+#docker_view .inner {
+  display: inline-block;
+  height: 32px;
+  margin-left: 38px;
+}
+
+/* Compressed folder wrapper and docker container wrapper styles */
+#docker_view .outer {
+  position: relative; /* Needed for absolute positioning of child elements */
+  display: inline-block;
+  background-color: transparent;
+}
+
+/* Expanded folder outer wrapper styles */
+#docker_view .folder-showcase-outer[expanded="true"] {
+  float: left;
+  display: block;
+  margin-left: -10px; /* Overcome 20px container padding-left by giving
+                      expanded folder a negative left margin */
+  width: calc(100% + 10px); /* Add 10px to the width to overcome negative margin */
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--exfold-drawer-brdr-c);
+  background-color: var(--exfold-drawer-bg-c);
+}
+#docker_view .folder-showcase-outer[expanded="true"]:not(:last-child) {
+  margin-bottom: 20px; /* Only apply 20px margin if it's NOT the last element */
+}
+
+/* Child docker container icons wrapper "drawer" styles */
+#docker_view .folder-showcase-outer[expanded="true"] .folder-showcase {
+  float: left;
+  display: block;
+  padding: 0 20px;
+}
+
+/* Compressed Folder text */
+#docker_view .inner.folder-inner-docker {
+  font-size: var(--folder-name-text-size);
+  font-weight: var(--folder-name-text-weight);
+}
+#docker_view .inner.folder-inner-docker .blue-text {
+  color: var(--folder-name-update-text-c); /* Folder with update */
+}
+
+/* Container text */
+#docker_view .inner:not(.folder-inner-docker) {
+  font-size: var(--container-name-text-size);
+  font-weight: var(--container-name-text-weight);
+}
+#docker_view .inner:not(.folder-inner-docker) .blue-text {
+  color: var(--container-name-update-text-c); /* Container with update */
+}
+
+/* Hide the "started" and "stopped" text so that only
+the green arrow or red square shows on containers */
+#docker_view .outer:not(.folder-docker) .state {
+  opacity: 0;
+}
+
+/*************************************************/
+/* EXPANDED FOLDER HEADER STYLES */
+/*************************************************/
+/* Add padding to the clickable area - builds on compressed styles */
+#docker_view .folder-showcase-outer[expanded="true"] .hand.folder-hand-docker {
+  padding: 8px;
+}
+
+/* Expanded folder wrapper/header styles */
+#docker_view .folder-showcase-outer[expanded="true"] .outer.folder-docker {
+  display: block;
+  float: none;
+  padding: 8px;
+  border: 1px solid var(--exfold-header-brdr-c);
+  background: var(--exfold-header-bg-c);
+  border-radius: 10px;
+  margin: -1px -1px 20px -1px;
+}
+
+/* Increase the size of the icon */
+#docker_view .folder-showcase-outer[expanded="true"] img.folder-img-docker {
+  width: 48px;
+  height: 48px;
+  filter: saturate(1); /* Override saturate-on-hover effects */
+}
+
+/* Set a height on the folder-name/text area to the same
+height of the icon - builds on compressed styles */
+#docker_view .folder-showcase-outer[expanded="true"] .inner.folder-inner-docker {
+  height: 48px;
+  margin-left: 55px;
+}
+
+/* Font for the folder name */
+#docker_view .folder-showcase-outer[expanded="true"] .folder-appname-docker {
+  font-size: var(--exfold-foldername-text-size);
+  font-weight: var(--exfold-foldername-text-weight);
+  color: var(--exfold-foldername-text-c);
+}
+#docker_view .folder-showcase-outer[expanded="true"] .folder-appname-docker.blue-text {
+  color: var(--exfold-foldername-updatetext-c);
+}
+
+/* Font for the container name inside a folder */
+#docker_view .folder-showcase-outer[expanded="true"] .inner:not(.folder-inner-docker) {
+  font-size: var(--exfold-contname-text-size);
+  font-weight: var(--exfold-contname-text-weight);
+  color: var(--exfold-contname-text-c);
+}
+
+/* Down arrow icon */
+#docker_view .folder-showcase-outer[expanded="true"] .folder-docker::after {
+  position: absolute;
+  content: "\f0d7";
+  display: block;
+  font-family: FontAwesome;
+  font-size: 3rem;
+  right: 1rem;
+  bottom: 0;
+}
+/*************************************************/
