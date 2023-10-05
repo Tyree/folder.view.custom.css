@@ -2,6 +2,8 @@
 
 _Current versions of the CSS styles require Folder.View version **2023.10.04**_
 
+_These themes do not currently include styling for VM panel on Dashboard or VM Page._
+
 Custom CSS styles for use with the **Folder.View** plugin for **unRAID** by **scolcipitato.**
 
 Thanks for scolcipitato for the great plugin! If you have a lot of docker containers, **Folder.View** is a must-have!
