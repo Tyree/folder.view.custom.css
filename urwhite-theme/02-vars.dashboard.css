@@ -16,7 +16,7 @@
 
   /* EXPANDED FOLDER HEADER AND "DRAWER" */
   --exfold-header-brdr-c: var(--cscheme-foreline4); /* Border color for the header */
-  --exfold-header-bg-c: var(--cscheme-foreline4); /* Background color for the header */
+  --exfold-header-bg-c: var(--cscheme-backfill1); /* Background color for the header */
   --exfold-drawer-brdr-c: var(--cscheme-foreline4); /* Border color for the container "drawer" */
   --exfold-drawer-bg-c: var(--cscheme-backfill3); /* Background color for the container "drawer" */
   --exfold-foldername-text-c: var(--cscheme-foreline1); /* Color for the folder name */

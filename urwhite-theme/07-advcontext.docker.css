@@ -15,7 +15,7 @@
 
   /* Top container name and stats areas */
   --advc-contname-area-brdr-rt-c: var(--cscheme-backfill4);
-  --advc-contstat-area-bg-c: var(--cscheme-backfill3);
+  --advc-contstat-area-bg-c: var(--cscheme-foreline4);
   --advc-contstat-hdr-bg-c: var(--cscheme-backfill1);
   --advc-contstat-cpumeter-bg-c: var(--cscheme-foreline2);
   --advc-contstat-cpumeter-text-c: var(--cscheme-accent1);
@@ -66,22 +66,22 @@
 /* Warning and Passed Text */
 .preview-outbox .orange-text,
 .preview-outbox .warning {
-  color: var(--warn-orange-text-c);
+  color: var(--cscheme-interface-warn);
 }
 .preview-outbox .green,
 .preview-outbox .green-text,
 .preview-outbox .passed {
-  color: var(--pass-green-text-c);
+  color: var(--cscheme-interface-passed);
 }
 .preview-outbox .blue-text {
-  color: var(--accent-blue-text-c);
+  color: var(--cscheme-interface-accent);
 }
 
 /* Outer box of the context window */
 .tooltipster-docker-folder.tooltipster-sidetip .tooltipster-box {
   border: 2px solid var(--advc-tooltip-brdr-c) !important;
   border-radius: 8px;
-  box-shadow: 1px 1px 10px 3px var(--cscheme-backfill4);
+  box-shadow: 1px 1px 10px 3px var(--cscheme-foreline2);
 }
 .tooltipster-docker-folder.tooltipster-bottom .tooltipster-box {
   border-top: 3px solid var(--advc-tooltip-brdr-accent-c) !important;
@@ -94,6 +94,19 @@
 }
 .tooltipster-docker-folder.tooltipster-left .tooltipster-box {
   border-right: 3px solid var(--advc-tooltip-brdr-accent-c) !important;
+}
+/* Arrow that points to open container */
+.tooltipster-docker-folder.tooltipster-bottom .tooltipster-arrow-border {
+  border-bottom-color: var(--cscheme-accent1);
+}
+.tooltipster-docker-folder.tooltipster-top .tooltipster-arrow-border {
+  border-top-color: var(--cscheme-accent1);
+}
+.tooltipster-docker-folder.tooltipster-right .tooltipster-arrow-border {
+  border-right-color: var(--cscheme-accent1);
+}
+.tooltipster-docker-folder.tooltipster-left .tooltipster-arrow-border {
+  border-left-color: var(--cscheme-accent1);
 }
 
 /* Inner box and main body of the context window */
