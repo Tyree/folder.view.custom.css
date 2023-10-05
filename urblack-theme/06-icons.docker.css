@@ -42,6 +42,16 @@
   content: var(--container-logs-icon);
 }
 
+/* Hide console and webui tool icons on stopped containers */
+.outer:not(.folder-outer) .stopped ~ .folder-element-webui i::before,
+.outer:not(.folder-outer) .stopped ~ .folder-element-console i::before {
+  font-size: 0 !important;
+}
+.outer:not(.folder-outer) .stopped ~ .folder-element-webui,
+.outer:not(.folder-outer) .stopped ~ .folder-element-console {
+  margin: 0 !important;
+}
+
 /*************************************************/
 /* STARTED/STOPPED ICON SIZES */
 /*************************************************/
