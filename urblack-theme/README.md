@@ -28,13 +28,15 @@ The code can be found in the **04-dash.dashboard.css:** and **04-table.docker.cs
 
 ### Example:
 
-````/* Desaturate docker/vm container and folder icons, saturate on hover */
+```
+/* Desaturate docker/vm container and folder icons, saturate on hover */
 #docker_view .outer img {
   filter: saturate(0);
 }
 #docker_view .outer:hover img {
   filter: saturate(1);
-}```
+}
+```
 
 Dashboard Folders Collapsed
 
@@ -51,4 +53,3 @@ Docker Table
 Advanced Context Menu
 
 ![advanced context menu](black_theme_docker_adv.png)
-````
