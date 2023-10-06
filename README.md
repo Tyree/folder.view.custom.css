@@ -6,7 +6,7 @@ _These themes do not currently include styling for VM panel on Dashboard or VM P
 
 Custom CSS styles for use with the **[Folder.View](https://github.com/scolcipitato/folder.view/tree/main)** plugin for **unRAID** by **scolcipitato.**
 
-Thanks for scolcipitato for the great plugin! If you have a lot of docker containers, **Folder.View** is a must-have!
+Thanks to scolcipitato for the great plugin! If you have a lot of docker containers, **Folder.View** is a must-have!
 
 Folder.View plugin **[Support Page](https://forums.unraid.net/topic/142782-plugin-folderview/)** on the unRAID forum.
 
