@@ -9,8 +9,8 @@
   /* Saturate docker container icons - Values above 1 will further saturate */
   filter: saturate(var(--container-logo-saturation-hov));
   /* Set the hover size for icons */
-  width: var(--container-logo-size-hover);
-  height: var(--container-logo-size-hover);
+  width: var(--container-logo-size-hov) !important; /* important needed to overcome higher-specificity selector rule below */
+  height: var(--container-logo-size-hov) !important; /* important needed to overcome higher-specificity selector rule below */
 }
 
 /*************************************************/
