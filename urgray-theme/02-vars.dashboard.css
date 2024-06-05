@@ -14,6 +14,10 @@
   /* Container with update text */
   --container-name-update-text-c: var(--cscheme-cont-update);
 
+  /* Container icon */
+  --container-logo-saturation: 0; /* Initial color depth for container icons - 0 is fully-desaturated (grayscale), 1 is default saturation */
+  --container-logo-saturation-hov: 1; /* 1 is 100% or default color depth - Values above 1 will saturate beyond default colors, Example: 4 = 400% */
+
   /* EXPANDED FOLDER HEADER AND "DRAWER" */
   --exfold-header-brdr-c: var(--cscheme-backfill1); /* Border color for the header */
   --exfold-header-bg-c: var(--cscheme-backfill1); /* Background color for the header */
