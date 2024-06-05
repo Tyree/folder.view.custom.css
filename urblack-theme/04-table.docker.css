@@ -1,13 +1,16 @@
 /*************************************************/
-/* CONTAINER LOGO ICON HOVER EFFECTS - 
-Disable for icons to be full color at all times */
+/* CONTAINER LOGO ICON HOVER EFFECTS */
 /*************************************************/
-/* Desaturate docker container icons, saturate on hover */
 .folder-preview-wrapper img {
+  /* Desaturate docker container icons */
   filter: saturate(0);
 }
 .folder-preview-wrapper:hover img {
+  /* Saturate docker container icons - Values above 1 will further saturate */
   filter: saturate(1);
+  /* Set the hover size for icons */
+  width: var(--container-logo-size-hover);
+  height: var(--container-logo-size-hover);
 }
 
 /*************************************************/
