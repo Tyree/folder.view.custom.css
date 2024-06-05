@@ -37,8 +37,9 @@
 
   /* Container */
   --container-logo-size: 38px;
-  --container-logo-size-hov: 40px;
-  --container-logo-saturation-hov: 1;
+  --container-logo-size-hov: 38px;
+  --container-logo-saturation: 0; /* Initial color depth for container icons - 0 is fully-desaturated (grayscale), 1 is default saturation */
+  --container-logo-saturation-hov: 1; /* 1 is 100% or default color depth - Values above 1 will saturate beyond default colors, Example: 4 = 400% */
   --container-logo-mrgtopbottom: 10px;
   --container-logo-mrgleft: 10px;
   --container-name-text-size: 1.3rem;
