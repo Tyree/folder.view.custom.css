@@ -3,11 +3,11 @@
 /*************************************************/
 .folder-preview-wrapper img {
   /* Desaturate docker container icons */
-  filter: saturate(0);
+  filter: saturate(var(--container-logo-saturation));
 }
 .folder-preview-wrapper:hover img {
   /* Saturate docker container icons - Values above 1 will further saturate */
-  filter: saturate(1);
+  filter: saturate(var(--container-logo-saturation-hov));
   /* Set the hover size for icons */
   width: var(--container-logo-size-hover);
   height: var(--container-logo-size-hover);
