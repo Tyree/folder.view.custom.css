@@ -4,13 +4,14 @@
 .folder-preview-wrapper img {
   /* Desaturate docker container icons */
   filter: saturate(var(--container-logo-saturation));
+  /* Add a transition for smooth scaling */
+  transition: transform 0.3s ease;
 }
 .folder-preview-wrapper:hover img {
   /* Saturate docker container icons - Values above 1 will further saturate */
   filter: saturate(var(--container-logo-saturation-hov));
-  /* Set the hover size for icons */
-  width: var(--container-logo-size-hov) !important; /* important needed to overcome higher-specificity selector rule below */
-  height: var(--container-logo-size-hov) !important; /* important needed to overcome higher-specificity selector rule below */
+  /* Scale the image on hover */
+  transform: scale(var(--container-logo-size-hov));
 }
 
 /*************************************************/
