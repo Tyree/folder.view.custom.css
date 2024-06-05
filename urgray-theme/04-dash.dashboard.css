@@ -4,10 +4,10 @@ Disable for icons to be full color at all times */
 /*************************************************/
 /* Desaturate docker/vm container and folder icons, saturate on hover */
 #docker_view .outer img {
-  filter: saturate(0);
+  filter: saturate(var(--container-logo-saturation));
 }
 #docker_view .outer:hover img {
-  filter: saturate(1);
+  filter: saturate(var(--container-logo-saturation-hov));
 }
 
 /* Apply border-box to all elements inside the docker and vm panes */
