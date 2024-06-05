@@ -37,7 +37,7 @@
 
   /* Container */
   --container-logo-size: 38px;
-  --container-logo-size-hov: 38px;
+  --container-logo-size-hov: 1.2; /* Changes logo size on hover - Used in transform/scale rule - 1 is 100%, 1.2 is 120%, 2 is 200%, etc. */
   --container-logo-saturation: 0; /* Initial color depth for container icons - 0 is fully-desaturated (grayscale), 1 is default saturation */
   --container-logo-saturation-hov: 1; /* 1 is 100% or default color depth - Values above 1 will saturate beyond default colors, Example: 4 = 400% */
   --container-logo-mrgtopbottom: 10px;
