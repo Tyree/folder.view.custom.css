@@ -37,6 +37,7 @@
 
   /* Container */
   --container-logo-size: 38px;
+  --container-logo-size-hov: 40px;
   --container-logo-mrgtopbottom: 10px;
   --container-logo-mrgleft: 10px;
   --container-name-text-size: 1.3rem;
