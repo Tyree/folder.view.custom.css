@@ -1,13 +1,18 @@
 /*************************************************/
-/* LOGO ICON HOVER EFFECTS - 
-Disable for icons to be full color at all times */
+/* FOLDER & CONTAINER LOGO ICON HOVER EFFECTS */
 /*************************************************/
 /* Desaturate docker/vm container and folder icons, saturate on hover */
 #docker_view .outer img {
+  /* Desaturate docker container icons */
   filter: saturate(var(--container-logo-saturation));
+  /* Add a transition for smooth scaling */
+  transition: transform 0.3s ease;
 }
 #docker_view .outer:hover img {
+  /* Saturate docker container icons - Values above 1 will further saturate */
   filter: saturate(var(--container-logo-saturation-hov));
+  /* Scale the image on hover */
+  transform: scale(var(--container-logo-size-hov));
 }
 
 /* Apply border-box to all elements inside the docker and vm panes */

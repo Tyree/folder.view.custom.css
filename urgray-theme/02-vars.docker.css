@@ -22,6 +22,9 @@
   --folderbox-brdr-width-right: 3px;
 
   --folder-logo-size: 40px;
+  --folder-logo-size-hov: 1.2; /* Changes logo size on hover - Used in transform/scale rule - 1 is 100%, 1.2 is 120%, 2 is 200%, etc. */
+  --folder-logo-saturation: 0; /* Initial color depth for folder icons - 0 is fully-desaturated (grayscale), 1 is default saturation */
+  --folder-logo-saturation-hov: 1; /* 1 is 100% or default color depth - Values above 1 will saturate beyond default colors, Example: 4 = 400% */
   --folder-logo-mrgright: 8px;
   --folder-name-text-size: 1.5rem;
   --folder-name-text-weight: bold;

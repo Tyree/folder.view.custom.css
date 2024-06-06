@@ -109,6 +109,16 @@
   width: var(--folder-logo-size);
   height: var(--folder-logo-size);
   margin-right: var(--folder-logo-mrgright);
+  /* Desaturate folder icons - Or as specified in vars */
+  filter: saturate(var(--folder-logo-saturation));
+  /* Add a transition for smooth scaling */
+  transition: transform 0.3s ease;
+}
+.folder-outer:hover img.img {
+  /* Saturate folder icons - Or as specified in vars */
+  filter: saturate(var(--folder-logo-saturation-hov));
+  /* Scale the image on hover */
+  transform: scale(var(--folder-logo-size-hov));
 }
 /* Folder name text */
 .folder-outer .folder-appname {
@@ -171,6 +181,17 @@ button.folder-dropwdown {
   width: var(--container-logo-size);
   height: var(--container-logo-size);
   margin-right: 5px;
+  /* Desaturate docker container icons - Or as specified in vars */
+  filter: saturate(var(--container-logo-saturation));
+  /* Add a transition for smooth scaling */
+  transition: transform 0.3s ease;
+}
+/* Container image hover */
+.folder-preview-wrapper:hover .outer img.img {
+  /* Saturate docker container icons - Or as specified in vars */
+  filter: saturate(var(--container-logo-saturation-hov));
+  /* Scale the image on hover */
+  transform: scale(var(--container-logo-size-hov));
 }
 /* Container name */
 .folder-preview-wrapper .appname {
