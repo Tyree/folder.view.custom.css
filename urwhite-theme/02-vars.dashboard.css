@@ -26,7 +26,7 @@
   --container-logo-saturation: 0; /* Initial color depth for container icons - 0 is fully-desaturated (grayscale), 1 is default saturation */
   --container-logo-saturation-hov: 1; /* 1 is 100% or default color depth - Values above 1 will saturate beyond default colors, Example: 4 = 400% */
 
-  /* EXPANDED FOLDER HEADER AND "DRAWER" */
+  /****** EXPANDED FOLDER STYLES ******/
   --exfold-header-brdr-c: var(--cscheme-foreline4); /* Border color for the header */
   --exfold-header-bg-c: var(--cscheme-backfill1); /* Background color for the header */
   --exfold-drawer-brdr-c: var(--cscheme-foreline4); /* Border color for the container "drawer" */
@@ -35,8 +35,14 @@
   --exfold-foldername-updatetext-c: var(--cscheme-exfolder-update); /* Color for the folder name with an update */
   --exfold-foldername-text-size: 2rem; /* Size for the folder name */
   --exfold-foldername-text-weight: bold; /* Weight for the folder name */
+
+  /* Folder icon in expanded folder header */
   --exfold-logo-size: 48px;
   --exfold-logo-size-hov: 1.2; /* Changes logo size on hover - Used in transform/scale rule - 1 is 100%, 1.2 is 120%, 2 is 200%, etc. */
+  --exfold-logo-saturation: 0; /* Initial color depth for folder icons - 0 is fully-desaturated (grayscale), 1 is default saturation */
+  --exfold-logo-saturation-hov: 1; /* 1 is 100% or default color depth - Values above 1 will saturate beyond default colors, Example: 4 = 400% */
+
+  /* Container within an expanded folder */
   --exfold-contname-text-c: inherit; /* Color for the container name when inside a folder */
   --exfold-contname-text-size: 1.4rem; /* Size for the container name when inside a folder */
   --exfold-contname-text-weight: bold; /* Weight for the container name when inside a folder */
