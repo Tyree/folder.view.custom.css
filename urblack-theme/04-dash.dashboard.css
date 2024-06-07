@@ -1,17 +1,37 @@
 /*************************************************/
 /* FOLDER & CONTAINER LOGO ICON HOVER EFFECTS */
 /*************************************************/
-/* Desaturate docker/vm container and folder icons, saturate on hover */
+/* Folder and Container Icons */
 #docker_view .outer img {
-  /* Desaturate docker container icons */
-  filter: saturate(var(--container-logo-saturation));
   /* Add a transition for smooth scaling */
   transition: transform 0.3s ease;
 }
-#docker_view .outer:hover img {
-  /* Saturate docker container icons - Values above 1 will further saturate */
+/* ************ Folder Icon ************ */
+#docker_view .outer.folder-docker img {
+  /* Default icon size */
+  height: var(--folder-logo-size);
+  width: var(--folder-logo-size);
+  /* Desaturate docker folder icons */
+  filter: saturate(var(--folder-logo-saturation));
+}
+#docker_view .outer.folder-docker:hover img {
+  /* Saturate docker folder icons */
+  filter: saturate(var(--folder-logo-saturation-hov));
+  /* Scale the icon on hover */
+  transform: scale(var(--folder-logo-size-hov));
+}
+/* ************ Container Icon ************ */
+#docker_view .outer.folder-element-docker img {
+  /* Default icon size */
+  height: var(--container-logo-size);
+  width: var(--container-logo-size);
+  /* Desaturate docker container icons */
+  filter: saturate(var(--container-logo-saturation));
+}
+#docker_view .outer.folder-element-docker:hover img {
+  /* Saturate docker container icons */
   filter: saturate(var(--container-logo-saturation-hov));
-  /* Scale the image on hover */
+  /* Scale the icon on hover */
   transform: scale(var(--container-logo-size-hov));
 }
 
@@ -46,8 +66,8 @@ to the full width of the wrapper */
 the folders and containers to the same height of the icon */
 #docker_view .inner {
   display: inline-block;
-  height: 32px;
-  margin-left: 38px;
+  height: var(--container-logo-size);
+  margin-left: calc(var(--container-logo-size) + 6px);
 }
 
 /* Compressed folder wrapper and docker container wrapper styles */
@@ -126,16 +146,19 @@ the green arrow or red square shows on containers */
 
 /* Increase the size of the icon */
 #docker_view .folder-showcase-outer[expanded="true"] img.folder-img-docker {
-  width: 48px;
-  height: 48px;
-  filter: saturate(1); /* Override saturate-on-hover effects */
+  width: var(--exfold-logo-size);
+  height: var(--exfold-logo-size);
+  filter: saturate(var(--folder-logo-saturation-hov)); /* Override saturate-on-hover effects */
+}
+#docker_view .folder-showcase-outer[expanded="true"] .outer.folder-docker:hover img.folder-img-docker {
+  transform: scale(var(--exfold-logo-size-hov));
 }
 
 /* Set a height on the folder-name/text area to the same
 height of the icon - builds on compressed styles */
 #docker_view .folder-showcase-outer[expanded="true"] .inner.folder-inner-docker {
-  height: 48px;
-  margin-left: 55px;
+  height: var(--exfold-logo-size);
+  margin-left: calc(var(--exfold-logo-size) + 7px);
 }
 
 /* Font for the folder name */
