@@ -148,10 +148,12 @@ the green arrow or red square shows on containers */
 #docker_view .folder-showcase-outer[expanded="true"] img.folder-img-docker {
   width: var(--exfold-logo-size);
   height: var(--exfold-logo-size);
-  filter: saturate(var(--folder-logo-saturation-hov)); /* Override saturate-on-hover effects */
+  /* Desaturate docker folder icons */
+  filter: saturate(var(--folder-logo-saturation));
 }
 #docker_view .folder-showcase-outer[expanded="true"] .outer.folder-docker:hover img.folder-img-docker {
   transform: scale(var(--exfold-logo-size-hov));
+  filter: saturate(var(--folder-logo-saturation-hov)); /* Override saturate-on-hover effects */
 }
 
 /* Set a height on the folder-name/text area to the same
