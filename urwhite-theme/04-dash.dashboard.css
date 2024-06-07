@@ -1,12 +1,12 @@
 /*************************************************/
 /* FOLDER & CONTAINER LOGO ICON HOVER EFFECTS */
 /*************************************************/
-/* Folder and Container Icons */
+/* ALL Folder and Container Icons (also affects expanded header icon) */
 #docker_view .outer img {
   /* Add a transition for smooth scaling */
   transition: transform 0.3s ease;
 }
-/* ************ Folder Icon ************ */
+/* ************ Folder Icon (Compressed Only) ************ */
 #docker_view .outer.folder-docker img {
   /* Default icon size */
   height: var(--folder-logo-size);
@@ -144,16 +144,18 @@ the green arrow or red square shows on containers */
   margin: -1px -1px 20px -1px;
 }
 
-/* Folder Icon */
+/* Folder Icon in Expanded Header */
 #docker_view .folder-showcase-outer[expanded="true"] img.folder-img-docker {
+  /* Default icon size */
   width: var(--exfold-logo-size);
   height: var(--exfold-logo-size);
   /* Desaturate docker folder icons */
   filter: saturate(var(--folder-logo-saturation));
 }
 #docker_view .folder-showcase-outer[expanded="true"] .outer.folder-docker:hover img.folder-img-docker {
-  /* Saturate docker container icons */
+  /* Saturate docker folder icons */
   filter: saturate(var(--exfold-logo-saturation-hov));
+  /* Scale the icon on hover */
   transform: scale(var(--exfold-logo-size-hov));
 }
 
