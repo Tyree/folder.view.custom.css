@@ -1,6 +1,12 @@
 # Folder.View Custom CSS Files
 
-_Current versions of the CSS styles require Folder.View version **2023.10.04**_
+------------
+
+_The original FolderView project was abandoned. A new fork has taken its place and is under development here: **[Folder.View2](https://github.com/VladoPortos/folder.view2)**_
+
+_I have yet to fully test the custom CSS here with the new Folder.View2 plugin._
+
+----------------
 
 _These themes do not currently include styling for VM panel on Dashboard or VM Page._
 
