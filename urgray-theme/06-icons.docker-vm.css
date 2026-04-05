@@ -125,6 +125,18 @@
   content: var(--container-autostart-stopped-icon); /* Replace the red square with a different icon */
   color: var(--container-autostart-stopped-icon-c);
 }
+
+/* Container autostart Spin Icon - Started */
+.outer:not(.folder-outer).autostart i.started.fa-spin::before {
+  content: var(--container-spin-started-icon); /* Replace the spinner with a different icon */
+  color: var(--container-autostart-started-icon-c);
+}
+/* Container autostart Spin Icon - Stopped */
+.outer:not(.folder-outer).autostart i.stopped.fa-spin::before {
+  content: var(--container-spin-stopped-icon); /* Replace the spinner with a different icon */
+  color: var(--container-autostart-stopped-icon-c);
+}
+
 /* Folder Icons */
 /* Replace the folder's default ontainer status icon with an icon
 denoting presence of autostart containers */

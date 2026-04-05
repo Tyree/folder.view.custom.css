@@ -7,10 +7,17 @@ like https://htmlcolorcodes.com/color-picker/ */
 /*************************************************/
 :root {
   --cscheme-accent1: #f0582c;
+  --cscheme-accent1-dark: #d44a22;
   --cscheme-accent2: #3e6dba;
   --cscheme-accent3: #4f8a10;
+  --cscheme-accent4: #256f92;
+  --cscheme-accent5: #00BCD4;
+  --cscheme-accent6: #9575CD;
 
+  --cscheme-foreline0: #1c1b1b;
   --cscheme-foreline1: #1c1b1b;
+  --cscheme-foreline1-light: #3a3a3a;
+  --cscheme-foreline1-dark: #606060;
   --cscheme-foreline2: #4e4e4e;
   --cscheme-foreline3: #a8a8a8;
   --cscheme-foreline4: #dcdcdc;
@@ -18,11 +25,17 @@ like https://htmlcolorcodes.com/color-picker/ */
   --cscheme-backfill2: #f2f2f2;
   --cscheme-backfill3: #f5f5f5;
   --cscheme-backfill4: #ffffff;
+  --cscheme-cpu: #00BCD4; /* CPU accent color Graph Line */
+  --cscheme-mem: #673AB7; /* Mem accent color Graph Line */
 
   --cscheme-interface-alert: #f0000c;
+  --cscheme-interface-alert2: #fb039a;
   --cscheme-interface-warn: #f0582c;
+  --cscheme-interface-warn2: #FFEB3B;
   --cscheme-interface-attention: #d6ff20;
+  --cscheme-interface-attention2: #FFEB3B;
   --cscheme-interface-passed: #4caf50;
+  --cscheme-interface-passed2: #4caf50;
   --cscheme-interface-accent: #2cabe3;
 
   --cscheme-link: #486dba; /* Text links within the docker table */

@@ -2,17 +2,11 @@
 
 ------------
 
-_The original FolderView project was abandoned. A new fork has taken its place and is under development here: **[Folder.View2](https://github.com/VladoPortos/folder.view2)**_
+Custom CSS styles for use with the **[FolderView3](https://github.com/scolcipitato/folder.view/tree/main)** plugin for **unRAID**.
 
-_I have yet to fully test the custom CSS here with the new Folder.View2 plugin._
+_Requires FolderView3 version **2026.03.23.3** or later._
 
-----------------
-
-_These themes do not currently include styling for VM panel on Dashboard or VM Page._
-
-Custom CSS styles for use with the **[Folder.View](https://github.com/scolcipitato/folder.view/tree/main)** plugin for **unRAID** by **scolcipitato.**
-
-Thanks to scolcipitato for the great plugin! If you have a lot of docker containers, **Folder.View** is a must-have!
+These themes include full styling for **Dashboard**, **Docker page**, and **VM page**, with support for FolderView3's layout modes (classic, accordion, fullwidth, inset, embossed) and preview overflow modes (scroll, expand).
 
 Folder.View plugin **[Support Page](https://forums.unraid.net/topic/142782-plugin-folderview/)** on the unRAID forum.
 
@@ -28,7 +22,7 @@ If you have issues or customization suggestions, contact me on the unRAID forum.
 ## Autostart Icon Customization
 
 Among other basic theme styling, all themes customize the autostart icons on the Dashboard and Docker page. Special icons for autostart containers and the folders that hold autostart containers make it easy to see, at a glance, if all of your autostart containers are running as they should.
-Icons are fully customizable (design, color, and size) via custom properties (variables) in the 06-icons.dashboard.css and 06-icons.docker.css files.
+Icons are fully customizable (design, color, and size) via custom properties (variables) in the 06-icons.dashboard.css and 06-icons.docker-vm.css files.
 
 _See the individual theme README files for more information on that theme._
 

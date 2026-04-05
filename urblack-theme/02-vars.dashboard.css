@@ -26,6 +26,9 @@
   --container-logo-saturation: 0; /* Initial color depth for container icons - 0 is fully-desaturated (grayscale), 1 is default saturation */
   --container-logo-saturation-hov: 1; /* 1 is 100% or default color depth - Values above 1 will saturate beyond default colors, Example: 4 = 400% */
 
+  /* Override FV3 inset fill to match classic expanded header grey */
+  --fv3-inset-fill: var(--cscheme-foreline4);
+
   /****** EXPANDED FOLDER STYLES ******/
   --exfold-header-brdr-c: var(--cscheme-foreline4); /* Border color for the header */
   --exfold-header-bg-c: var(--cscheme-foreline4); /* Background color for the header */

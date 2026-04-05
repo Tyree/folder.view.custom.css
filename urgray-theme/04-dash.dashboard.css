@@ -1,39 +1,54 @@
 /*************************************************/
 /* FOLDER & CONTAINER LOGO ICON HOVER EFFECTS */
 /*************************************************/
+
 /* ALL Folder and Container Icons (also affects expanded header icon) */
-#docker_view .outer img {
+#docker_view .outer img,
+#vm_view .outer img {
   /* Add a transition for smooth scaling */
   transition: transform 0.3s ease;
 }
+
 /* ************ Folder Icon (Compressed Only) ************ */
-#docker_view .outer.folder-docker img {
+#docker_view .outer.folder-docker img,
+#vm_view .outer.folder-vm img {
   /* Default icon size */
   height: var(--folder-logo-size);
   width: var(--folder-logo-size);
-  /* Desaturate docker folder icons */
+  /* Desaturate docker folder icons (Docker & VM) */
   filter: saturate(var(--folder-logo-saturation));
 }
-#docker_view .outer.folder-docker:hover img {
-  /* Saturate docker folder icons */
+
+#docker_view .outer.folder-docker:hover img,
+#vm_view .outer.folder-vm:hover img {
+  /* Saturate docker folder icons (Docker & VM) */
   filter: saturate(var(--folder-logo-saturation-hov));
   /* Scale the icon on hover */
   transform: scale(var(--folder-logo-size-hov));
 }
+
 /* ************ Container Icon ************ */
-#docker_view .outer.folder-element-docker img {
+#docker_view .outer.folder-element-docker img,
+#vm_view .outer.folder-element-vm img {
   /* Default icon size */
   height: var(--container-logo-size);
   width: var(--container-logo-size);
-  /* Desaturate docker container icons */
+  /* Desaturate docker container icons (Docker & VM) */
   filter: saturate(var(--container-logo-saturation));
 }
-#docker_view .outer.folder-element-docker:hover img {
-  /* Saturate docker container icons */
+
+#docker_view .outer.folder-element-docker:hover img,
+#vm_view .outer.folder-element-vm:hover img {
+  /* Saturate docker container icons (Docker & VM) */
   filter: saturate(var(--container-logo-saturation-hov));
   /* Scale the icon on hover */
   transform: scale(var(--container-logo-size-hov));
 }
+
+
+/*************************************************/
+/* SHARED LAYOUT RULES */
+/*************************************************/
 
 /* Apply border-box to all elements inside the docker and vm panes */
 #docker_view *,
@@ -42,19 +57,19 @@
 }
 
 /* Add a padding left to the entire docker and vm icon area
-- this compensates for the expanded folder header */
-#docker_view tr:nth-child(2) td,
-#vm_view tr:nth-child(2) td {
+- this compensates for the expanded folder header (classic only) */
+#docker_view tr:nth-child(2) td.fv3-layout-classic,
+#vm_view tr:nth-child(2) td.fv3-layout-classic {
   padding-left: 20px;
   padding-bottom: 10px;
 }
 
-/* Expand the clickable area of folders and containers
-to the full width of the wrapper */
-#docker_view .hand {
+/* Expand the clickable area of folders and containers (classic only) */
+.fv3-layout-classic .hand {
   position: absolute;
   z-index: 50;
-  display: inline-block;
+  display: flex !important;
+  align-items: center !important;
   left: 0;
   right: 0;
   top: 0;
@@ -62,80 +77,123 @@ to the full width of the wrapper */
   padding: 0;
 }
 
-/* Set a height on the name/text area of
-the folders and containers to the same height of the icon */
-#docker_view .inner {
+/* Set a min-height on the name/text area of
+the folders and containers to the same height of the icon (classic only) */
+.fv3-layout-classic .inner {
   display: inline-block;
-  height: var(--container-logo-size);
+  min-height: var(--container-logo-size);
   margin-left: calc(var(--container-logo-size) + 6px);
 }
 
-/* Compressed folder wrapper and docker container wrapper styles */
-#docker_view .outer {
-  position: relative; /* Needed for absolute positioning of child elements */
-  display: inline-block;
-  background-color: transparent;
+/* Compressed folder wrapper and docker container wrapper styles (classic only) */
+#docker_view .fv3-layout-classic .outer,
+#vm_view .fv3-layout-classic .outer {
+  position: relative;
 }
 
-/* Expanded folder outer wrapper styles */
-#docker_view .folder-showcase-outer[expanded="true"] {
+/* Transparent background and vertical icon centering for all dashboard tiles */
+#docker_view .outer,
+#vm_view .outer {
+  background-color: transparent;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+/* Restore block display for expanded folder headers (all layouts) */
+.folder-showcase-outer[expanded="true"] .outer.folder-docker,
+.folder-showcase-outer[expanded="true"] .outer.folder-vm {
+  display: block !important;
+}
+
+
+/*************************************************/
+/* EXPANDED FOLDER WRAPPER STYLES */
+/*************************************************/
+
+/* Allow full folder names on expanded folders (classic only — other layouts use FV3 truncation) */
+.fv3-layout-classic .folder-showcase-outer[expanded="true"] .fv3-folder-appname {
+  max-width: none;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+/* Expanded folder outer wrapper styles (classic layout only — other layouts keep FV3 structure) */
+#docker_view .fv3-layout-classic .folder-showcase-outer[expanded="true"],
+#vm_view .fv3-layout-classic .folder-showcase-outer[expanded="true"],
+.fv3-layout-classic .folder-showcase-outer[expanded="true"] {
   float: left;
   display: block;
-  margin-left: -10px; /* Overcome 20px container padding-left by giving
-                      expanded folder a negative left margin */
-  width: calc(100% + 10px); /* Add 10px to the width to overcome negative margin */
+  margin-left: -10px;
+  width: calc(100% + 10px);
   border-radius: 10px;
   border-width: 1px;
   border-style: solid;
   border-color: var(--exfold-drawer-brdr-c);
   background-color: var(--exfold-drawer-bg-c);
 }
-#docker_view .folder-showcase-outer[expanded="true"]:not(:last-child) {
-  margin-bottom: 20px; /* Only apply 20px margin if it's NOT the last element */
+
+.fv3-layout-classic .folder-showcase-outer[expanded="true"]:not(:last-child) {
+  margin-bottom: 20px;
 }
 
 /* Child docker container icons wrapper "drawer" styles */
-#docker_view .folder-showcase-outer[expanded="true"] .folder-showcase {
+.fv3-layout-classic .folder-showcase-outer[expanded="true"] .folder-showcase {
   float: left;
   display: block;
   padding: 0 20px;
 }
 
+
+/*************************************************/
+/* TEXT STYLES */
+/*************************************************/
+
 /* Compressed Folder text */
-#docker_view .inner.folder-inner-docker {
+#docker_view .inner.folder-inner-docker,
+#vm_view .inner.folder-inner-vm {
   font-size: var(--folder-name-text-size);
   font-weight: var(--folder-name-text-weight);
 }
-#docker_view .inner.folder-inner-docker .blue-text {
+
+#docker_view .inner.folder-inner-docker .blue-text,
+#vm_view .inner.folder-inner-vm .blue-text {
   color: var(--folder-name-update-text-c); /* Folder with update */
 }
 
 /* Container text */
-#docker_view .inner:not(.folder-inner-docker) {
+#docker_view .inner:not(.folder-inner-docker),
+#vm_view .inner:not(.folder-inner-vm) {
   font-size: var(--container-name-text-size);
   font-weight: var(--container-name-text-weight);
 }
-#docker_view .inner:not(.folder-inner-docker) .blue-text {
+
+#docker_view .inner:not(.folder-inner-docker) .blue-text,
+#vm_view .inner:not(.folder-inner-vm) .blue-text {
   color: var(--container-name-update-text-c); /* Container with update */
 }
 
 /* Hide the "started" and "stopped" text so that only
 the green arrow or red square shows on containers */
-#docker_view .outer:not(.folder-docker) .state {
+#docker_view .outer:not(.folder-docker) .state,
+#vm_view .outer:not(.folder-vm) .state {
   opacity: 0;
 }
+
 
 /*************************************************/
 /* EXPANDED FOLDER HEADER STYLES */
 /*************************************************/
-/* Add padding to the clickable area - builds on compressed styles */
-#docker_view .folder-showcase-outer[expanded="true"] .hand.folder-hand-docker {
+
+/* Add padding to the clickable area - classic layout only */
+#docker_view .fv3-layout-classic .folder-showcase-outer[expanded="true"] .hand.folder-hand-docker,
+#vm_view .fv3-layout-classic .folder-showcase-outer[expanded="true"] .hand.folder-hand-vm {
   padding: 8px;
 }
 
-/* Expanded folder wrapper/header styles */
-#docker_view .folder-showcase-outer[expanded="true"] .outer.folder-docker {
-  display: block;
+/* Expanded folder wrapper/header styles (classic layout only) */
+#docker_view .fv3-layout-classic .folder-showcase-outer[expanded="true"] .outer.folder-docker,
+#vm_view .fv3-layout-classic .folder-showcase-outer[expanded="true"] .outer.folder-vm {
+  display: block !important;
   float: none;
   padding: 8px;
   border: 1px solid var(--exfold-header-brdr-c);
@@ -145,15 +203,18 @@ the green arrow or red square shows on containers */
 }
 
 /* Folder Icon in Expanded Header */
-#docker_view .folder-showcase-outer[expanded="true"] img.folder-img-docker {
+#docker_view .folder-showcase-outer[expanded="true"] img.folder-img-docker,
+#vm_view .folder-showcase-outer[expanded="true"] img.folder-img-vm {
   /* Default icon size */
   width: var(--exfold-logo-size);
   height: var(--exfold-logo-size);
-  /* Desaturate docker folder icons */
-  filter: saturate(var(--folder-logo-saturation));
+  /* Desaturate docker folder icons (Docker & VM) */
+  filter: saturate(var(--exfold-logo-saturation));
 }
-#docker_view .folder-showcase-outer[expanded="true"] .outer.folder-docker:hover img.folder-img-docker {
-  /* Saturate docker folder icons */
+
+#docker_view .folder-showcase-outer[expanded="true"] .outer.folder-docker:hover img.folder-img-docker,
+#vm_view .folder-showcase-outer[expanded="true"] .outer.folder-vm:hover img.folder-img-vm {
+  /* Saturate docker folder icons (Docker & VM) */
   filter: saturate(var(--exfold-logo-saturation-hov));
   /* Scale the icon on hover */
   transform: scale(var(--exfold-logo-size-hov));
@@ -161,30 +222,41 @@ the green arrow or red square shows on containers */
 
 /* Set a height on the folder-name/text area to the same
 height of the icon - builds on compressed styles */
-#docker_view .folder-showcase-outer[expanded="true"] .inner.folder-inner-docker {
+#docker_view .folder-showcase-outer[expanded="true"] .inner.folder-inner-docker,
+#vm_view .folder-showcase-outer[expanded="true"] .inner.folder-inner-vm {
   height: var(--exfold-logo-size);
+}
+
+/* Classic layout: offset text for absolutely-positioned icon */
+#docker_view .fv3-layout-classic .folder-showcase-outer[expanded="true"] .inner.folder-inner-docker,
+#vm_view .fv3-layout-classic .folder-showcase-outer[expanded="true"] .inner.folder-inner-vm {
   margin-left: calc(var(--exfold-logo-size) + 7px);
 }
 
 /* Font for the folder name */
-#docker_view .folder-showcase-outer[expanded="true"] .folder-appname-docker {
+#docker_view .folder-showcase-outer[expanded="true"] .folder-appname-docker,
+#vm_view .folder-showcase-outer[expanded="true"] .folder-appname-vm {
   font-size: var(--exfold-foldername-text-size);
   font-weight: var(--exfold-foldername-text-weight);
   color: var(--exfold-foldername-text-c);
 }
-#docker_view .folder-showcase-outer[expanded="true"] .folder-appname-docker.blue-text {
+
+#docker_view .folder-showcase-outer[expanded="true"] .folder-appname-docker.blue-text,
+#vm_view .folder-showcase-outer[expanded="true"] .folder-appname-vm.blue-text {
   color: var(--exfold-foldername-updatetext-c);
 }
 
 /* Font for the container name inside a folder */
-#docker_view .folder-showcase-outer[expanded="true"] .inner:not(.folder-inner-docker) {
+#docker_view .folder-showcase-outer[expanded="true"] .inner:not(.folder-inner-docker),
+#vm_view .folder-showcase-outer[expanded="true"] .inner:not(.folder-inner-vm) {
   font-size: var(--exfold-contname-text-size);
   font-weight: var(--exfold-contname-text-weight);
   color: var(--exfold-contname-text-c);
 }
 
-/* Down arrow icon */
-#docker_view .folder-showcase-outer[expanded="true"] .folder-docker::after {
+/* Down arrow icon (classic layout only, hidden when collapse toggle is active) */
+.fv3-layout-classic .folder-showcase-outer[expanded="true"] .folder-docker::after,
+.fv3-layout-classic .folder-showcase-outer[expanded="true"] .folder-vm::after {
   position: absolute;
   content: "\f0d7";
   display: block;
@@ -193,4 +265,6 @@ height of the icon - builds on compressed styles */
   right: 1rem;
   bottom: 0;
 }
-/*************************************************/
+.fv3-layout-classic .folder-showcase-outer[expanded="true"] .fv3-expanded-tab::after {
+  content: none;
+}

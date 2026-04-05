@@ -55,7 +55,7 @@
   color: var(--accent-blue-text-c);
 }
 
-/* Autostart switches */
+/* Autostart switches *//*
 #docker_containers .switch-button-background.checked,
 .preview-status .switch-button-background.checked {
   background-color: var(--cscheme-interface-passed);
@@ -64,12 +64,19 @@
 .preview-status .switch-button-label.on {
   color: var(--cscheme-interface-passed);
 }
-
+*/
 /*************************************************/
 /* FOLDER NAME AREA */
 /*************************************************/
 .folder .folder-name {
-  width: var(--folderbox-width);
+  min-width: var(--fv3-folder-name-min-width);
+  max-width: var(--fv3-folder-name-max-width);
+}
+/* Prevent folder icon from being clipped when scaled on hover */
+td.folder-name .folder-outer {
+  overflow: visible;
+  white-space: nowrap;
+  width: auto;
 }
 /* Wrapper around folder icon, name, and toggle */
 .folder .folder-name-sub {
@@ -81,12 +88,12 @@
   height: var(--folderbox-height);
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
-.folder .folder-outer {
-  display: block;
-  height: var(--folder-logo-size);
+.outer.folder-outer {
+  display: inline-flex !important;
+  align-items: center !important;
   margin-bottom: 0;
-  width: calc(var(--folderbox-width) - 25px);
 }
 /* Folder image */
 .folder-outer img.img {
@@ -94,15 +101,15 @@
   height: var(--folder-logo-size);
   margin-right: var(--folder-logo-mrgright);
   /* Desaturate folder icons - Or as specified in vars */
-  filter: saturate(var(--folder-logo-saturation));
-  /* Add a transition for smooth scaling */
-  transition: transform 0.3s ease;
+    filter: saturate(var(--folder-logo-saturation));
+    /* Add a transition for smooth scaling */
+    transition: transform 0.3s ease;
 }
 .folder-outer:hover img.img {
   /* Saturate folder icons - Or as specified in vars */
-  filter: saturate(var(--folder-logo-saturation-hov));
-  /* Scale the image on hover */
-  transform: scale(var(--folder-logo-size-hov));
+    filter: saturate(var(--folder-logo-saturation-hov));
+    /* Scale the image on hover */
+    transform: scale(var(--folder-logo-size-hov));
 }
 /* Folder name text */
 .folder-outer .folder-appname {
@@ -110,8 +117,24 @@
   font-weight: var(--folder-name-text-weight);
 }
 /* Folder toggle open button */
-button.folder-dropwdown {
+button.folder-dropdown {
   float: none;
+  margin-left: auto;
+  color: var(--folder-button-text-c);
+  border: none;
+  background: var(--folder-button-background);
+  background-size: var(--folder-button-background-size);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+button.folder-dropdown:hover {
+  color: var(--folder-button-text-c-hov);
+  background: var(--folder-button-background-hov);
+  /* Scale the button on hover */
+  transform: scale(var(--folder-button-size-hov));
+}
+/* Small "press button" effect */
+button.folder-dropdown:active {
+  transform: scale(var(--folder-button-size-act));
 }
 /* Version column */
 .folder .updatecolumn {
@@ -121,6 +144,7 @@ button.folder-dropwdown {
 .outer.folder-outer .state {
   font-size: var(--folder-startstop-text-size);
   margin-left: var(--folder-startstop-text-mrgleft);
+  color: var(--cscheme-foreline2);
 }
 
 /*************************************************/
@@ -138,16 +162,28 @@ button.folder-dropwdown {
   border-style: solid !important;
   border-color: var(--folderpreview-brdr-c) !important;
   border-width: var(--folderpreview-brdr-width-topbottom) var(--folderpreview-brdr-width-right) var(--folderpreview-brdr-width-topbottom) var(--folderpreview-brdr-width-left) !important;
-  height: var(--folderpreview-height);
-  align-items: start;
+  height: 100%;
+  min-height: var(--folderpreview-height);
+  align-items: center;
 }
 
 /* Vertical lines between containers - if enabled */
 .folder-preview .folder-preview-divider {
   float: none;
-  height: var(--container-logo-size);
-  margin: var(--container-logo-mrgtopbottom) 5px var(--container-logo-mrgtopbottom) 10px;
+  height: 70%;
+  margin: 0 5px 0 10px;
+  align-self: center;
   border: 1px solid var(--folderpreview-brdr-c) !important;
+}
+.folder-preview.fv3-overflow-scroll .folder-preview-divider:not(:last-child) {
+  height: auto;
+  align-self: stretch;
+  margin-top: var(--container-logo-mrgtopbottom);
+}
+.folder-preview.fv3-overflow-expand .folder-preview-divider:not(:last-child) {
+  height: var(--container-logo-size);
+  margin-top: var(--container-logo-mrgtopbottom);
+  align-self: flex-start;
 }
 
 /*************************************************/
@@ -157,7 +193,7 @@ button.folder-dropwdown {
 .folder-preview .folder-preview-wrapper {
   float: none;
   margin-left: var(--container-logo-mrgleft);
-  margin-top: var(--container-logo-mrgtopbottom);
+  margin-top: 4px;
   height: auto;
 }
 /* Container image */
@@ -188,11 +224,49 @@ button.folder-dropwdown {
   margin-left: var(--container-startstop-text-mrgleft);
 }
 
+/*************************************************/
+/* EXPANDED / SCROLL PREVIEW MODES */
+/*************************************************/
+.folder .folder-preview.fv3-overflow-expand {
+  height: auto;
+  min-height: var(--folderpreview-height);
+  max-height: none;
+  padding-bottom: var(--container-logo-mrgtopbottom);
+}
+.folder:has(.folder-preview.fv3-overflow-expand) .folder-name-sub {
+  height: 100%;
+}
+.folder .folder-preview.fv3-overflow-scroll {
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.folder-preview.fv3-overflow-scroll .folder-preview-wrapper {
+  flex-shrink: 0;
+}
+.folder-preview.fv3-overflow-scroll::-webkit-scrollbar {
+  height: 6px;
+  background: transparent;
+}
+.folder-preview.fv3-overflow-scroll::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+}
+.folder-preview.fv3-overflow-scroll:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 140, 47, 0.5);
+}
+.folder .folder-preview.expanded {
+  height: auto;
+  max-height: none;
+}
+
+/****** Give more space for containers *******/
 /* Autostart column */
 #docker_containers th.nine {
-  width: 110px;
+  width: 0px; /*110px;*/
   padding: 0;
 }
+
 
 /*************************************************/
 /* EXPANDED FOLDER AND NO FOLDER CONTAINER ROW */
@@ -206,8 +280,8 @@ button.folder-dropwdown {
 
 /* Container name text */
 #docker_containers .inner:not(.folder-inner) .appname {
-  font-size: 1.4rem;
-  font-weight: bold;
+  font-size: var(--container-name-text-size);
+  font-weight: var(--container-name-text-weight);
 }
 
 /* Wait form on autostart containers */
@@ -215,4 +289,26 @@ button.folder-dropwdown {
   float: none !important;
   display: block;
   margin-left: 10px;
+}
+
+/*************************************************/
+/* MOBILE / NARROW SCREEN                        */
+/*************************************************/
+@media (max-width: 768px) {
+  .folder-preview .folder-preview-divider {
+    float: none;
+    height: 70%;
+    margin: 0;
+    align-self: center;
+  }
+  .folder-preview.fv3-overflow-scroll .folder-preview-divider:not(:last-child) {
+    height: 36px;
+    margin-top: 10px;
+    align-self: flex-start;
+  }
+  .folder-preview.fv3-overflow-expand .folder-preview-divider:not(:last-child) {
+    height: 42px;
+    margin-top: 12px;
+    align-self: flex-start;
+  }
 }

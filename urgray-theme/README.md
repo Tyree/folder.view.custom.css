@@ -1,6 +1,6 @@
 # unRAID Gray Theme
 
-_Use of this theme requires FolderView version **2023.10.04**_
+_Use of this theme requires FolderView3 version **2026.03.23.3** or later_
 
 Based on color and style from the out-of-box **Gray** theme in **unRAID**.
 Dashboard and Docker table have been fully themed with easy-to-access variables that even those with limited CSS skills can edit and tweak.
@@ -9,21 +9,23 @@ Dashboard and Docker table have been fully themed with easy-to-access variables 
 
 File naming determines load order. _Do not change the naming of these files unless you know what you're doing._
 
-- **01-colors.dashboard-docker.css:** _Color scheme file. Stores all colors used by other dashboard and docker page CSS files._
+- **01-colors.dashboard-docker-vm.css:** _Color scheme file. Stores all colors used by dashboard, docker, and VM page CSS files._
 - **02-vars.dashboard.css:** _Variables used by other dashboard CSS files. Most editing can be done in this file._
-- **02-vars.docker.css:** _Variables used by other docker page CSS files. Most editing can be done in this file._
+- **02-vars.docker-vm.css:** _Variables used by other docker and VM page CSS files. Most editing can be done in this file._
 - **03-vars-icons.dashboard.css:** _Variables pertaining specifically to icons on the dashboard._
-- **03-vars-icons.docker.css:** _Variables pertaining specifically to icons on the docker page._
+- **03-vars-icons.docker-vm.css:** _Variables pertaining specifically to icons on the docker and VM pages._
 - **04-dash.dashboard.css:** _Main CSS selectors file for the dashboard._
 - **04-table.docker.css:** _Main CSS selectors file for the docker page._
+- **04-table.vm.css:** _Main CSS selectors file for the VM page._
 - **05-tableadv.docker.css:** _Selectors and rules pertaining to elements added with the Advanced View switch._
 - **06-icons.dashboard.css:** _Selectors and rules specific to icons on the dashboard._
-- **06-icons.docker.css:** _Selectors and rules specific to icons on the docker page._
+- **06-icons.docker-vm.css:** _Selectors and rules specific to icons on the docker and VM pages._
 - **07-advcontext.docker.css:** _Variables, selectors, and rules specific to the Advanced Context Menu._
+- **08-fv3-overrides.dashboard-docker-vm.css:** _FolderView3 plugin variable overrides and layout adjustments for accordion, fullwidth, inset, and embossed modes._
 
 ## Sample Images
 
-_Icons in these images are desaturated by the CSS rules and saturate on hover. These settings are easily disabled by changing the variable values in the **02-vars.dashboard.css** and **02-vars.docker.css** files._
+_Icons in these images are desaturated by the CSS rules and saturate on hover. These settings are easily disabled by changing the variable values in the **02-vars.dashboard.css** and **02-vars.docker-vm.css** files._
 
 ### Example:
 

@@ -1,0 +1,111 @@
+/*************************************************/
+/* FV3 PLUGIN VARIABLE OVERRIDES */
+/* Override FolderView3 built-in CSS variables    */
+/* to match this theme's color palette            */
+/*************************************************/
+:root {
+  /* Graph colors */
+  --folder-view3-graph-cpu: var(--cscheme-cpu);
+  --folder-view3-graph-mem: var(--cscheme-mem);
+
+  /* Tooltip / Advanced Preview theme colors */
+  --fv3-surface-tint: rgba(200, 200, 200, 0.08);
+  --fv3-hover-bg: rgba(200, 200, 200, 0.15);
+  --fv3-border: 1px solid rgba(200, 200, 200, 0.2);
+
+  /* Dashboard: Inset layout */
+  --fv3-inset-border-color: var(--cscheme-foreline3);
+  --fv3-inset-fill: var(--cscheme-foreline4);
+  --fv3-inset-showcase-border: var(--cscheme-foreline4);
+  --fv3-inset-showcase-fill: rgba(27, 29, 27, 0.4);
+  --fv3-inset-bg: transparent;
+  --fv3-showcase-bg: transparent;
+
+  /* Dashboard: Embossed layout */
+  --fv3-embossed-border: var(--cscheme-foreline3);
+  --fv3-embossed-accent: var(--cscheme-accent1);
+  --fv3-embossed-bg: transparent;
+  --fv3-embossed-shadow: none;
+  --fv3-embossed-inner-border: var(--cscheme-foreline4);
+  --fv3-embossed-inner-bg: rgba(200, 200, 200, 0.05);
+}
+
+/*************************************************/
+/* COLLAPSE TOGGLE BUTTON — styled as the down arrow */
+/*************************************************/
+button.fv3-collapse-toggle {
+  z-index: 51;
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
+  top: auto;
+  left: auto;
+  transform: none;
+  width: auto;
+  height: auto;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: inherit;
+  font-size: 3rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+button.fv3-collapse-toggle:hover {
+  background: transparent;
+  border: none;
+  color: var(--cscheme-accent1);
+  transform: none;
+}
+button.fv3-collapse-toggle:active {
+  transform: none;
+}
+/* Accordion/Embossed: static positioning next to folder name */
+.fv3-layout-accordion button.fv3-collapse-toggle,
+.fv3-layout-embossed button.fv3-collapse-toggle {
+  position: static;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+/* Force chevron-up icon, overriding icon theme rules */
+#docker_view .outer.folder-docker button.fv3-collapse-toggle i::before,
+#docker_view .outer.folder-element-docker button.fv3-collapse-toggle i::before,
+#vm_view .outer.folder-vm button.fv3-collapse-toggle i::before,
+#vm_view .outer.folder-element-vm button.fv3-collapse-toggle i::before {
+  content: "\f077";
+  font-family: FontAwesome;
+  color: inherit;
+  font-size: inherit;
+}
+
+/*************************************************/
+/* ACCORDION / FULLWIDTH / INSET / EMBOSSED      */
+/* Extra padding for larger custom theme icons    */
+/*************************************************/
+.fv3-layout-accordion .folder-showcase:not(:empty) {
+  border-color: var(--cscheme-foreline4);
+  border-left-color: var(--cscheme-accent1);
+  padding: 12px;
+  overflow: visible;
+}
+
+.fv3-fullwidth-panel {
+  border-color: var(--cscheme-foreline4);
+  border-left-color: var(--cscheme-accent1);
+  padding: 12px;
+}
+
+.fv3-layout-inset .folder-showcase:not(:empty) {
+  padding: 12px;
+  overflow: visible;
+}
+
+.fv3-layout-embossed .folder-showcase:not(:empty) {
+  padding: 12px;
+  overflow: visible;
+}

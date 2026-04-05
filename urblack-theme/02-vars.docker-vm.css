@@ -4,15 +4,21 @@
 :root {
   /* Passed/Warning/Green/Orange Text */
   --warn-orange-text-c: var(--cscheme-interface-warn);
-  --pass-green-text-c: var(--cscheme-interface-good);
+  --pass-green-text-c: var(--cscheme-interface-passed);
   --accent-blue-text-c: var(--cscheme-interface-accent);
 
   /* Table Rows */
   --row-base-bg-c: var(--cscheme-backfill4);
   --row-even-bg-c: var(--cscheme-backfill2);
 
+  /* Table Rows VMs Colors */
+  --fv3-row-bg: var(--row-base-bg-c);
+  --fv3-row-alt-bg: var(--row-even-bg-c);
+
   /* Folder Name/Logo Area */
-  --folderbox-width: 250px; /* May need to be increased if --folder-name-text-size is too big */
+  --fv3-folder-name-min-width: 250px;
+  --fv3-folder-name-max-width: none;
+  --folderbox-width: var(--fv3-folder-name-min-width); /* May need to be increased if --folder-name-text-size is too big */
   --folderbox-height: calc(var(--folder-logo-size) + (var(--folderbox-padding-topbottom) * 2) + (var(--folderbox-brdr-width-topbottom) * 2));
   --folderbox-padding-topbottom: 10px;
   --folderbox-padding-leftright: 10px;
@@ -30,6 +36,14 @@
   --folder-name-text-weight: bold;
   --folder-startstop-text-size: 1.2rem; /* 0 to hide */
   --folder-startstop-text-mrgleft: 7px; /* 0 to hide */
+
+  --folder-button-size-hov: 1.08;
+  --folder-button-size-act: 0.98;
+  --folder-button-background: linear-gradient(90deg, var(--cscheme-foreline1-dark) 0, var(--cscheme-foreline1)) 0 0 no-repeat, linear-gradient(90deg, var(--cscheme-foreline1-dark) 0, var(--cscheme-foreline1)) 0 100% no-repeat, linear-gradient(0deg, var(--cscheme-foreline1-dark) 0, var(--cscheme-foreline1-dark)) 0 100% no-repeat, linear-gradient(0deg, var(--cscheme-foreline1) 0, var(--cscheme-foreline1)) 100% 100% no-repeat;
+  --folder-button-background-size: 100% 2px, 100% 2px, 2px 100%, 2px 100%;
+  --folder-button-background-hov: linear-gradient(90deg, var(--cscheme-foreline1-dark) 0, var(--cscheme-foreline1));
+  --folder-button-text-c: var(--cscheme-foreline1);
+  --folder-button-text-c-hov: var(--cscheme-foreline0);
 
   /* Folder/Container Preview Row */
   --folderpreview-height: calc(var(--container-logo-size) + (var(--container-logo-mrgtopbottom) * 2) + (var(--folderpreview-brdr-width-topbottom) * 2));
